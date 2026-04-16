@@ -12,3 +12,9 @@ hkits-dgk-publish
     - 공통부분과 본문 부분 분리 태그 작성
         예) <!-- 본문내용 시작 -->, <!-- 본문내용 끝 -->
 	
+
+# main 브랜치에 올려주시면, 아래 주소에서 확인 가능
+
+
+    - https://satcop.github.io/hkits-dgk-publish/
+
