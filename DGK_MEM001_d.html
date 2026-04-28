@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=yes"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Cache-Control" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <meta name="format-detection" content="telephone=no">
+
+    <title>DGK 영화감독조합 내부데이터 통합관리 시스템</title>
+
+    <!-- font : 프리텐다드 -->
+    <link rel="preload" href="./font/woff2-subset/Pretendard-Regular.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/woff2-subset/Pretendard-Medium.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/woff2-subset/Pretendard-SemiBold.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/woff2-subset/Pretendard-Bold.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/woff2-subset/Pretendard-ExtraBold.subset.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="./font/woff2-subset/Pretendard-Black.subset.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- css : 스타일 -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- js : 자바스크립트 -->
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/common.js"></script>
+</head>
+<body>
+    <div id="wrap">
+
+        <!-- [공통] 사이드바 시작 -->
+        <aside class="sidebar">
+            <div class="inner">
+                <div class="logo">
+                    <div class="logo-switch">
+                        <img class="logo-full" src="./img/logo.svg" alt="DGK 영화감독조합 내부데이터 통합관리 시스템">
+                        <img class="logo-fold" src="./img/logo-fold.svg" alt="" width="44" height="55" aria-hidden="true">
+                    </div>
+                </div>
+                <nav class="nav">
+                    <div class="nav-list">
+                        <h3 class="title">기본 관리</h3>
+                        <ul>
+                            <li class="user"><a href="" title="회원 관리"><i class="icon-user"></i><span>회원 관리</span></a></li>
+                            <li class="work"><a href="" title="작품 관리"><i class="icon-work"></i><span>작품 관리</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-list">
+                        <h3 class="title">정산 관리</h3>
+                        <ul>
+                            <li class="deposit"><a href="" title="입금내역 관리"><i class="icon-deposit"></i><span>입금내역 관리</span></a></li>
+                            <li class="unsettled"><a href="" title="미정산내역"><i class="icon-unsettled"></i><span>미정산내역</span></a></li>
+                            <li class="history"><a href="" title="관리비율 이력"><i class="icon-history"></i><span>관리비율 이력</span></a></li>
+                            <li class="group"><a href="" title="단체 관리"><i class="icon-group"></i><span>단체 관리</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-list">
+                        <h3 class="title">회원 지급</h3>
+                        <ul>
+                            <li class="prepare"><a href="" title="지급 준비"><i class="icon-prepare"></i><span>지급 준비</span></a></li>
+                            <li class="waiting"><a href="" title="지급 대기"><i class="icon-waiting"></i><span>지급 대기</span></a></li>
+                            <li class="payment-history"><a href="" title="지급 이력"><i class="icon-payment-history"></i><span>지급 이력</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-list">
+                        <h3 class="title">통계</h3>
+                        <ul>
+                            <li class="stat-work"><a href="" title="작품별 통계"><i class="icon-stat-work"></i><span>작품별 통계</span></a></li>
+                            <li class="stat-member"><a href="" title="회원별 통계"><i class="icon-stat-member"></i><span>회원별 통계</span></a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="bottom">
+                    <button type="button" class="btn-toggle-sidebar">접기</button>
+                </div>
+            </div>
+        </aside>        
+        <!-- 사이드바 끝 -->
+
+        <div id="container">
+
+            <!-- [공통] 헤더 시작 -->
+            <header id="header">
+                <div class="inner">
+                    <div class="header-start">
+                        <p class="last-login">최근 접속 <time>2026. 04. 14. 14:30:02</time></p>
+                    </div>
+
+                    <div class="header-end">
+                        <div class="header-user">
+                            <p class="user-avatar">홍</p>
+                            <div class="user-info">
+                                <p class="user-name"><span>홍길동</span>님</p>
+                                <p class="user-role">administrator</p>
+                            </div>
+                            <button type="button" class="btn-logout">로그아웃</button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- 헤더 끝 -->
+
+            <!-- 컨텐츠 시작 -->
+            <div id="content">
+                
+                <!-- page head 시작 -->
+                <div class="page-head">
+                    <ul id="location">
+                        <li>홈</li>
+                        <li>기본 관리</li>
+                        <li>회원 관리</li>
+                        <li>회원 상세</li>
+                    </ul>
+                    <h2 class="page-title">회원 상세</h2>                    
+                </div>
+                <!-- page head 끝 -->
+
+                <!-- page body 시작 -->
+                <form class="member-detail-form">
+                    <div class="page-body">
+                        <div class="page-buttons">
+                            <button type="reset" class="btn-reset">초기화</button>
+                            <span class="divider">|</span>
+                            <button type="button" class="btn-list">목록</button>
+                            <button type="button" class="btn-save">저장</button>
+                        </div>
+
+                        <div class="indiv member-summary">
+                            <div class="head">
+                                <strong class="name">홍길동</strong>
+                                <span class="id">DGK-00001</span>
+                                <span class="state ok">정상</span>
+                                <!-- <span class="state withdraw">탈퇴</span> -->
+                            </div>
+                            <div class="meta">
+                                <span class="item">
+                                    <span class="label">회원구분 :</span>
+                                    <span class="value">정회원</span>
+                                </span>
+                                <span class="item">
+                                    <span class="label">가입일 :</span>
+                                    <span class="value">2025. 01. 01.</span>
+                                </span>
+                                <span class="item">
+                                    <span class="label">승인일 :</span>
+                                    <span class="value">2025. 01. 01.</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="indiv tab-menu">
+                            <ul role="tablist" aria-label="회원 상세 구분">
+                                <li class="active" role="presentation"><button type="button" role="tab" aria-selected="true" aria-controls="tab-panel-1" id="tab-1">기본정보</button></li>
+                                <li role="presentation"><button type="button" role="tab" aria-selected="false" aria-controls="tab-panel-2" id="tab-2">필모그래피</button></li>
+                                <li role="presentation"><button type="button" role="tab" aria-selected="false" aria-controls="tab-panel-3" id="tab-3">정산내역</button></li>
+                                <li role="presentation"><button type="button" role="tab" aria-selected="false" aria-controls="tab-panel-4" id="tab-4">이력관리</button></li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <!-- 기본정보 시작 -->
+                            <div class="tab-content-item active" id="tab-panel-1" role="tabpanel" aria-labelledby="tab-1">
+                                <div class="indiv">
+                                    <h3 class="tit">기본정보 수정</h3>
+                                    <div class="tbl-input">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:10%">
+                                                <col style="width:15%">
+                                                <col style="width:10%">
+                                                <col style="width:15%">
+                                                <col style="width:10%">
+                                                <col style="width:15%">
+                                                <col style="width:10%">
+                                                <col style="width:15%">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th><label class="tit">회원코드</label></th>
+                                                    <td>
+                                                        <p>DGK-00001</p>
+                                                    </td>
+                                                    <th><label class="tit">회원구분</label></th>
+                                                    <td>
+                                                        <div class="select-box wd100">
+                                                            <select id="f-mtype">
+                                                                <option value="">전체</option>
+                                                                <option value="1" selected>정회원</option>
+                                                                <option value="2">준회원</option>
+                                                                <option value="3">대리중개</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit">회원상태</label></th>
+                                                    <td>
+                                                        <div class="select-box wd100">
+                                                            <select id="f-mstat">
+                                                                <option value="">전체</option>
+                                                                <option value="1" selected>정상</option>
+                                                                <option value="2">탈퇴</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit">가입일</label></th>
+                                                    <td>
+                                                        <p>2025. 01. 01.</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th><label class="tit"><span class="req" aria-label="필수">*</span>이름</label></th>
+                                                    <td>
+                                                        <div class="input-box wd100">
+                                                            <input type="text" id="f-name" class="input" value="홍길동">
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit">국문 성</label></th>
+                                                    <td>
+                                                        <div class="input-box wd100">
+                                                            <input type="text" id="f-ko-ln" class="input" value="홍">
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit">국문 이름</label></th>
+                                                    <td>
+                                                        <div class="input-box wd100">
+                                                            <input type="text" id="f-ko-fn" class="input" value="길동">
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit">승인일</label></th>
+                                                    <td>
+                                                        <p>2025. 01. 01.</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th><label class="tit"><span class="req" aria-label="필수">*</span>영문 성</label></th>
+                                                    <td>
+                                                        <div class="input-box wd100">
+                                                            <input type="text" id="f-en-ln" class="input" value="Hong">
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit"><span class="req" aria-label="필수">*</span>영문 이름</label></th>
+                                                    <td>
+                                                        <div class="input-box wd100">
+                                                            <input type="text" id="f-en-fn" class="input" value="gildong">
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit"><span class="req" aria-label="필수">*</span>가명 국문</label></th>
+                                                    <td>
+                                                        <div class="input-box wd100">
+                                                            <input type="text" id="f-alias-ko" class="input" value="질수">
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit">가명 영문</label></th>
+                                                    <td>
+                                                        <div class="input-box wd100">
+                                                            <input type="text" id="f-alias-en" class="input" value="cheolsu">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th><label class="tit">주민등록번호 앞자리</label></th>
+                                                    <td>
+                                                        <div class="input-box wd100">
+                                                            <input type="text" id="f-rrn" class="input only-number" value="121212" maxlength="6">
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit">휴대폰 번호</label></th>
+                                                    <td>
+                                                        <div class="input-box wd100">
+                                                            <input type="text" id="f-phone" class="input only-number" value="01012345678" maxlength="11" placeholder="전화번호를 입력하세요 (‘-’ 제외)">
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit">이메일</label></th>
+                                                    <td>
+                                                        <div class="input-box wd100">
+                                                            <input type="email" id="f-email" class="input" value="gd-hong25@email.com">
+                                                        </div>
+                                                    </td>
+                                                    <th><span class="tit">성별</span></th>
+                                                    <td>
+                                                        <div class="radio-box">
+                                                            <div class="items">
+                                                                <input type="radio" name="gender" id="f-gen-m" value="M" checked>
+                                                                <label for="f-gen-m">M</label>
+                                                            </div>
+                                                            <div class="items">
+                                                                <input type="radio" name="gender" id="f-gen-f" value="F">
+                                                                <label for="f-gen-f">F</label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th><label class="tit">생년월일</label></th>
+                                                    <td>
+                                                        <div class="input-box wd100">
+                                                            <input type="date" id="f-birth" class="input calendar" value="2012-12-12">
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit">국적</label></th>
+                                                    <td>
+                                                        <div class="select-box wd100">
+                                                            <select id="f-nation">
+                                                                <option value="KR" selected>대한민국</option>
+                                                                <option value="US">미국</option>
+                                                                <option value="JP">일본</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit">출생국(국가)</label></th>
+                                                    <td>
+                                                        <div class="input-box wd100">
+                                                            <input type="text" id="f-birth-country" class="input" value="대한민국">
+                                                        </div>
+                                                    </td>
+                                                    <th><span class="tit">역할</span></th>
+                                                    <td>
+                                                        <div class="select-box wd100">
+                                                            <select>
+                                                                <option value="">전체</option>
+                                                                <option value="">감독</option>
+                                                                <option value="">연출</option>
+                                                                <option value="">감독,연출</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th><span class="tit">등본상 주소</span></th>
+                                                    <td>
+                                                        <div class="radio-box">
+                                                            <div class="items">
+                                                                <input type="radio" name="addrReg" id="f-addr-kr" value="domestic" checked>
+                                                                <label for="f-addr-kr">국내</label>
+                                                            </div>
+                                                            <div class="items">
+                                                                <input type="radio" name="addrReg" id="f-addr-ab" value="overseas">
+                                                                <label for="f-addr-ab">해외</label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit">출생지</label></th>
+                                                    <td colspan="5">
+                                                        <div class="input-box wd100">
+                                                            <input type="text" id="f-birth-place" class="input" value="서울특별시 강남구">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th><label class="tit">주소</label></th>
+                                                    <td colspan="7">
+                                                        <div class="addr-row">
+                                                            <div class="input-box zip">
+                                                                <input type="text" id="f-zip" class="input white" value="12345" maxlength="5" title="우편번호" readonly>
+                                                            </div>
+                                                            <button type="button" class="btn-zip">주소찾기</button>
+                                                            <div class="input-box grow">
+                                                                <input type="text" id="f-addr-base" class="input white" value="서울특별시 강남구 압구정동 123-45" title="기본주소" readonly>
+                                                            </div>
+                                                            <div class="input-box grow">
+                                                                <input type="text" id="f-addr-bldg" class="input white" value="강남아파트 101동 101호" placeholder="상세주소를 입력하세요">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- 탈퇴 시 추가 시작 -->
+                                                <tr>
+                                                    <th><span class="tit">탈퇴동의서</span></th>
+                                                    <td colspan="3">
+                                                        <!-- 파일 업로드 시작 : 기존 파일 없을 시 file-drop-zone 클래스에 is-filled 클래스 제거, 기존파일 있을 시 file-drop-zone 클래스에 is-filled 클래스 추가 -->
+                                                        <div class="file-drop-zone is-filled" data-max-mb="100" data-accept="jpg,jpeg,png,pdf">
+                                                            <input type="file" id="f-file-withdraw" name="file_withdraw" class="file-native" accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf">
+                                                            <div class="file-drop-main">
+                                                                <div class="file-drop-empty">
+                                                                    <p class="file-drop-hint">파일 선택 또는 여기에 드래그</p>
+                                                                    <p class="file-drop-sub">업로드된 파일 없음</p>
+                                                                </div>
+                                                                <div class="file-drop-filled">
+                                                                    <a href="#" class="file-link">탈퇴동의서.png</a><!-- 기존 파일 없을 시 공백, 기존 파일 있을 시 파일명 표시 -->
+                                                                    <span class="file-meta">(12KB)</span><!-- 기존 파일 없을 시 공백, 기존 파일 있을 시 파일 크기  표시 -->
+                                                                    <button type="button" class="btn-file-remove" aria-label="첨부 파일 삭제"><span class="ico-del" aria-hidden="true"></span></button>
+                                                                </div>
+                                                            </div>
+                                                            <button type="button" class="btn-file-pick" aria-label="파일 선택"><img src="./img/upload.svg" alt=""></button>
+                                                        </div>
+                                                        <!-- 파일 업로드 종료 -->
+                                                        <p class="note-text mt10">* JPG, PNG, PDF 형식 파일만 업로드 가능 / 최대 크기 100MB 이하</p>
+                                                    </td>
+                                                    <th><span class="tit">탈퇴일</span></th>
+                                                    <td colspan="3">
+                                                        <p>2025.01.01</p>
+                                                    </td>
+                                                </tr>
+                                                <!-- 탈퇴 시 추가 종료 -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="indiv col">
+                                        <h3 class="tit">대표 필모그래피</h3>
+                                        <div class="textarea-box">
+                                            <textarea class="textarea" rows="6" placeholder="대표 필모그래피를 입력하세요">기생충 (2019), 옥자 (2017), 설국열차 (2013)</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="indiv col">
+                                        <h3 class="tit">관리자 메모</h3>
+                                        <div class="textarea-box">
+                                            <textarea class="textarea" rows="6" placeholder="특이사항을 입력하세요"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="indiv">
+                                    <h3 class="tit">계좌정보</h3>
+                                    <div class="tbl-input">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:10%">
+                                                <col style="width:15%">
+                                                <col style="width:10%">
+                                                <col style="width:15%">
+                                                <col style="width:10%">
+                                                <col style="width:15%">
+                                                <col style="width:10%">
+                                                <col style="width:15%">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th><span class="tit">구분</span></th>
+                                                    <td><p>CMS 출금 계좌</p></td>
+                                                    <th><label class="tit">은행명</label></th>
+                                                    <td>
+                                                        <div class="select-box wd100">
+                                                            <select id="f-cms-bank">
+                                                                <option value="">선택하세요</option>
+                                                                <option value="1" selected>국민</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit">예금주명</label></th>
+                                                    <td>
+                                                        <div class="input-box wd100">
+                                                            <input type="text" id="f-cms-holder" class="input" value="김영화" placeholder="이름을 입력하세요" autocomplete="off">
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit">계좌번호</label></th>
+                                                    <td>
+                                                        <div class="input-box wd100">
+                                                            <input type="text" id="f-cms-acct" class="input only-number" value="01010101010101" inputmode="numeric" placeholder="계좌번호를 입력하세요" autocomplete="off">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th><span class="tit">구분</span></th>
+                                                    <td><p>정산 계좌</p></td>
+                                                    <th><label class="tit">은행명</label></th>
+                                                    <td>
+                                                        <div class="select-box wd100">
+                                                            <select id="f-cms-bank">
+                                                                <option value="">선택하세요</option>
+                                                                <option value="1" selected>국민</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit">예금주명</label></th>
+                                                    <td>
+                                                        <div class="input-box wd100">
+                                                            <input type="text" id="f-cms-holder" class="input" value="김영화" placeholder="이름을 입력하세요" autocomplete="off">
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit">계좌번호</label></th>
+                                                    <td>
+                                                        <div class="input-box wd100">
+                                                            <input type="text" id="f-cms-acct" class="input only-number" value="01010101010101" inputmode="numeric" placeholder="계좌번호를 입력하세요" autocomplete="off">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                
+                                <div class="indiv file-submit-block">
+                                    <div class="tit-wrap file-submit-head">
+                                        <h3 class="tit">필수 제출 파일 정보</h3>
+                                        <p class="note-text">* JPG, PNG, PDF 형식 파일만 업로드 가능 / 최대 크기 100MB 이하</p>
+                                    </div>
+                                    <div class="file-drop-grid">
+                                        <div class="file-drop-field">
+                                            <label class="file-drop-label" for="f-file-proxy">대리 중개 동의서</label>
+                                            <!-- 파일 업로드 시작 : 기존 파일 없을 시 file-drop-zone 클래스에 is-filled 클래스 제거, 기존파일 있을 시 file-drop-zone 클래스에 is-filled 클래스 추가 -->
+                                            <div class="file-drop-zone is-filled" data-max-mb="100" data-accept="jpg,jpeg,png,pdf">
+                                                <input type="file" id="f-file-proxy" name="file_proxy" class="file-native" accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf">
+                                                <div class="file-drop-main">
+                                                    <div class="file-drop-empty">
+                                                        <p class="file-drop-hint">파일 선택 또는 여기에 드래그</p>
+                                                        <p class="file-drop-sub">업로드된 파일 없음</p>
+                                                    </div>
+                                                    <div class="file-drop-filled">
+                                                        <a href="#" class="file-link">대리중개동의서.png</a><!-- 기존 파일 없을 시 공백, 기존 파일 있을 시 파일명 표시 -->
+                                                        <span class="file-meta">(12KB)</span><!-- 기존 파일 없을 시 공백, 기존 파일 있을 시 파일 크기  표시 -->
+                                                        <button type="button" class="btn-file-remove" aria-label="첨부 파일 삭제"><span class="ico-del" aria-hidden="true"></span></button>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="btn-file-pick" aria-label="파일 선택"><img src="./img/upload.svg" alt=""></button>
+                                            </div>
+                                            <!-- 파일 업로드 종료 -->
+                                        </div>
+                                        <div class="file-drop-field">
+                                            <label class="file-drop-label" for="f-file-cms">CMS 출금 이체 신청서</label>
+                                            <!-- 파일 업로드 시작 : 기존 파일 없을 시 file-drop-zone 클래스에 is-filled 클래스 제거, 기존파일 있을 시 file-drop-zone 클래스에 is-filled 클래스 추가 -->
+                                            <div class="file-drop-zone" data-max-mb="100" data-accept="jpg,jpeg,png,pdf">
+                                                <input type="file" id="f-file-cms" name="file_cms" class="file-native" accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf">
+                                                <div class="file-drop-main">
+                                                    <div class="file-drop-empty">
+                                                        <p class="file-drop-hint">파일 선택 또는 여기에 드래그</p>
+                                                        <p class="file-drop-sub">업로드된 파일 없음</p>
+                                                    </div>
+                                                    <div class="file-drop-filled">
+                                                        <a href="#" class="file-link"></a><!-- 기존 파일 없을 시 공백, 기존 파일 있을 시 파일명 표시 -->
+                                                        <span class="file-meta"></span><!-- 기존 파일 없을 시 공백, 기존 파일 있을 시 파일 크기  표시 -->
+                                                        <button type="button" class="btn-file-remove" aria-label="첨부 파일 삭제"><span class="ico-del" aria-hidden="true"></span></button>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="btn-file-pick" aria-label="파일 선택"><img src="./img/upload.svg" alt=""></button>
+                                            </div>
+                                            <!-- 파일 업로드 종료 -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="indiv">
+                                    <div class="tit-wrap">
+                                        <h3 class="tit">IPI 목록</h3>
+                                        <div class="in-btn-wrap">
+                                            <button type="button" class="btn-ipi-delete btn-gray">삭제</button>
+                                            <button type="button" class="btn-base-number-add btn-primary">Base Number 추가</button>
+                                        </div>
+                                    </div>
+                                    <div class="tbl-list tbl-ipi-list tbl-check-scope body-scroll">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:8rem">
+                                                <col>
+                                                <col>
+                                                <col>
+                                                <col>
+                                                <col>
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col" class="th-ipi-check-all">
+                                                        <div class="check-box-wrap center">
+                                                            <div class="check-box">
+                                                                <input type="checkbox" id="ipi-check-all" class="js-check-all" value="1">
+                                                                <label for="ipi-check-all" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                            </div>
+                                                        </div>
+                                                    </th>
+                                                    <th scope="col">구분</th>
+                                                    <th scope="col">IPI 번호</th>
+                                                    <th scope="col">이름 표기</th>
+                                                    <th scope="col">등록 단체</th>
+                                                    <th scope="col">관리</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="check-box-wrap center">
+                                                            <div class="check-box">
+                                                                <input type="checkbox" id="ipi-sel-1" class="js-check-row" name="no" value="1">
+                                                                <label for="ipi-sel-1" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td data-ipi-kind="base">Base Number</td>
+                                                    <td class="left">
+                                                        <div class="input-box wd100">
+                                                            <input type="text" id="f-ipi-num-1" class="input" value="1111111122222222" maxlength="32" autocomplete="off">
+                                                        </div>
+                                                    </td>
+                                                    <td class="left">
+                                                        <div class="input-box wd100">
+                                                            <input type="text" id="f-ipi-name-1" class="input" value="hong gildong" autocomplete="off">
+                                                        </div>
+                                                    </td>
+                                                    <td class="left">
+                                                        <div class="input-box wd100">
+                                                            <input type="text" id="f-ipi-org-1" class="input" value="KOMCA" autocomplete="off">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" class="btn-name-number-add">+ Name Number</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="check-box-wrap center">
+                                                            <div class="check-box">
+                                                                <input type="checkbox" id="ipi-sel-2" class="js-check-row" name="no" value="2">
+                                                                <label for="ipi-sel-2" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td data-ipi-kind="name">Name Number</td>
+                                                    <td class="left">
+                                                        <div class="input-box wd100">
+                                                            <input type="text" id="f-ipi-num-2" class="input" value="1111111122222222" maxlength="32" autocomplete="off">
+                                                        </div>
+                                                    </td>
+                                                    <td class="left">
+                                                        <div class="input-box wd100">
+                                                            <input type="text" id="f-ipi-name-2" class="input" value="hong gildong" autocomplete="off">
+                                                        </div>
+                                                    </td>
+                                                    <td class="left">
+                                                        <div class="input-box wd100">
+                                                            <input type="text" id="f-ipi-org-2" class="input" value="KOMCA" autocomplete="off">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="check-box-wrap center">
+                                                            <div class="check-box">
+                                                                <input type="checkbox" id="ipi-sel-3" class="js-check-row" name="no" value="3">
+                                                                <label for="ipi-sel-3" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td data-ipi-kind="base">Base Number</td>
+                                                    <td class="left">
+                                                        <div class="input-box wd100">
+                                                            <input type="text" id="f-ipi-num-3" class="input" value="1111111122222222" maxlength="32" autocomplete="off">
+                                                        </div>
+                                                    </td>
+                                                    <td class="left">
+                                                        <div class="input-box wd100">
+                                                            <input type="text" id="f-ipi-name-3" class="input" value="hong gildong" autocomplete="off">
+                                                        </div>
+                                                    </td>
+                                                    <td class="left">
+                                                        <div class="input-box wd100">
+                                                            <input type="text" id="f-ipi-org-3" class="input" value="KOMCA" autocomplete="off">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" class="btn-name-number-add">+ Name Number</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="check-box-wrap center">
+                                                            <div class="check-box">
+                                                                <input type="checkbox" id="ipi-sel-4" class="js-check-row" name="no" value="4">
+                                                                <label for="ipi-sel-4" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td data-ipi-kind="base">Base Number</td>
+                                                    <td class="left">
+                                                        <div class="input-box wd100">
+                                                            <input type="text" id="f-ipi-num-4" class="input" value="1111111122222222" maxlength="32" autocomplete="off">
+                                                        </div>
+                                                    </td>
+                                                    <td class="left">
+                                                        <div class="input-box wd100">
+                                                            <input type="text" id="f-ipi-name-4" class="input" value="hong gildong" autocomplete="off">
+                                                        </div>
+                                                    </td>
+                                                    <td class="left">
+                                                        <div class="input-box wd100">
+                                                            <input type="text" id="f-ipi-org-4" class="input" value="KOMCA" autocomplete="off">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" class="btn-name-number-add">+ Name Number</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 기본정보 끝 -->
+                            <!-- 필모그래피 시작 -->
+                            <div class="tab-content-item" id="tab-panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+                                <div class="indiv">
+                                    <h3 class="tit">목록</h3>
+                                    <div class="tbl-top">
+                                        <div class="left">
+                                            <div class="item">
+                                                총 <span>4</span> 건
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tbl-list body-scroll">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:80px">
+                                                <col style="width:150px">
+                                                <col>
+                                                <col style="width:200px">
+                                                <col style="width:150px">
+                                                <col style="width:200px">
+                                                <col style="width:150px">
+                                                <col style="width:100px">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">No</th>
+                                                    <th scope="col">DGK번호</th>
+                                                    <th scope="col">작품명</th>
+                                                    <th scope="col">작품구분</th>
+                                                    <th scope="col">IDA 코드</th>
+                                                    <th scope="col">IDA 상태</th>
+                                                    <th scope="col">등록일</th>
+                                                    <th scope="col">상태</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- 
+                                                    1. 상태 : <span class="active">활성</span>
+                                                    2. 상태 : <span class="inactive">비활성</span>
+                                                -->
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>DGK-W001</td>
+                                                    <td class="left"><div class="link"><a href="javascript:void(0);">파친코 시즌 2</a></div></td>
+                                                    <td>시리즈-마스터</td>
+                                                    <td>IDA202501</td>
+                                                    <td>등록완료</td>
+                                                    <td>2025.03.10</td>
+                                                    <td><span class="active">활성</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>DGK-W002</td>
+                                                    <td class="left"><div class="link"><a href="javascript:void(0);">설국열차: 레거시</a></div></td>
+                                                    <td>영화</td>
+                                                    <td>미등록</td>
+                                                    <td>미등록</td>
+                                                    <td>2025.03.15</td>
+                                                    <td><span class="active">활성</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>DGK-W003</td>
+                                                    <td class="left"><div class="link"><a href="javascript:void(0);">더 글로리 시즌 3</a></div></td>
+                                                    <td>시리즈-마스터</td>
+                                                    <td>IDA202503</td>
+                                                    <td>등록완료</td>
+                                                    <td>2025.03.20</td>
+                                                    <td><span class="active">활성</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>DGK-W004</td>
+                                                    <td class="left"><div class="link"><a href="javascript:void(0);">오징어게임 시즌 3</a></div></td>
+                                                    <td>시리즈-에피소드</td>
+                                                    <td>처리중</td>
+                                                    <td>처리중</td>
+                                                    <td>2025.04.01</td>
+                                                    <td><span class="active">활성</span></td>
+                                                </tr>   
+                                                
+                                                <!-- no-data 시작 -->
+                                                <!-- <tr>
+                                                    <td colspan="8" class="no-data">데이터가 없습니다.</td>
+                                                </tr> -->
+                                                <!-- no-data 종료 -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 필모그래피 끝 -->
+                            <!-- 정산내역 시작 -->
+                            <div class="tab-content-item" id="tab-panel-3" role="tabpanel" aria-labelledby="tab-3" hidden>
+                                <div class="indiv">
+                                    <h3 class="tit">목록</h3>
+                                    <div class="tbl-top">
+                                        <div class="left">
+                                            <div class="item">
+                                                총 <span>3</span> 건
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tbl-list body-scroll no-wrap">
+                                        <table>
+                                            <colgroup>
+                                                <col class="col-no" style="width:80px">
+                                                <col span="19">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col" class="col-no">No</th>
+                                                    <th scope="col">지급일</th>
+                                                    <th scope="col">단체</th>
+                                                    <th scope="col">Last_Name</th>
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">IPI_Name</th>
+                                                    <th scope="col">권리자</th>
+                                                    <th scope="col">회원구분</th>
+                                                    <th scope="col">IDA</th>
+                                                    <th scope="col">Title</th>
+                                                    <th scope="col">한글</th>
+                                                    <th scope="col">Net_Amount</th>
+                                                    <th scope="col">NET_USD</th>
+                                                    <th scope="col">분배금액(A)</th>
+                                                    <th scope="col">DGK수수료(B)</th>
+                                                    <th scope="col">복지기금(C)</th>
+                                                    <th scope="col">개인별 정산액(D=A-B-C)</th>
+                                                    <th scope="col">개인소득세(E)</th>
+                                                    <th scope="col">개인주민세(F)</th>
+                                                    <th scope="col">최종 개인지급액(D-E-F)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="col-no">3</td>
+                                                    <td>2025.04.15</td>
+                                                    <td>한국음악저작권협회</td>
+                                                    <td>Kim</td>
+                                                    <td>Minsoo</td>
+                                                    <td>IPI-00789654321</td>
+                                                    <td>김민수</td>
+                                                    <td>정회원</td>
+                                                    <td>IDA202401</td>
+                                                    <td>Stranger in Seoul (Main Theme)</td>
+                                                    <td>이방인의 밤 (메인)</td>
+                                                    <td>1,250,000</td>
+                                                    <td>850.00</td>
+                                                    <td>1,200,000</td>
+                                                    <td>60,000</td>
+                                                    <td>20,000</td>
+                                                    <td>1,120,000</td>
+                                                    <td>84,000</td>
+                                                    <td>8,400</td>
+                                                    <td>1,027,600</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="col-no">2</td>
+                                                    <td>2025.03.10</td>
+                                                    <td>한국음악저작권협회</td>
+                                                    <td>Kim</td>
+                                                    <td>Minsoo</td>
+                                                    <td>IPI-00789654321</td>
+                                                    <td>김민수</td>
+                                                    <td>정회원</td>
+                                                    <td>IDA202310</td>
+                                                    <td>Autumn Breeze (OST Part.2)</td>
+                                                    <td>가을 바람 (OST 2)</td>
+                                                    <td>890,000</td>
+                                                    <td>600.00</td>
+                                                    <td>850,000</td>
+                                                    <td>42,500</td>
+                                                    <td>10,000</td>
+                                                    <td>797,500</td>
+                                                    <td>59,800</td>
+                                                    <td>5,980</td>
+                                                    <td>731,720</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="col-no">1</td>
+                                                    <td>2025.02.05</td>
+                                                    <td>한국음악저작권협회</td>
+                                                    <td>Kim</td>
+                                                    <td>Minsoo</td>
+                                                    <td>IPI-00789654321</td>
+                                                    <td>김민수</td>
+                                                    <td>정회원</td>
+                                                    <td>IDA202205</td>
+                                                    <td>City Lights (Remix Ver.)</td>
+                                                    <td>도시의 불빛 (리믹스)</td>
+                                                    <td>640,000</td>
+                                                    <td>420.00</td>
+                                                    <td>600,000</td>
+                                                    <td>30,000</td>
+                                                    <td>5,000</td>
+                                                    <td>565,000</td>
+                                                    <td>42,300</td>
+                                                    <td>4,230</td>
+                                                    <td>518,470</td>
+                                                </tr>
+
+                                                <!-- no-data 시작 -->
+                                                <!-- <tr>
+                                                    <td colspan="20" class="no-data">데이터가 없습니다.</td>
+                                                </tr> -->
+                                                <!-- no-data 종료 -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 정산내역 끝 -->
+                            <!-- 이력관리 시작 -->
+                            <div class="tab-content-item" id="tab-panel-4" role="tabpanel" aria-labelledby="tab-4" hidden>
+                                <div class="indiv">
+                                    <h3 class="tit">목록</h3>
+                                    <div class="tbl-top">
+                                        <div class="left">
+                                            <div class="item">
+                                                총 <span>2</span> 건
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tbl-list body-scroll">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:80px">
+                                                <col>
+                                                <col>
+                                                <col>
+                                                <col>
+                                                <col>
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">No</th>
+                                                    <th scope="col">변경 내용</th>
+                                                    <th scope="col">변경 전</th>
+                                                    <th scope="col">변경 후</th>
+                                                    <th scope="col">변경일</th>
+                                                    <th scope="col">변경자</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>회원구분변경</td>
+                                                    <td>준회원</td>
+                                                    <td>정회원</td>
+                                                    <td>2025.01.01</td>
+                                                    <td>김철수 (abc1234)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>회원상태변경</td>
+                                                    <td>정상</td>
+                                                    <td>탈퇴</td>
+                                                    <td>2025.01.01</td>
+                                                    <td>김철수 (abc1234)</td>
+                                                </tr>
+
+                                                <!-- no-data 시작 -->
+                                                <!-- <tr>
+                                                    <td colspan="6" class="no-data">데이터가 없습니다.</td>
+                                                </tr> -->
+                                                <!-- no-data 종료 -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="indiv">
+                                    <h3 class="tit">관리자 메모</h3>
+                                    <div class="textarea-box">
+                                        <textarea class="textarea" rows="12" placeholder="특이사항을 입력하세요"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 이력관리 끝 -->
+                        </div>
+                    </div>
+                </form>              
+                <!-- page body 끝 -->
+
+            </div>
+            <!-- 컨텐츠 끝 -->
+
+        </div>
+        
+    </div>
+
+    <script>
+        /* 사이드바 네비 현재 메뉴 활성 */
+        $(document).ready(function () {
+            setSidebarNavActive('user'); // 회원 관리
+        });
+
+        /* 회원 상세 탭 */
+        $(document).on('click', '.tab-menu button[type="button"]', function () {
+            var $btn = $(this);
+            var $li = $btn.closest('li');
+            var idx = $li.index();
+
+            $li.addClass('active').siblings().removeClass('active');
+            $('.tab-menu button[role="tab"]').attr('aria-selected', 'false');
+            $btn.attr('aria-selected', 'true');
+
+            var $panels = $('.tab-content .tab-content-item');
+            $panels.removeClass('active').attr('hidden', true);
+            $panels.eq(idx).addClass('active').removeAttr('hidden');
+        });
+
+        /* IPI 목록 — Base Number 행 추가 (구분 data-ipi-kind="base", 표시 Base Number) */
+        $(document).on('click', '.btn-base-number-add', function (e) {
+            e.preventDefault();
+            var $btn = $(this);
+            var $scope = $btn.closest('.indiv').find('.tbl-ipi-list.tbl-check-scope');
+            var $tbody = $scope.find('tbody');
+            if (!$tbody.length) return;
+
+            var maxNo = 0;
+            $tbody.find('input.js-check-row').each(function () {
+                var v = parseInt(String($(this).val()), 10);
+                if (!isNaN(v) && v > maxNo) maxNo = v;
+            });
+            var rowNo = maxNo + 1;
+            var uid = 'ipi-new-' + rowNo + '-' + Date.now();
+            var idChk = uid + '-chk';
+            var idNum = uid + '-num';
+            var idName = uid + '-name';
+            var idOrg = uid + '-org';
+
+            var rowHtml =
+                '<tr>' +
+                '<td><div class="check-box-wrap center"><div class="check-box">' +
+                '<input type="checkbox" id="' +
+                idChk +
+                '" class="js-check-row" name="no" value="' +
+                rowNo +
+                '">' +
+                '<label for="' +
+                idChk +
+                '" class="blank"><span class="mark" aria-hidden="true"></span></label>' +
+                '</div></div></td>' +
+                '<td data-ipi-kind="base">Base Number</td>' +
+                '<td class="left"><div class="input-box wd100">' +
+                '<input type="text" id="' +
+                idNum +
+                '" class="input" value="" maxlength="32" autocomplete="off">' +
+                '</div></td>' +
+                '<td class="left"><div class="input-box wd100">' +
+                '<input type="text" id="' +
+                idName +
+                '" class="input" value="" autocomplete="off">' +
+                '</div></td>' +
+                '<td class="left"><div class="input-box wd100">' +
+                '<input type="text" id="' +
+                idOrg +
+                '" class="input" value="" autocomplete="off">' +
+                '</div></td>' +
+                '<td><button type="button" class="btn-name-number-add">+ Name Number</button></td>' +
+                '</tr>';
+
+            $tbody.append(rowHtml);
+            syncTblCheckScope($scope);
+        });     
+        
+        /* IPI 목록 — 선택 행 삭제 (.btn-ipi-delete) */
+        $(document).on('click', '.btn-ipi-delete', function (e) {
+            e.preventDefault();
+            var $btn = $(this);
+            var $scope = $btn.closest('.indiv').find('.tbl-ipi-list.tbl-check-scope');
+            if (!$scope.length) return;
+            var $checked = $scope.find('tbody .js-check-row:checked');
+            if (!$checked.length) {
+                alert('삭제할 행을 선택해 주세요.');
+                return;
+            }
+            $checked.closest('tr').remove();
+            syncTblCheckScope($scope);
+        });
+
+        /* IPI 목록 — Base 행의 + Name Number 클릭 시 바로 아래 Name Number 행 추가 */
+        function ipiNextRowNo($tbody) {
+            var maxNo = 0;
+            $tbody.find('input.js-check-row').each(function () {
+                var v = parseInt(String(this.value), 10);
+                if (!isNaN(v) && v > maxNo) maxNo = v;
+            });
+            return maxNo + 1;
+        }
+        $(document).on('click', '.btn-name-number-add', function (e) {
+            e.preventDefault();
+            var $btn = $(this);
+            var $scope = $btn.closest('.tbl-ipi-list.tbl-check-scope');
+            if (!$scope.length) return;
+            var $tbody = $scope.find('tbody');
+            var $anchor = $btn.closest('tr');
+            if ($anchor.children('td').eq(1).attr('data-ipi-kind') !== 'base') {
+                alert('Base Number 행에서만 Name Number를 추가할 수 있습니다.');
+                return;
+            }
+            var rowNo = ipiNextRowNo($tbody);
+            var uid = 'ipi-name-' + rowNo + '-' + Date.now();
+            var idChk = uid + '-chk';
+            var idNum = uid + '-num';
+            var idName = uid + '-name';
+            var idOrg = uid + '-org';
+            var rowHtml =
+                '<tr>' +
+                '<td><div class="check-box-wrap center"><div class="check-box">' +
+                '<input type="checkbox" id="' +
+                idChk +
+                '" class="js-check-row" name="no" value="' +
+                rowNo +
+                '">' +
+                '<label for="' +
+                idChk +
+                '" class="blank"><span class="mark" aria-hidden="true"></span></label>' +
+                '</div></div></td>' +
+                '<td data-ipi-kind="name">Name Number</td>' +
+                '<td class="left"><div class="input-box wd100">' +
+                '<input type="text" id="' +
+                idNum +
+                '" class="input" value="" maxlength="32" autocomplete="off">' +
+                '</div></td>' +
+                '<td class="left"><div class="input-box wd100">' +
+                '<input type="text" id="' +
+                idName +
+                '" class="input" value="" autocomplete="off">' +
+                '</div></td>' +
+                '<td class="left"><div class="input-box wd100">' +
+                '<input type="text" id="' +
+                idOrg +
+                '" class="input" value="" autocomplete="off">' +
+                '</div></td>' +
+                '<td></td>' +
+                '</tr>';
+            $(rowHtml).insertAfter($anchor);
+            syncTblCheckScope($scope);
+        });        
+        
+    </script>
+</body>
+</html>        

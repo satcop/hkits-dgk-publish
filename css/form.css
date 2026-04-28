@@ -1,0 +1,453 @@
+@charset "utf-8";
+
+/* Change the white to any color ;) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 3rem white inset !important;
+    -webkit-text-fill-color: #757575 !important;
+}
+
+/* placeholder style */
+input::placeholder {
+    color: #aaa;
+    opacity: 1;
+    font-size: 1.3rem;
+    line-height: normal !important;
+}
+input::-webkit-input-placeholder {
+    color: #aaa;
+    line-height: normal !important;
+}
+input:-ms-input-placeholder {
+    color: #aaa;
+    line-height: normal !important;
+}
+
+textarea::placeholder {
+    color: #757575;
+    opacity: 1;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.6 !important;
+}
+textarea::-webkit-input-placeholder {
+    color: #757575;
+    font-weight: 400;
+    line-height: 1.6 !important;
+}
+textarea:-ms-input-placeholder {
+    color: #757575;
+    font-weight: 400;
+    line-height: 1.6 !important;
+}
+
+@media (max-width:1025px){
+    input::placeholder {
+        font-size: 13px;
+    }
+    textarea::placeholder {
+        font-size: 13px;
+    }
+}
+
+
+
+
+/** input-box **/
+.input-box {
+    position: relative;
+}
+.input-box label {
+    display:block;
+    font-size: 13px;
+    color: #000;
+    margin-bottom:1rem;
+}
+
+/** input : 웹접근성 개선 **/
+.input-box .input {
+    width: 100%;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 1.5rem;
+    font-size: 13px;
+    color: #222;
+    border-radius: 0.6rem;
+    border: solid 1px #ddd;
+    background: #fff;
+    transition: all 0.35s;
+}
+.input-box .input.center {
+    text-align: center;
+}
+.input-box .input.only-number {
+    /* 숫자(0–9)만 허용, maxlength 준수 */
+}
+/* 포커스 */
+.input-box .input:focus {
+    outline: none;
+}
+.input-box.focus .input {
+    border: solid 1px var(--ccolor);
+}
+/* 읽기전용 */
+.input-box .input:read-only {
+    background:#f5f5f5;
+    color:#757575;
+}
+/* 비활성화 */
+.input-box .input:disabled {
+    background:#f5f5f5;
+    color:#757575;
+}
+
+
+
+
+/** checkbox : 웹접근성 개선 **/
+.check-box-wrap {
+    display:flex;
+    gap:2rem;
+    row-gap:1.5rem;
+    flex-wrap:wrap;
+}
+.check-box-wrap.center {
+    justify-content:center;
+}
+.check-box {position:relative; display:flex;}
+.check-box input[type=checkbox] {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+}
+.check-box input[type=checkbox] + label {
+    display:flex; align-items:center; column-gap:1rem; 
+	position:relative; 
+    font-size:1.4rem; 
+    color:#000; 
+    font-weight:400;
+    cursor:pointer;
+    outline:none;	
+    padding-left:26px;
+}
+.check-box input[type=checkbox] + label.blank {font-size:0; padding-left:20px; height:3rem;}
+.check-box input[type=checkbox] + label .mark {
+    position:absolute;
+    top:50%;
+    left: 0;
+    transform:translateY(-50%);
+    width:20px; 
+    height:20px;
+    background-color: #fff;
+    border:solid 1px #ddd;
+    border-radius:4px;
+    z-index:1;
+    transition: 0.35s;
+}
+.check-box input[type=checkbox] + label .mark::after {
+    opacity:0;
+    content:"";
+    position:absolute;
+    left: 50%;
+    top: 40%;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform:translate(-50%,-50%) rotate(45deg);
+    -ms-transform:translate(-50%,-50%) rotate(45deg);
+    transform:translate(-50%,-50%) rotate(45deg);
+    transition: 0.35s;
+}
+.check-box input[type=checkbox]:hover + label .mark {
+    border:solid 1px var(--ccolor);
+}
+.check-box input[type=checkbox]:checked + label .mark {
+	background:var(--ccolor);
+    border:solid 1px var(--ccolor);
+}
+.check-box input[type=checkbox]:checked + label .mark::after {
+    opacity:1;
+}
+.check-box input[type=checkbox]:disabled + label {color:#757575 !important;}
+.check-box input[type=checkbox]:disabled + label .mark {
+    border-color:#ddd;    
+    background:#ddd;  
+}
+.check-box input[type=checkbox]:focus + label .mark {
+    outline:auto;
+}
+
+
+
+
+
+/** select : 웹접근성 개선 **/
+.select-box {
+    display: inline-flex;
+}
+.select-box.max440 {
+    width:100%;
+    max-width:44rem;
+}
+
+/* select 스타일 */
+select {
+    -webkit-appearance:menulist;
+    box-sizing:border-box;
+    align-items:center;
+    white-space:pre;
+    -webkit-rtl-ordering:logical;
+    color: black;
+    background-color:white;
+    cursor:default;
+    border-width:1px;
+    border-style:solid;
+    border-color:initial;
+    border-image:initial;
+}
+
+.select-box {
+    position: relative;
+}
+.select-box::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    width: 1rem;
+    height: 1rem;
+    background: url("../img/sel-arr.svg") no-repeat center center;
+    background-size:1rem auto;
+    transform: translateY(-50%);
+    transition: all 0.35s;
+    pointer-events: none;
+}
+.select-box select {
+    position: relative;
+    display:inline-block; 
+    width:100%;
+    border:solid 1px #ddd; 
+    outline-style:none;
+    vertical-align:middle;
+    padding:0 4.5rem 0 1.5rem;
+    height:38px;
+    line-height:38px;
+    border-radius:0.6rem;
+    color:#000; 
+    font-size:13px; 
+    font-weight:500;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; 
+    transition: all 0.35s;
+}
+select::-ms-expand {display:none;}
+select::-webkit-expand {display:none;}
+select::-moz-expand {display:none;}
+select::-o-expand {display:none;}
+
+/* select focus */
+.select-box select:focus {
+    outline:none;
+}
+.select-box.focus select {
+    border:solid 1px var(--ccolor);
+}
+.select-box.focus::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+
+
+
+/** radio-box : 웹접근성 개선 **/
+.radio-box {
+    display:flex;    
+    gap:2rem;    
+    flex-wrap:wrap;   
+    padding:1rem 0; 
+}
+.radio-box.center {
+    justify-content:center;
+    gap:0;
+}
+.radio-box.justify-center {
+    justify-content:center;
+}
+.radio-box .items {display:flex; align-items:center; position:relative;}
+.radio-box .items input[type=radio] {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+}
+.radio-box .items label {
+    display:flex;
+    align-items:center;
+    cursor:pointer; 
+    font-size:1.4rem;
+    color:#222;   
+}
+.radio-box .items label:before {    
+    display:inline-block;    
+    content:"";    
+    width:9px;    
+    height:9px;    
+    background:#fff;    
+    border-radius:50%;    
+    margin-right:8px;    
+    border: solid 4px transparent;    
+    transition: all 0.3s ease;   
+    outline:1px solid #ccc; 
+}
+.radio-box .items label.blank {
+    font-size:0;
+}
+.radio-box .items label.blank:before {
+    margin-right:0;
+}
+.radio-box .items label:after {    
+    display:inline-block;    
+    content:"";   
+}
+.radio-box input[type=radio]:hover ~ label:before {   
+    outline:1px solid var(--ccolor);
+}
+.radio-box input[type=radio]:checked ~ label:before {    
+    border-color:#fff;    
+    background:var(--ccolor);  
+    outline:1px solid var(--ccolor);
+}
+.radio-box input[type=radio]:disabled ~ label:before {    
+    border-color:#ccc;    
+    background:#ccc;  
+    outline:1px solid #ccc;   
+}
+.radio-box input[type=radio]:disabled ~ label {
+    color:#757575;
+}
+.radio-box input[type=radio]:focus-visible ~ label:before {outline: auto;}
+
+
+
+
+
+/** calender - date,month,time,datetime-local : 웹접근성 개선 **/
+.input-box .calendar {
+    position: relative;
+    min-width:148px;
+    outline:0;
+    background:#f5f5f5;
+    width:auto;
+}
+/* date 아이콘 포커스를 위한 위치,사이즈 지정 */
+.input-box .calendar::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;  
+    background: transparent;
+    color: transparent;
+    cursor: pointer;  
+    z-index: 1;
+}
+.input-box .calendar::-webkit-clear-button,
+.input-box .calendar::-webkit-inner-spin-button {
+    display:none;
+}
+.input-box .calendar:after {
+    position: absolute;
+    top: 50%;
+    right: 1.2rem;
+    content: "";
+    width: 1.4rem;
+    height: 1.4rem;  
+    background:url("../img/icon-calendar.svg") no-repeat center center / contain;
+    transform: translateY(-50%);
+    z-index: 0;
+} 
+/* time 아이콘 포커스를 위한 위치,사이즈 지정 */
+.input-box .calendar[type=time]::-webkit-calendar-picker-indicator {
+    width:1.5rem;
+    right: 1.2rem;
+}
+.input-box .calendar[type=time]:after { 
+    width: 1.5rem;
+    height: 1.5rem;  
+    background:url("../img/time.png") no-repeat center center / contain;
+} 
+.input-box .calendar[type=datetime-local] {
+    width:23rem !important;
+}
+/* datetime-local 아이콘 포커스를 위한 위치,사이즈 지정 */
+.input-box .calendar[type=datetime-local]::-webkit-calendar-picker-indicator {
+    width:1.5rem;
+    right: 1.2rem;
+}
+.input-box .calendar[type=datetime-local]:after { 
+    right: 1.2rem;
+    width: 1.5rem;
+    height: 1.5rem;  
+    background:url("../img/time.png") no-repeat center center / contain;
+} 
+
+
+
+
+
+/** textarea-box : 웹접근성 개선 **/
+.textarea-box {
+    position: relative;
+    border-top:solid 1px var(--ccolor);
+}
+.textarea-box .textarea {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    line-height: 1.6;
+    padding: 1.5rem 1.5rem;
+    font-size: 1.4rem;
+    color: #222;
+    font-weight: 400;
+    border-radius: 0 0 0.6rem 0.6rem;
+    border: solid 1px #ddd;
+    background: #F7F7F7;
+    transition: all 0.35s;
+}
+.textarea-box .textarea:focus {
+    outline: none;
+}
+.textarea-box.focus .textarea {
+    border: solid 1px var(--ccolor);
+}
+.textarea-box .textarea:disabled {
+    background:#f9f9f9;
+    color:#757575;
+}
+
+
+
+
+/** date-range-box **/
+.date-range-box {
+    display:flex;
+    align-items:center;
+    gap:0.8rem;
+}
+.date-range-box .divider {
+    font-size:1.4rem;
+    color:#222;
+}

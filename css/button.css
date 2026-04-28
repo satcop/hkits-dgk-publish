@@ -1,0 +1,449 @@
+@charset "utf-8";
+
+/* btn-wrap */
+.btn-wrap {
+    display:flex;
+    justify-content:center;
+    gap:0.8rem;
+}
+
+/* 버튼 대표 3종류 : primary, secondary, gray */
+/* 1 : 추가, 수기 추가, 등록, 저장 등등 */
+.btn-primary {
+    display:inline-block;
+    padding:0 1.5rem;
+    height:38px;
+    line-height:38px;
+    font-size:1.4rem;
+    font-weight:500;
+    color:#fff;
+    background:var(--ccolor);
+    border:solid 1px var(--ccolor);
+    border-radius:0.6rem;
+    transition: background 0.15s ease, border-color 0.15s ease;
+    white-space:nowrap;
+}
+.btn-primary:hover {
+    background: var(--ccolor-hover);
+    border-color: var(--ccolor-hover);
+}
+
+/* 2 : 목록, 검색 추가, 수정, 변경, 업데이트 등등 */
+.btn-secondary {
+    display:inline-block;
+    padding:0 1.5rem;
+    height:38px;
+    line-height:38px;
+    font-size:1.4rem;
+    font-weight:500;
+    color:var(--ccolor);
+    background:#fff;
+    border:solid 1px var(--ccolor);
+    border-radius:0.6rem;
+    transition: background 0.15s ease, border-color 0.15s ease;
+    white-space:nowrap;
+}
+.btn-secondary:hover {
+    background: #fafafa;
+    border-color: var(--ccolor-hover);
+}
+
+/* 3 : 삭제, 초기화, 취소 등등 */
+.btn-gray {
+    display:inline-block;
+    padding:0 1.5rem;
+    height:38px;
+    line-height:38px;
+    font-size:1.4rem;
+    font-weight:500;
+    color:#757575;
+    background:#fff;
+    border:solid 1px #ccc;
+    border-radius:0.6rem;
+    transition: background 0.15s ease, border-color 0.15s ease;
+    white-space:nowrap;
+}
+.btn-gray:hover {
+    background: #fafafa;
+    border-color: #bbb;
+}
+
+
+
+/* btn-login-big */
+.btn-login-big {
+    display:inline-block;
+    width:100%;
+    padding:0 1.5rem;
+    height:5.2rem;
+    line-height:5.2rem;
+    font-size:1.8rem;
+    color:#fff;
+    background:var(--ccolor);
+    border-radius:0.8rem;
+    text-align:center;
+    white-space:nowrap;
+    transition: background 0.15s ease, border-color 0.15s ease;
+    white-space:nowrap;
+}
+.btn-login-big:hover {
+    background: var(--ccolor-hover);
+    border-color: var(--ccolor-hover);
+}
+
+/* btn-pw-view */
+.btn-pw-view {
+    display:inline-block;
+    width:2rem;
+    height:2rem;
+    font-size:0;
+    background:url("../img/eye.svg") no-repeat center center;
+    background-size:contain;
+}
+.btn-pw-view.active {
+    background:url("../img/eye-off.svg") no-repeat center center;
+    background-size:contain;
+}
+
+/* btn-settings */
+.btn-settings {
+    display:inline-block;
+    width:2rem;
+    height:2rem;
+    font-size:0;
+    background:url("../img/setting.svg") no-repeat center center;
+    background-size:contain;
+}
+
+/* btn-logout */
+.btn-logout {
+    display:inline-block;
+    padding:0.8rem 1rem;
+    font-size:1.2rem;
+    font-weight:500;
+    color:#757575;
+    background:#F8F8F8;
+    border-radius:0.6rem;
+    border:1px solid #ddd;
+    transition: background 0.15s ease, border-color 0.15s ease;
+    white-space:nowrap;
+}
+.btn-logout:hover {
+    background: #fafafa;
+    border-color: #ccc;
+}
+
+/* btn-search */
+.btn-search {
+    display:inline-block;
+    padding:0 1.5rem;
+    height:38px;
+    line-height:38px;
+    font-size:1.4rem;
+    font-weight:500;
+    color:#fff;
+    background:var(--ccolor);
+    border:solid 1px var(--ccolor);
+    border-radius:0.6rem;
+    transition: background 0.15s ease, border-color 0.15s ease;
+    white-space:nowrap;
+}
+.btn-search:hover {    
+    background: var(--ccolor-hover);
+    border-color: var(--ccolor-hover);
+}
+
+/* btn-reset */
+.btn-reset {
+    display:inline-block;
+    padding:0 1.5rem;
+    height:38px;
+    line-height:38px;
+    font-size:1.4rem;
+    font-weight:500;
+    color:#757575;
+    background:#fff;
+    border-radius:0.6rem;
+    border:1px solid #ccc;
+    transition: background 0.15s ease, border-color 0.15s ease;
+    white-space:nowrap;
+}
+.btn-reset:hover {
+    border-color: #bbb;
+    background: #fafafa;
+}
+
+/* btn-download */
+.btn-download {
+    display:inline-block;
+    position:relative;
+    padding:0 1.5rem;
+    padding-right:4.5rem;
+    height:38px;
+    line-height:38px;
+    font-size:1.4rem;
+    font-weight:500;
+    color:var(--ccolor);
+    background:#fff;
+    border:solid 1px var(--ccolor);
+    border-radius:0.6rem;
+    transition: background 0.15s ease, border-color 0.15s ease;
+    white-space:nowrap;
+}
+.btn-download::after {
+    display:inline-block;
+    content:'';
+    width:2rem;
+    height:2rem;
+    background:url("../img/download.svg") no-repeat center center;
+    background-size:contain;
+    position:absolute;
+    right:1.5rem;
+    top:50%;
+    transform:translateY(-50%);
+}
+.btn-download:hover {
+    background: #fafafa;
+    border-color: var(--ccolor-hover);
+}
+
+/* btn-upload */
+.btn-upload {
+    display:inline-block;
+    position:relative;
+    padding:0 1.5rem;
+    padding-right:4.5rem;
+    height:38px;
+    line-height:38px;
+    font-size:1.4rem;
+    font-weight:500;
+    color:var(--ccolor);
+    background:#fff;
+    border:solid 1px var(--ccolor);
+    border-radius:0.6rem;
+    transition: background 0.15s ease, border-color 0.15s ease;
+    white-space:nowrap;
+}
+.btn-upload::after {
+    display:inline-block;
+    content:'';
+    width:2rem;
+    height:2rem;
+    background:url("../img/upload.svg") no-repeat center center;
+    background-size:contain;
+    position:absolute;
+    right:1.5rem;
+    top:50%;
+    transform:translateY(-50%);
+}
+.btn-upload:hover {
+    background: #fafafa;
+    border-color: var(--ccolor-hover);
+}
+
+/* page-buttons */
+.page-buttons {
+    position:absolute;
+    right:0;
+    bottom:calc(100% + 1.5rem);
+    display:flex;
+    align-items:center;
+    gap:0.8rem;
+    justify-content:flex-end;
+}
+.page-buttons .divider {
+    display:inline-block;
+    width:1px;
+    height:1.2rem;
+    border-left:1px solid #ddd;
+    vertical-align:middle;
+    font-size:0;
+    margin:0 0.8rem;
+}
+
+/* btn-list */
+.btn-list {
+    display:inline-block;
+    padding:0 1.5rem;
+    height:38px;
+    line-height:38px;
+    font-size:1.4rem;
+    font-weight:500;
+    color:var(--ccolor);
+    background:#fff;
+    border:solid 1px var(--ccolor);
+    border-radius:0.6rem;
+    transition: background 0.15s ease, border-color 0.15s ease;
+    white-space:nowrap;
+}
+.btn-list:hover {
+    background: #fafafa;
+    border-color: var(--ccolor-hover);
+}
+
+/* btn-save */
+.btn-save {
+    display:inline-block;
+    padding:0 1.5rem;
+    height:38px;
+    line-height:38px;
+    font-size:1.4rem;
+    font-weight:500;
+    color:#fff;
+    background:var(--ccolor);
+    border:solid 1px var(--ccolor);
+    border-radius:0.6rem;
+    transition: background 0.15s ease, border-color 0.15s ease;
+    white-space:nowrap;
+}
+.btn-save:hover {
+    background: var(--ccolor-hover);
+    border-color: var(--ccolor-hover);
+}
+
+/* btn-zip : 주소찾기 */
+.btn-zip {
+    display:inline-block;
+    flex-shrink:0;
+    padding:0 1.5rem;
+    height:38px;
+    line-height:38px;
+    font-size:1.4rem;
+    font-weight:500;
+    color:#fff;
+    background:#757575;
+    border:solid 1px #757575;
+    border-radius:0.6rem;
+    transition: background 0.15s ease, border-color 0.15s ease;
+    white-space:nowrap;
+}
+.btn-zip:hover {
+    background:#666;
+    border-color:#666;
+}
+
+
+
+
+
+/* btn-name-number-add : Name Number 추가 */
+.btn-name-number-add {
+    display:inline-block;
+    font-size:1.3rem;
+    font-weight:500;
+    color:var(--ccolor);
+    text-decoration:underline;
+    text-underline-offset:0.2rem;
+    transition: color 0.15s ease;
+}
+.btn-name-number-add:hover {
+    color:var(--ccolor-hover);
+}
+
+
+
+
+/* btn-close */
+.btn-close {
+    display:inline-block;
+    padding:0 1.5rem;
+    height:38px;
+    line-height:38px;
+    font-size:1.4rem;
+    font-weight:500;
+    color:#757575;
+    background:#fff;
+    border:solid 1px #ccc;
+    border-radius:0.6rem;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+.btn-close:hover {
+    background: #fafafa;
+    border-color: #bbb;
+}
+
+/* btn-apply */
+.btn-apply {
+    display:inline-block;
+    padding:0 1.5rem;
+    height:38px;
+    line-height:38px;
+    font-size:1.4rem;
+    font-weight:500;
+    color:#fff;
+    background:var(--ccolor);
+    border:solid 1px var(--ccolor);
+    border-radius:0.6rem;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+.btn-apply:hover {
+    background: var(--ccolor-hover);
+    border-color: var(--ccolor-hover);
+}
+
+
+
+
+
+
+/* btn-find-file */
+.btn-find-file {
+    display:inline-block;
+    padding:0 1.5rem;
+    height:38px;
+    line-height:38px;
+    font-size:1.4rem;
+    font-weight:500;
+    color:#757575;
+    background:#fff;
+    border:solid 1px #ccc;
+    border-radius:0.6rem;
+    transition: background 0.15s ease, border-color 0.15s ease;
+    white-space:nowrap;
+}
+.btn-find-file:hover {
+    background: #fafafa;
+    border-color: #bbb;
+}
+
+
+/* btn-dgk-work-code-search */
+.btn-dgk-work-code-search {
+    display:inline-block;
+    padding:0 1.5rem;
+    height:38px;
+    line-height:38px;
+    font-size:1.4rem;
+    font-weight:500;
+    color:#757575;
+    background:#fff;
+    border:solid 1px #ccc;
+    border-radius:0.6rem;
+    transition: background 0.15s ease, border-color 0.15s ease;
+    white-space:nowrap;
+}
+.btn-dgk-work-code-search:hover {
+    background: #fafafa;
+    border-color: #bbb;
+}
+
+
+/* btn-dgk-member-code-search */
+.btn-dgk-member-code-search {
+    display:inline-block;
+    padding:0 1.5rem;
+    height:38px;
+    line-height:38px;
+    font-size:1.4rem;
+    font-weight:500;
+    color:#757575;
+    background:#fff;
+    border:solid 1px #ccc;
+    border-radius:0.6rem;
+    transition: background 0.15s ease, border-color 0.15s ease;
+    white-space:nowrap;
+}
+.btn-dgk-member-code-search:hover {
+    background: #fafafa;
+    border-color: #bbb;
+}

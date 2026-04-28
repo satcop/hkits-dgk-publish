@@ -1,0 +1,272 @@
+@charset "utf-8";
+
+/* tbl-input */   
+.tbl-input { overflow-x:auto; border-top:solid 1px var(--ccolor); } 
+.tbl-input::-webkit-scrollbar { height:0.6rem; } 
+.tbl-input::-webkit-scrollbar-track { background:#fff; border-radius:100vw; } 
+.tbl-input::-webkit-scrollbar-thumb { background:#aaa; border-radius:100vw; border:0.3rem solid #aaa; }
+.tbl-input table {
+    width:100%;
+}
+.tbl-input table th,
+.tbl-input table td {
+    height:48.67px;
+    padding:0.5rem 1rem;
+    text-align:left;
+    border: solid 1px #DFE1E0;
+    font-size: 1.4rem;
+    color: #222;
+}
+.tbl-input table th {
+    text-align:center;
+    background:#F6F5F3;
+}
+.tbl-input table th label.tit {
+    display:inline-block;
+    height:38px;
+    line-height:38px;
+    font-size:1.4rem;
+    color:#2F313D;
+    font-weight:500;
+    white-space:nowrap;
+}
+.tbl-input .input-box .input,
+.tbl-input .select-box select {
+    background:#F7F7F7;
+}
+.tbl-input .input-box .input.white {
+    background:#fff;
+}
+
+/* 폼 : 필수 표시 */
+.tbl-input th label.tit .req {
+    color:var(--ccolor);
+    font-weight:600;
+    margin-right:0.2rem;
+}
+.tbl-input table th > span.tit {
+    display:block;
+    height:36px;
+    line-height:36px;
+    font-size:1.4rem;
+    color:#2F313D;
+    font-weight:500;
+    white-space:nowrap;
+}
+
+/* 기본정보 : 주소 한 줄 배치 */
+.addr-row {
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:0.8rem 1rem;
+}
+.addr-row .input-box.zip {
+    flex:0 0 11rem;
+    max-width:14rem;
+    width:11rem;
+}
+.addr-row .input-box.grow {
+    flex:1 1 16rem;
+    min-width:12rem;
+}
+
+/* note-text */
+.tbl-input td .note-text {
+    font-size: 13px;
+    color: var(--ccolor);
+    font-weight: 500;
+}
+
+/* link */
+.tbl-input td a.link {
+    font-size:1.3rem;
+    color:var(--ccolor);
+    text-decoration:underline !important;
+    text-underline-offset:0.2rem !important;
+}
+
+
+
+
+
+
+
+
+/* tbl-top */
+.tbl-top {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:1rem;
+    flex-wrap:wrap;
+    row-gap:1rem;
+}
+.tbl-top .left {
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;    
+    gap:1.6rem;
+    row-gap:1rem;
+}
+.tbl-top .left .item {
+    font-size:1.4rem;
+    color:#222;
+}
+.tbl-top .left .item span {
+    color:var(--ccolor);
+}
+.tbl-top .right {
+    display:flex;
+    align-items:center;
+    gap:0.8rem;
+}
+.tbl-top .right .select-box select {
+    background:#F7F7F7;
+}
+
+.tbl-top .divider {
+    display:inline-block;
+    width:1px;
+    height:1.2rem;
+    border-left:1px solid #ddd;
+    vertical-align:middle;
+    font-size:0;
+}
+.tbl-top .top-btn-wrap {
+    display:flex;
+    align-items:center;
+    gap:0.8rem;
+}
+
+/* tbl-list */
+.tbl-list { overflow-x:auto; border-top:solid 1px var(--ccolor); } 
+.tbl-list::-webkit-scrollbar { height:0.6rem; } 
+.tbl-list::-webkit-scrollbar-track { background:#fff; border-radius:100vw; } 
+.tbl-list::-webkit-scrollbar-thumb { background:#aaa; border-radius:100vw; border:0.3rem solid #aaa; }
+.tbl-list table { width:100%; } 
+.tbl-list th,
+.tbl-list td { height:48.67px; padding:0.5rem 1rem; text-align:center; line-height:1.43; border:solid 1px #DFE1E0; } 
+.tbl-list th { font-size:1.4rem; color:#2F313D; background:#F6F5F3; font-weight:500; white-space:nowrap; } 
+.tbl-list td { font-size:1.4rem; color:#757575; font-weight:500; } 
+.tbl-list td.left { text-align:left;} 
+
+.tbl-list td span.normal {display:inline-block; height:26px; line-height:25px; border-radius:100vh; padding:0 0.8rem; background:#EBF7F1; border:solid 1px #C4DED0; color:#2A7A4B; font-size:12px; font-weight:bold; } /* 회원상태 : 정상 */
+.tbl-list td span.withdraw {display:inline-block; height:26px; line-height:25px; border-radius:100vh; padding:0 0.8rem; background:#FAEEEE; border:solid 1px #FAC8C8; color:#D22A2A; font-size:12px; font-weight:bold; } /* 회원상태 : 탈퇴 */
+.tbl-list td span.member { color:var(--ccolor); font-weight:600; } /* 회원구분 : 정회원 */
+.tbl-list td span.pre-member { color:#222; font-weight:600; } /* 회원구분 : 준회원 */
+.tbl-list td span.non-member { color:#aaa; font-weight:600; } /* 회원구분 : 비회원 */
+.tbl-list td span.active { color:var(--ccolor); font-weight:600; } /* 상태 : 활성 */
+.tbl-list td span.inactive { color:#aaa; font-weight:600; } /* 상태 : 비활성 */
+
+.tbl-list td .link { 
+    position:relative;
+}
+.tbl-list td div.link {
+    min-width:10rem;
+}
+.tbl-list tr.new td .link::before {
+    display:inline-block;
+    content:'NEW';
+    font-size:12px;
+    font-weight:bold;
+    color:var(--ccolor);
+    position:absolute;
+    top:50%;
+    left:0;
+    transform:translateY(-50%);
+    z-index:1;
+}
+.tbl-list td .link a {
+    color:#222;
+    text-decoration:underline;
+    text-underline-offset:0.2rem;
+}
+.tbl-list td a.link {
+    font-size:1.3rem;
+    color:var(--ccolor);
+    text-decoration:underline;
+    text-underline-offset:0.2rem;
+}
+
+.tbl-list td .select-box select,
+.tbl-list td .input-box .input {
+    background:#F7F7F7;
+}
+.tbl-list td .input-box .input.white {
+    background:#fff;
+}
+
+/* tbl-list: 세로 스크롤 — tbody에 display 조작 X, 래퍼 스크롤 + thead th sticky(열 안 깨짐) */
+.tbl-list.body-scroll {
+    max-height: var(--tbl-body-scroll-max-h, min(53.7rem, 50vh));
+    overflow-y: auto;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-color: #aaa #fff;
+    scrollbar-width: thin;
+}
+.tbl-list.body-scroll::-webkit-scrollbar {
+    width: 0.6rem;
+    height: 0.6rem;
+}
+.tbl-list.body-scroll::-webkit-scrollbar-track {
+    background: #fff;
+    border-radius: 100vw;
+}
+.tbl-list.body-scroll::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 100vw;
+    border: 0.2rem solid #aaa;
+}
+.tbl-list.body-scroll thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #F6F5F3;
+    box-shadow: 0 1px 0 #DFE1E0;
+}
+.tbl-filmography.body-scroll thead th,
+.tbl-list.tbl-filmography.body-scroll thead th {
+    background: #1a3a5c;
+    color: #fff;
+    box-shadow: 0 1px 0 #2a4d73;
+}
+
+/* no-wrap */
+.tbl-list.no-wrap th,
+.tbl-list.no-wrap td {
+    white-space: nowrap;
+}
+.tbl-list.no-wrap col.col-no {
+    width: 80px;
+}
+.tbl-list.no-wrap th.col-no,
+.tbl-list.no-wrap td.col-no {
+    width: 80px;
+    min-width: 80px;
+    max-width: 80px;
+    box-sizing: border-box;
+}
+
+.tbl-list th em.required {
+    color:var(--ccolor);
+    font-weight:600;
+    margin-left:0.2rem;
+}
+
+
+.tbl-list tr.disabled td {
+    color:#aaa !important;
+    font-weight:300 !important;
+}
+.tbl-list tr.disabled td a {
+    color:#aaa !important;
+    font-weight:300 !important;
+}
+
+/* error */
+.tbl-list tr.error td {
+    background:#FDECEC !important;
+}
+

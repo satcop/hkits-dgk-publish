@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=yes"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Cache-Control" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <meta name="format-detection" content="telephone=no">
+
+    <title>DGK 영화감독조합 내부데이터 통합관리 시스템</title>
+
+    <!-- font : 프리텐다드 -->
+    <link rel="preload" href="./font/woff2-subset/Pretendard-Regular.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/woff2-subset/Pretendard-Medium.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/woff2-subset/Pretendard-SemiBold.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/woff2-subset/Pretendard-Bold.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/woff2-subset/Pretendard-ExtraBold.subset.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="./font/woff2-subset/Pretendard-Black.subset.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- css : 스타일 -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- js : 자바스크립트 -->
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/common.js"></script>
+</head>
+<body>
+    <div id="wrap">
+
+        <!-- 로그인 페이지 시작 -->
+        <section class="login-wrap">
+            <div class="inner">
+                <h1 class="logo"><img src="./img/logo.svg" alt="DGK 영화감독조합 내부데이터 통합관리 시스템"></h1>
+                <div class="login-box">
+                    <h2 class="tit">
+                        DGK 영화감독조합<br/>
+                        <span>내부데이터 통합관리 시스템</span>
+                    </h2>
+                    <form class="login-form">
+                        <div class="login-box-inner">
+                            <label for="input-id" class="tit">아이디</label>
+                            <div class="input-box id">
+                                <input type="text" id="input-id" class="input" placeholder="아이디를 입력하세요." required>
+                            </div>
+                            <label for="input-pw" class="tit mt20">비밀번호</label>
+                            <div class="input-box password">
+                                <input type="password" id="input-pw" class="input" placeholder="비밀번호를 입력하세요." required>
+                                <button type="button" class="btn-pw-view">비밀번호 보기</button>
+                            </div>
+                            <button type="button" class="btn-login-big mt20">로그인</button>
+                            <div class="check-box-wrap mt20">
+                                <div class="check-box">
+                                    <input type="checkbox" id="save-id" name="save-id" checked>
+                                    <label for="save-id"><span class="mark"></span>아이디 저장</label>
+                                </div>
+                                <div class="check-box">
+                                    <input type="checkbox" id="keep-login" name="keep-login">
+                                    <label for="keep-login"><span class="mark"></span>로그인 유지</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="login-info">
+                        <p>로그인에 문제가 있으신 경우, 개발팀에 문의해 주세요.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 로그인 페이지 끝 -->
+        
+    </div>
+</body>
+</html>        

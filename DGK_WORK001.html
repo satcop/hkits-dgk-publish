@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=yes"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Cache-Control" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <meta name="format-detection" content="telephone=no">
+
+    <title>DGK 영화감독조합 내부데이터 통합관리 시스템</title>
+
+    <!-- font : 프리텐다드 -->
+    <link rel="preload" href="./font/woff2-subset/Pretendard-Regular.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/woff2-subset/Pretendard-Medium.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/woff2-subset/Pretendard-SemiBold.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/woff2-subset/Pretendard-Bold.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/woff2-subset/Pretendard-ExtraBold.subset.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="./font/woff2-subset/Pretendard-Black.subset.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- css : 스타일 -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- js : 자바스크립트 -->
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/common.js"></script>
+</head>
+<body>
+    <div id="wrap">
+
+        <!-- [공통] 사이드바 시작 -->
+        <aside class="sidebar">
+            <div class="inner">
+                <div class="logo">
+                    <div class="logo-switch">
+                        <img class="logo-full" src="./img/logo.svg" alt="DGK 영화감독조합 내부데이터 통합관리 시스템">
+                        <img class="logo-fold" src="./img/logo-fold.svg" alt="" width="44" height="55" aria-hidden="true">
+                    </div>
+                </div>
+                <nav class="nav">
+                    <div class="nav-list">
+                        <h3 class="title">기본 관리</h3>
+                        <ul>
+                            <li class="user"><a href="" title="회원 관리"><i class="icon-user"></i><span>회원 관리</span></a></li>
+                            <li class="work"><a href="" title="작품 관리"><i class="icon-work"></i><span>작품 관리</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-list">
+                        <h3 class="title">정산 관리</h3>
+                        <ul>
+                            <li class="deposit"><a href="" title="입금내역 관리"><i class="icon-deposit"></i><span>입금내역 관리</span></a></li>
+                            <li class="unsettled"><a href="" title="미정산내역"><i class="icon-unsettled"></i><span>미정산내역</span></a></li>
+                            <li class="history"><a href="" title="관리비율 이력"><i class="icon-history"></i><span>관리비율 이력</span></a></li>
+                            <li class="group"><a href="" title="단체 관리"><i class="icon-group"></i><span>단체 관리</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-list">
+                        <h3 class="title">회원 지급</h3>
+                        <ul>
+                            <li class="prepare"><a href="" title="지급 준비"><i class="icon-prepare"></i><span>지급 준비</span></a></li>
+                            <li class="waiting"><a href="" title="지급 대기"><i class="icon-waiting"></i><span>지급 대기</span></a></li>
+                            <li class="payment-history"><a href="" title="지급 이력"><i class="icon-payment-history"></i><span>지급 이력</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-list">
+                        <h3 class="title">통계</h3>
+                        <ul>
+                            <li class="stat-work"><a href="" title="작품별 통계"><i class="icon-stat-work"></i><span>작품별 통계</span></a></li>
+                            <li class="stat-member"><a href="" title="회원별 통계"><i class="icon-stat-member"></i><span>회원별 통계</span></a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="bottom">
+                    <button type="button" class="btn-toggle-sidebar">접기</button>
+                </div>
+            </div>
+        </aside>        
+        <!-- 사이드바 끝 -->
+
+        <div id="container">
+
+            <!-- [공통] 헤더 시작 -->
+            <header id="header">
+                <div class="inner">
+                    <div class="header-start">
+                        <p class="last-login">최근 접속 <time>2026. 04. 14. 14:30:02</time></p>
+                    </div>
+
+                    <div class="header-end">
+                        <div class="header-user">
+                            <p class="user-avatar">홍</p>
+                            <div class="user-info">
+                                <p class="user-name"><span>홍길동</span>님</p>
+                                <p class="user-role">administrator</p>
+                            </div>
+                            <button type="button" class="btn-logout">로그아웃</button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- 헤더 끝 -->
+
+            <!-- 컨텐츠 시작 -->
+            <div id="content">
+                
+                <!-- page head 시작 -->
+                <div class="page-head">
+                    <ul id="location">
+                        <li>홈</li>
+                        <li>기본 관리</li>
+                        <li>작품 관리</li>
+                    </ul>
+                    <h2 class="page-title">작품 관리</h2>                    
+                </div>
+                <!-- page head 끝 -->
+
+                <!-- page body 시작 -->
+                <div class="page-body">
+                    <div class="indiv">
+                        <h3 class="tit">조회</h3>
+                        <form class="member-search-form">
+                            <div class="tbl-input">
+                                <table>
+                                    <colgroup>
+                                        <col width="12%">
+                                        <col width="21.33%">
+                                        <col width="12%">
+                                        <col width="21.33%">
+                                        <col width="12%">
+                                        <col width="21.34%">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>
+                                                <label class="tit">작품구분</label>
+                                            </th>
+                                            <td>
+                                                <div class="select-box">
+                                                    <select>
+                                                        <option value="">전체</option>
+                                                        <option value="">영화</option>
+                                                        <option value="">시리즈</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <th>
+                                                <label class="tit">에피소드</label>
+                                            </th>
+                                            <td>
+                                                <div class="radio-box">
+                                                    <div class="items">
+                                                        <input type="radio" name="episode" id="episode-include" value="포함" checked>
+                                                        <label for="episode-include">포함</label>
+                                                    </div>
+                                                    <div class="items">
+                                                        <input type="radio" name="episode" id="episode-exclude" value="미포함">
+                                                        <label for="episode-exclude">미포함</label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <th>
+                                                <label class="tit">상태</label>
+                                            </th>
+                                            <td>
+                                                <div class="select-box">
+                                                    <select>
+                                                        <option value="">전체</option>
+                                                        <option value="">공개</option>
+                                                        <option value="">미공개</option>
+                                                    </select>
+                                                </div>
+                                            </td> 
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <label class="tit">작품명</label>
+                                            </th>
+                                            <td>
+                                                <div class="input-box wd100">
+                                                    <input type="text" class="input">
+                                                </div>
+                                            </td>                                            
+                                            <th>
+                                                <label class="tit">참여자</label>
+                                            </th>
+                                            <td>
+                                                <div class="input-box wd100">
+                                                    <input type="text" class="input">
+                                                </div>
+                                            </td>  
+                                            <th>
+                                                <label class="tit">IDA 등록여부</label>
+                                            </th>
+                                            <td colspan="3">
+                                                <div class="select-box">
+                                                    <select>
+                                                        <option value="">전체</option>
+                                                        <option value="">등록완료</option>
+                                                        <option value="">미등록</option>
+                                                    </select>
+                                                </div>
+                                            </td>                                           
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="btn-wrap mt20">
+                                <button type="reset" class="btn-reset">초기화</button>
+                                <button type="button" class="btn-search">조회</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="indiv">
+                        <h3 class="tit">목록</h3>
+                        <div class="tbl-top">
+                            <div class="left">
+                                <div class="item">
+                                    전체 <span>15</span> 페이지, <span>152</span> 건
+                                </div>
+                                <div class="top-btn-wrap">
+                                    <button type="button" class="btn-upload" onclick="modalOpen('uploadPopup');">대량 업로드</button>
+                                    <button type="button" class="btn-download">엑셀 다운로드</button>
+                                </div>                                
+                                <span class="divider">|</span>
+                                <div class="top-btn-wrap">
+                                    <button type="button" class="btn-ida-add btn-secondary">IDA 일괄 등록</button>
+                                    <button type="button" class="btn-work-add btn-primary">등록</button>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="select-box">
+                                    <select>
+                                        <option value="5" selected>5개씩 보기</option>
+                                        <option value="10">10개씩 보기</option>
+                                        <option value="20">20개씩 보기</option>
+                                        <option value="50">50개씩 보기</option>
+                                        <option value="100">100개씩 보기</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tbl-list tbl-work-list no-wrap tbl-check-scope">
+                            <table>
+                                <colgroup>
+                                    <col style="width:80px;">
+                                    <col style="width:80px;">
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>   
+                                    <col>   
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <div class="check-box-wrap center">
+                                                <div class="check-box">
+                                                    <input type="checkbox" id="work-check-all" class="js-check-all" value="1">
+                                                    <label for="work-check-all" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th>No</th>
+                                        <th>DKG 번호</th>
+                                        <th>작품명</th>
+                                        <th>작품구분</th>
+                                        <th>IDA 코드</th>
+                                        <th>IDA 상태</th>
+                                        <th>등록일</th>
+                                        <th>상태</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="check-box-wrap center">
+                                                <div class="check-box">
+                                                    <input type="checkbox" id="work-check-5" class="js-check-row" value="1">
+                                                    <label for="work-check-5" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>5</td>
+                                        <td>DGK-W005</td>
+                                        <td>
+                                            <div class="link"><a href="javascript:void(0);">파친코 시즌 2</a></div>
+                                        </td>
+                                        <td>시리즈-마스터</td>
+                                        <td>IDA202501</td>
+                                        <td>등록완료</td>
+                                        <td>2026.04.21</td>
+                                        <td>공개</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="check-box-wrap center">
+                                                <div class="check-box">
+                                                    <input type="checkbox" id="work-check-4" class="js-check-row" value="1">
+                                                    <label for="work-check-4" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>4</td>
+                                        <td>DGK-W004</td>
+                                        <td>
+                                            <div class="link"><a href="javascript:void(0);">설국열차: 레거시</a></div>
+                                        </td>
+                                        <td>영화</td>
+                                        <td>미등록</td>
+                                        <td>미등록</td>
+                                        <td>2026.04.21</td>
+                                        <td>미공개</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="check-box-wrap center">
+                                                <div class="check-box">
+                                                    <input type="checkbox" id="work-check-3" class="js-check-row" value="1">
+                                                    <label for="work-check-3" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>3</td>
+                                        <td>DGK-W003</td>
+                                        <td>
+                                            <div class="link"><a href="javascript:void(0);">더 글로리 시즌 3</a></div>
+                                        </td>
+                                        <td>시리즈-마스터</td>
+                                        <td>IDA202503</td>
+                                        <td>등록완료</td>
+                                        <td>2026.04.21</td>
+                                        <td>공개</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="check-box-wrap center">
+                                                <div class="check-box">
+                                                    <input type="checkbox" id="work-check-2" class="js-check-row" value="1">
+                                                    <label for="work-check-2" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>2</td>
+                                        <td>DGK-W002</td>
+                                        <td>
+                                            <div class="link"><a href="javascript:void(0);">더 글로리 시즌 3</a></div>
+                                        </td>
+                                        <td>시리즈-에피소드</td>
+                                        <td>처리중</td>
+                                        <td>처리중</td>
+                                        <td>2026.04.21</td>
+                                        <td>공개</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="check-box-wrap center">
+                                                <div class="check-box">
+                                                    <input type="checkbox" id="work-check-1" class="js-check-row" value="1">
+                                                    <label for="work-check-1" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>1</td>
+                                        <td>DGK-W001</td>
+                                        <td>
+                                            <div class="link"><a href="javascript:void(0);">오징어게임 시즌 3</a></div>
+                                        </td>
+                                        <td>시리즈-에피소드</td>
+                                        <td>처리중</td>
+                                        <td>처리중</td>
+                                        <td>2026.04.21</td>
+                                        <td>미공개</td>
+                                    </tr>
+
+                                    <!-- no data 시작 -->
+                                    <!-- <tr>
+                                        <td colspan="9" class="no-data">
+                                            <p>데이터가 없습니다.</p>
+                                        </td>
+                                    </tr> -->
+                                    <!-- no data 끝 -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- paging 시작 -->
+                        <nav class="paging">
+                            <button type="button" class="paging__btn paging__btn--soft">처음</button>
+                            <button type="button" class="paging__btn paging__btn--soft">이전</button>
+                            <div class="paging__nums">
+                                <a href="javascript:void(0);" class="paging__num is-active">1</a>
+                                <a href="javascript:void(0);" class="paging__num">2</a>
+                                <a href="javascript:void(0);" class="paging__num">3</a>
+                                <a href="javascript:void(0);" class="paging__num">4</a>
+                                <a href="javascript:void(0);" class="paging__num">5</a>
+                            </div>
+                            <button type="button" class="paging__btn">다음</button>
+                            <button type="button" class="paging__btn">맨끝</button>
+                        </nav>
+                        <!-- paging 끝 -->
+                    </div>
+                </div>                
+                <!-- page body 끝 -->
+
+            </div>
+            <!-- 컨텐츠 끝 -->
+
+        </div>
+        
+    </div>
+
+
+    <!-- 대량 업로드 popup 시작 -->
+    <div class="layer-popup uploadPopup">
+        <div class="md-content" style="max-width:60rem;">
+            <div class="md-header no-bottom">
+                <h2 class="tit">대량 업로드</h2>
+            </div>
+            <div class="md-body">
+                <form class="upload-form">
+                    <div class="tbl-input mt20">
+                        <table>
+                            <colgroup>
+                                <col style="width:100px;">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        <label class="tit">샘플 파일</label>
+                                    </th>
+                                    <td>
+                                        <a href="javascript:void(0);" class="link">sample.xlsx</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <label class="tit">파일 첨부</label>
+                                    </th>
+                                    <td>
+                                        <!-- 파일 업로드 시작 : 기존 파일 없을 시 file-drop-zone 클래스에 is-filled 클래스 제거, 기존파일 있을 시 file-drop-zone 클래스에 is-filled 클래스 추가 -->
+                                        <div class="file-drop-zone" data-max-mb="100" data-accept="xls,xlsx" data-msg-invalid-ext="엑셀 파일(.xls, .xlsx)만 업로드할 수 있습니다.">
+                                            <input type="file" id="upload-file" name="upload_file" class="file-native" accept=".xls,.xlsx,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+                                            <div class="file-drop-main">
+                                                <div class="file-drop-empty">
+                                                    <p class="file-drop-hint">파일 선택 또는 여기에 드래그</p>
+                                                    <p class="file-drop-sub">업로드된 파일 없음</p>
+                                                </div>
+                                                <div class="file-drop-filled">
+                                                    <a href="#" class="file-link"></a><!-- 기존 파일 없을 시 공백, 기존 파일 있을 시 파일명 표시 -->
+                                                    <span class="file-meta"></span><!-- 기존 파일 없을 시 공백, 기존 파일 있을 시 파일 크기 표시 -->
+                                                    <button type="button" class="btn-file-remove" aria-label="첨부 파일 삭제"><span class="ico-del" aria-hidden="true"></span></button>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn-file-pick" aria-label="파일 선택"><img src="./img/upload.svg" alt=""></button>
+                                        </div>
+                                        <!-- 파일 업로드 종료 -->
+                                        <p class="note-text mt10">* 엑셀 파일(.xls, .xlsx)만 업로드 가능 / 최대 크기 100MB 이하</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="btn-wrap mt20">
+                        <button type="button" class="btn-close" onclick="modalClose('uploadPopup');">닫기</button>
+                        <button type="button" class="btn-apply">적용</button>
+                    </div>
+                </form>
+            </div>
+            <button type="button" class="close" onclick="modalClose('uploadPopup');">닫기</button>
+        </div>
+    </div>
+    <!-- 대량 업로드 popup 끝 -->
+
+
+
+    <script>
+        /* 사이드바 네비 현재 메뉴 활성 */
+        $(document).ready(function () {
+            setSidebarNavActive('work'); // 작품 관리
+        });
+    </script>
+</body>
+</html>        

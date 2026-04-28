@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=yes"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Cache-Control" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <meta name="format-detection" content="telephone=no">
+
+    <title>DGK 영화감독조합 내부데이터 통합관리 시스템</title>
+
+    <!-- font : 프리텐다드 -->
+    <link rel="preload" href="./font/woff2-subset/Pretendard-Regular.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/woff2-subset/Pretendard-Medium.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/woff2-subset/Pretendard-SemiBold.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/woff2-subset/Pretendard-Bold.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/woff2-subset/Pretendard-ExtraBold.subset.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="./font/woff2-subset/Pretendard-Black.subset.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- css : 스타일 -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- js : 자바스크립트 -->
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/common.js"></script>
+</head>
+<body>
+    <div id="wrap">
+
+        <!-- [공통] 사이드바 시작 -->
+        <aside class="sidebar">
+            <div class="inner">
+                <div class="logo">
+                    <div class="logo-switch">
+                        <img class="logo-full" src="./img/logo.svg" alt="DGK 영화감독조합 내부데이터 통합관리 시스템">
+                        <img class="logo-fold" src="./img/logo-fold.svg" alt="" width="44" height="55" aria-hidden="true">
+                    </div>
+                </div>
+                <nav class="nav">
+                    <div class="nav-list">
+                        <h3 class="title">기본 관리</h3>
+                        <ul>
+                            <li class="user"><a href="" title="회원 관리"><i class="icon-user"></i><span>회원 관리</span></a></li>
+                            <li class="work"><a href="" title="작품 관리"><i class="icon-work"></i><span>작품 관리</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-list">
+                        <h3 class="title">정산 관리</h3>
+                        <ul>
+                            <li class="deposit"><a href="" title="입금내역 관리"><i class="icon-deposit"></i><span>입금내역 관리</span></a></li>
+                            <li class="unsettled"><a href="" title="미정산내역"><i class="icon-unsettled"></i><span>미정산내역</span></a></li>
+                            <li class="history"><a href="" title="관리비율 이력"><i class="icon-history"></i><span>관리비율 이력</span></a></li>
+                            <li class="group"><a href="" title="단체 관리"><i class="icon-group"></i><span>단체 관리</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-list">
+                        <h3 class="title">회원 지급</h3>
+                        <ul>
+                            <li class="prepare"><a href="" title="지급 준비"><i class="icon-prepare"></i><span>지급 준비</span></a></li>
+                            <li class="waiting"><a href="" title="지급 대기"><i class="icon-waiting"></i><span>지급 대기</span></a></li>
+                            <li class="payment-history"><a href="" title="지급 이력"><i class="icon-payment-history"></i><span>지급 이력</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-list">
+                        <h3 class="title">통계</h3>
+                        <ul>
+                            <li class="stat-work"><a href="" title="작품별 통계"><i class="icon-stat-work"></i><span>작품별 통계</span></a></li>
+                            <li class="stat-member"><a href="" title="회원별 통계"><i class="icon-stat-member"></i><span>회원별 통계</span></a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="bottom">
+                    <button type="button" class="btn-toggle-sidebar">접기</button>
+                </div>
+            </div>
+        </aside>        
+        <!-- 사이드바 끝 -->
+
+        <div id="container">
+
+            <!-- [공통] 헤더 시작 -->
+            <header id="header">
+                <div class="inner">
+                    <div class="header-start">
+                        <p class="last-login">최근 접속 <time>2026. 04. 14. 14:30:02</time></p>
+                    </div>
+
+                    <div class="header-end">
+                        <div class="header-user">
+                            <p class="user-avatar">홍</p>
+                            <div class="user-info">
+                                <p class="user-name"><span>홍길동</span>님</p>
+                                <p class="user-role">administrator</p>
+                            </div>
+                            <button type="button" class="btn-logout">로그아웃</button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- 헤더 끝 -->
+
+            <!-- 컨텐츠 시작 -->
+            <div id="content">
+                
+                <!-- page head 시작 -->
+                <div class="page-head">
+                    <ul id="location">
+                        <li>홈</li>
+                        <li>기본 관리</li>
+                        <li>작품 관리</li>
+                        <li>작품 등록</li>
+                    </ul>
+                    <h2 class="page-title">작품 등록</h2>                    
+                </div>
+                <!-- page head 끝 -->
+
+                <!-- page body 시작 -->
+                <form class="work-add-form">
+                    <div class="page-body">
+                        <div class="page-buttons">
+                            <button type="button" class="btn-list">목록</button>
+                            <span class="divider">|</span>                            
+                            <button type="button" class="btn-secondary">IDA 등록</button>
+                            <button type="button" class="btn-save">저장</button>
+                            <button type="reset" class="btn-reset">초기화</button>
+                        </div>
+
+                        <div class="indiv">
+                            <h3 class="tit">DGK 정보</h3>
+                            <div class="tbl-input">
+                                <table>
+                                    <colgroup>
+                                        <col style="width:10%;">
+                                        <col style="width:15%;">
+                                        <col style="width:10%;">
+                                        <col style="width:15%;">
+                                        <col style="width:10%;">
+                                        <col style="width:15%;">
+                                        <col style="width:10%;">
+                                        <col style="width:15%;">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>
+                                                <label class="tit">DGK 작품코드</label>
+                                            </th>
+                                            <td>
+                                                <p>DGK-00001</p>
+                                            </td>
+                                            <th>
+                                                <label class="tit">작품구분 <em class="req">**</em></label>
+                                            </th>
+                                            <td>
+                                                <div class="select-box wd100">
+                                                    <select>
+                                                        <option value="">전체</option>
+                                                        <option value="">영화-에피소드</option>
+                                                        <option value="">시리즈-마스터</option>
+                                                        <option value="">시리즈-에피소드</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <th>
+                                                <label class="tit">IDA 레퍼런스</label>
+                                            </th>
+                                            <td>
+                                                <div class="input-box wd100">
+                                                    <input type="text" class="input">
+                                                </div>
+                                            </td>
+                                            <th>
+                                                <label class="tit">상태</label>
+                                            </th>
+                                            <td>
+                                                <div class="select-box wd100">
+                                                    <select>
+                                                        <option value="">전체</option>
+                                                        <option value="">공개</option>
+                                                        <option value="">미공개</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="indiv">
+                            <div class="tit-wrap">
+                                <h3 class="tit">IDA  Title</h3>
+                                <div class="in-btn-wrap">
+                                    <button type="button" class="btn-ida-delete btn-gray">삭제</button>
+                                    <span class="divider">|</span>
+                                    <button type="button" class="btn-ida-search-add btn-secondary">검색 추가</button>
+                                    <button type="button" class="btn-ida-row-add btn-primary">수기 추가</button>
+                                </div>
+                            </div>
+                            <div class="tbl-list tbl-ida-list tbl-check-scope body-scroll">
+                                <table>
+                                    <colgroup>
+                                        <col style="width:8rem">
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="th-ipi-check-all">
+                                                <div class="check-box-wrap center">
+                                                    <div class="check-box">
+                                                        <input type="checkbox" id="ida-check-all" class="js-check-all" value="1">
+                                                        <label for="ida-check-all" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <th scope="col">Type <em class="required">*</em></th>
+                                            <th scope="col">Title <em class="required">***</em></th>
+                                            <th scope="col">Episode title</th>
+                                            <th scope="col">Language <em class="required">*</em></th>
+                                            <th scope="col">Country</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="check-box-wrap center">
+                                                    <div class="check-box">
+                                                        <input type="checkbox" id="ida-sel-1" class="js-check-row" name="ida-no" value="1">
+                                                        <label for="ida-sel-1" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="select-box wd100">
+                                                    <select>
+                                                        <option value="" selected>Main title</option>
+                                                        <option value="">Other title</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="input-box wd100">
+                                                    <input type="text" id="" class="input" value="STOKER" autocomplete="off">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="input-box wd100">
+                                                    <input type="text" id="" class="input" autocomplete="off">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="select-box wd100">
+                                                    <select>
+                                                        <option value="">select</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="select-box wd100">
+                                                    <select>
+                                                        <option value="">select</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="check-box-wrap center">
+                                                    <div class="check-box">
+                                                        <input type="checkbox" id="ida-sel-2" class="js-check-row" name="ida-no" value="2">
+                                                        <label for="ida-sel-2" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="select-box wd100">
+                                                    <select>
+                                                        <option value="">Main title</option>
+                                                        <option value="" selected>Other title</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="input-box wd100">
+                                                    <input type="text" id="" class="input" value="스토커" autocomplete="off">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="input-box wd100">
+                                                    <input type="text" id="" class="input" autocomplete="off">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="select-box wd100">
+                                                    <select>
+                                                        <option value="">select</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="select-box wd100">
+                                                    <select>
+                                                        <option value="">select</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="indiv">
+                            <h3 class="tit">IDA Work</h3>
+                            <div class="tbl-input">
+                                <table>
+                                    <colgroup>
+                                        <col width="12%">
+                                        <col>
+                                        <col width="12%">
+                                        <col>
+                                        <col width="12%">
+                                        <col>
+                                        <col width="12%">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>
+                                                <label class="tit">IDA 레퍼런스</label>
+                                            </th>
+                                            <td colspan="5">
+                                                <p>-</p>
+                                            </td>
+                                            <th>
+                                                <label class="tit">Master</label>
+                                            </th>
+                                            <td>
+                                                <div class="check-box-wrap">
+                                                    <div class="check-box">
+                                                        <input type="checkbox" id="ida-work-master" name="ida-work-master" value="1">
+                                                        <label for="ida-work-master" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <label class="tit">Season</label>
+                                            </th>
+                                            <td>
+                                                <div class="input-box wd100">
+                                                    <input type="text" id="" class="input" autocomplete="off">
+                                                </div>
+                                            </td>
+                                            <th>
+                                                <label class="tit">Ref.Episode</label>
+                                            </th>
+                                            <td>
+                                                <div class="input-box wd100">
+                                                    <input type="text" id="" class="input" autocomplete="off">
+                                                </div>
+                                            </td>
+                                            <th>
+                                                <label class="tit">Mn</label>
+                                            </th>
+                                            <td>
+                                                <div class="input-box wd100">
+                                                    <input type="text" id="" class="input" autocomplete="off">
+                                                </div>
+                                            </td>
+                                            <th>
+                                                <label class="tit">Sec</label>
+                                            </th>
+                                            <td>
+                                                <div class="input-box wd100">
+                                                    <input type="text" id="" class="input" autocomplete="off">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="ida-work-inner mt30">
+                                <div class="left">
+                                    <h4>Keyword</h4>
+                                    <div class="tbl-input">
+                                        <table>
+                                            <colgroup>
+                                                <col width="35%">
+                                                <col>
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="dflex wrap gap10">
+                                                            <div class="select-box">
+                                                                <select>
+                                                                    <option value="">Format *</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="select-box">
+                                                                <select>
+                                                                    <option value="">Type *</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="select-box">
+                                                                <select>
+                                                                    <option value="">Animated or live</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="select-box">
+                                                                <select>
+                                                                    <option value="">Sound</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="select-box">
+                                                                <select>
+                                                                    <option value="">Color</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="select-box">
+                                                                <select>
+                                                                    <option value="">Performance</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="select-box">
+                                                                <select>
+                                                                    <option value="">Subject</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="tbl-top" style="margin-top:25px;">
+                                        <h4>Shooting language</h4>
+                                        <div class="top-btn-wrap">
+                                            <button type="button" class="btn-shooting-language-delete btn-gray">삭제</button>
+                                            <button type="button" class="btn-shooting-language-add btn-primary">추가</button>
+                                        </div>
+                                    </div>
+                                    <div class="tbl-list tbl-shooting-language-list tbl-check-scope body-scroll">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:8rem">
+                                                <col>
+                                                <col>
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">
+                                                        <div class="check-box-wrap center">
+                                                            <div class="check-box">
+                                                                <input type="checkbox" id="shooting-language-check-all" class="js-check-all" value="1">
+                                                                <label for="shooting-language-check-all" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                            </div>
+                                                        </div>
+                                                    </th>
+                                                    <th scope="col">Language <em class="required">*</em></th>
+                                                    <th scope="col">Country</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="check-box-wrap center">
+                                                            <div class="check-box">
+                                                                <input type="checkbox" id="shooting-language-sel-1" class="js-check-row" name="shooting-language-no" value="1">
+                                                                <label for="shooting-language-sel-1" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="select-box wd100">
+                                                            <select>
+                                                                <option value="">select</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="select-box wd100">
+                                                            <select>
+                                                                <option value="">select</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="check-box-wrap center">
+                                                            <div class="check-box">
+                                                                <input type="checkbox" id="shooting-language-sel-2" class="js-check-row" name="shooting-language-no" value="2">
+                                                                <label for="shooting-language-sel-2" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="select-box wd100">
+                                                            <select>
+                                                                <option value="">select</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="select-box wd100">
+                                                            <select>
+                                                                <option value="">select</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div class="tbl-input" style="margin-top:35px;">
+                                        <table>
+                                            <colgroup>
+                                                <col width="35%">
+                                                <col>
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th>
+                                                        <label class="tit">ISAN</label>
+                                                    </th>
+                                                    <td>
+                                                        <div class="input-box wd100">
+                                                            <input type="text" id="" class="input" autocomplete="off">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        <label class="tit">Production Year <em class="req">**</em></label>
+                                                    </th>
+                                                    <td>
+                                                        <div class="input-box wd100">
+                                                            <input type="text" id="" class="input" autocomplete="off">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        <label class="tit">Production country</label>
+                                                    </th>
+                                                    <td>
+                                                        <div class="select-box wd100">
+                                                            <select>
+                                                                <option value="">select</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        <label class="tit">Initial destination</label>
+                                                    </th>
+                                                    <td>
+                                                        <div class="select-box wd100">
+                                                            <select>
+                                                                <option value="">select</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        <label class="tit">Nature of pre-existing work</label>
+                                                    </th>
+                                                    <td>
+                                                        <div class="select-box wd100">
+                                                            <select>
+                                                                <option value="">select</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        <label class="tit">Real exploitation</label>
+                                                    </th>
+                                                    <td>
+                                                        <div class="select-box wd100">
+                                                            <select>
+                                                                <option value="">select</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        <label class="tit">Distribution mode <em class="req">*</em></label>
+                                                    </th>
+                                                    <td>
+                                                        <div class="select-box wd100">
+                                                            <select>
+                                                                <option value="">select</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="indiv">
+                            <div class="tit-wrap">
+                                <h3 class="tit">IDA Participants</h3>
+                                <div class="in-btn-wrap">
+                                    <button type="button" class="btn-ida-participants-delete btn-gray">삭제</button>
+                                    <span class="divider">|</span>
+                                    <button type="button" class="btn-ida-participants-search-add btn-secondary" onclick="modalOpen('workSearchPopup');">검색 추가</button>
+                                    <button type="button" class="btn-ida-participants-row-add btn-primary">수기 추가</button>
+                                </div>
+                            </div>
+                            <div class="tbl-list tbl-ida-participants-list tbl-check-scope body-scroll">
+                                <table>
+                                    <colgroup>
+                                        <col style="width:8rem">
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="th-ida-participants-check-all">
+                                                <div class="check-box-wrap center">
+                                                    <div class="check-box">
+                                                        <input type="checkbox" id="ida-participants-check-all" class="js-check-all" value="1">
+                                                        <label for="ida-participants-check-all" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <th scope="col">IPI NN</th>
+                                            <th scope="col">Last Name <em class="required">*</em></th>
+                                            <th scope="col">First Name</th>
+                                            <th scope="col">Internal reference (DGK)</th>
+                                            <th scope="col">Right Owner</th>
+                                            <th scope="col">Role</th>
+                                            <th scope="col">A rights</th>
+                                            <th scope="col">B rights / Society</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="check-box-wrap center">
+                                                    <div class="check-box">
+                                                        <input type="checkbox" id="ida-participants-sel-1" class="js-check-row" name="ida-participants-no" value="1">
+                                                        <label for="ida-participants-sel-1" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                123456
+                                            </td>
+                                            <td>
+                                                SON
+                                            </td>
+                                            <td>
+                                                EUNIBIN
+                                            </td>                                            
+                                            <td>
+                                                <div class="input-box wd100">
+                                                    <input type="text" id="" class="input" autocomplete="off">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="radio-box justify-center">
+                                                    <div class="items">
+                                                        <input type="radio" id="ida-owner-radio-1-on" name="ida-owner-radio-1" value="ON" checked>
+                                                        <label for="ida-owner-radio-1-on">ON</label>
+                                                    </div>
+                                                    <div class="items">
+                                                        <input type="radio" id="ida-owner-radio-1-off" name="ida-owner-radio-1" value="OFF">
+                                                        <label for="ida-owner-radio-1-off">OFF</label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="select-box wd100">
+                                                    <select>
+                                                        <option value="">select</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                0/DGK
+                                            </td>
+                                            <td>
+                                                <div class="dflex gap10">
+                                                    <div class="input-box flex1">
+                                                        <input type="text" id="" class="input" autocomplete="off">
+                                                    </div>
+                                                    <span>/ DGK</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="check-box-wrap center">
+                                                    <div class="check-box">
+                                                        <input type="checkbox" id="ida-participants-sel-1" class="js-check-row" name="ida-participants-no" value="1">
+                                                        <label for="ida-participants-sel-1" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                234234
+                                            </td>
+                                            <td>
+                                                <div class="input-box wd100">
+                                                    <input type="text" id="" class="input" autocomplete="off">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="input-box wd100">
+                                                    <input type="text" id="" class="input" autocomplete="off">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="input-box wd100">
+                                                    <input type="text" id="" class="input" autocomplete="off">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="radio-box justify-center">
+                                                    <div class="items">
+                                                        <input type="radio" id="ida-owner-radio-2-on" name="ida-owner-radio-2" value="ON" checked>
+                                                        <label for="ida-owner-radio-2-on">ON</label>
+                                                    </div>
+                                                    <div class="items">
+                                                        <input type="radio" id="ida-owner-radio-2-off" name="ida-owner-radio-2" value="OFF">
+                                                        <label for="ida-owner-radio-2-off">OFF</label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="select-box wd100">
+                                                    <select>
+                                                        <option value="">select</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                0/DGK
+                                            </td>
+                                            <td>
+                                                <div class="dflex gap10">
+                                                    <div class="input-box flex1">
+                                                        <input type="text" id="" class="input" autocomplete="off">
+                                                    </div>
+                                                    <span>/ DGK</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="indiv col">
+                                <div class="tit-wrap">
+                                    <h3 class="tit">IDA References</h3>
+                                    <div class="in-btn-wrap">
+                                        <button type="button" class="btn-ida-references1-delete btn-gray">삭제</button>
+                                        <button type="button" class="btn-ida-references1-row-add btn-primary">추가</button>
+                                    </div>
+                                </div>
+                                <div class="tbl-list tbl-ida-references1-list tbl-check-scope body-scroll">
+                                    <table>
+                                        <colgroup>
+                                            <col>
+                                            <col>
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">
+                                                    <div class="check-box-wrap center">
+                                                        <div class="check-box">
+                                                            <input type="checkbox" id="ida-references1-check-all" class="js-check-all" value="1">
+                                                            <label for="ida-references1-check-all" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th scope="col">Society</th>
+                                                <th scope="col">Reference <em class="required">*</em></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="check-box-wrap center">
+                                                        <div class="check-box">
+                                                            <input type="checkbox" id="ida-references1-sel-1" class="js-check-row" name="ida-references1-no" value="1">
+                                                            <label for="ida-references1-sel-1" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    DGK
+                                                </td>
+                                                <td>
+                                                    <div class="input-box wd100">
+                                                        <input type="text" id="" class="input" autocomplete="off">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="indiv col">
+                                <div class="tit-wrap">
+                                    <h3 class="tit">IDA References</h3>
+                                    <div class="in-btn-wrap">
+                                        <button type="button" class="btn-ida-references2-delete btn-gray">삭제</button>
+                                        <button type="button" class="btn-ida-references2-row-add btn-primary">추가</button>
+                                    </div>
+                                </div>
+                                <div class="tbl-list tbl-ida-references2-list tbl-check-scope body-scroll">
+                                    <table>
+                                        <colgroup>
+                                            <col>
+                                            <col>
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">
+                                                    <div class="check-box-wrap center">
+                                                        <div class="check-box">
+                                                            <input type="checkbox" id="ida-references2-check-all" class="js-check-all" value="1">
+                                                            <label for="ida-references2-check-all" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th scope="col">Society <em class="required">*</em></th>
+                                                <th scope="col">IDA Reference <em class="required">*</em></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="check-box-wrap center">
+                                                        <div class="check-box">
+                                                            <input type="checkbox" id="ida-references2-sel-1" class="js-check-row" name="ida-references2-no" value="1">
+                                                            <label for="ida-references2-sel-1" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="select-box wd100">
+                                                        <select>
+                                                            <option value="">select</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-box wd100">
+                                                        <input type="text" id="" class="input" autocomplete="off">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>    
+                </form>
+                <!-- page body 끝 -->
+
+            </div>
+            <!-- 컨텐츠 끝 -->
+
+        </div>
+        
+    </div>
+
+
+
+    <!-- 작품 검색 popup 시작 -->
+    <div class="layer-popup workSearchPopup">
+        <div class="md-content" style="max-width:100rem;">
+            <div class="md-header no-bottom">
+                <h2 class="tit">작품 검색</h2>
+            </div>
+            <div class="md-body">
+                <form class="work-search-form">
+                    <div class="tbl-input mt20">
+                        <table>
+                            <colgroup>
+                                <col style="width:20%;">
+                                <col style="width:30%;">
+                                <col style="width:20%;">
+                                <col style="width:30%;">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        <label class="tit">작품코드</label>
+                                    </th>
+                                    <td>
+                                        <div class="input-box wd100">
+                                            <input type="text" id="" class="input" autocomplete="off">
+                                        </div>
+                                    </td>
+                                    <th>
+                                        <label class="tit">작품명</label>
+                                    </th>
+                                    <td>
+                                        <div class="input-box wd100">
+                                            <input type="text" id="" class="input" autocomplete="off">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <label class="tit">IDA 코드</label>
+                                    </th>
+                                    <td>
+                                        <div class="input-box wd100">
+                                            <input type="text" id="" class="input" autocomplete="off">
+                                        </div>
+                                    </td>
+                                    <th>
+                                        <label class="tit">참여자명</label>
+                                    </th>
+                                    <td>
+                                        <div class="input-box wd100">
+                                            <input type="text" id="" class="input" autocomplete="off">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="btn-wrap mt20">
+                        <button type="reset" class="btn-reset">초기화</button>
+                        <button type="button" class="btn-search">조회</button>
+                    </div>
+                </form>
+                <form class="work-search-result-form">
+                    <div class="tbl-top mt30">
+                        <div class="left">
+                            <div class="item">
+                                총 <span>1</span> 건
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tbl-list tbl-work-search-result-list tbl-check-scope body-scroll">
+                        <table>
+                            <colgroup>
+                                <col style="width:8rem;">
+                                <col style="width:8rem;">
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col style="width:12rem;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">
+                                        <div class="check-box-wrap center">
+                                            <div class="check-box">
+                                                <input type="checkbox" id="work-search-result-check-all" class="js-check-all" value="1">
+                                                <label for="work-search-result-check-all" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <th scope="col">No</th>
+                                    <th scope="col">작품코드</th>
+                                    <th scope="col">작품명</th>
+                                    <th scope="col">부제</th>
+                                    <th scope="col">참여자</th>
+                                    <th scope="col">IDA 코드</th>
+                                    <th scope="col">등록일</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="check-box-wrap center">
+                                            <div class="check-box">
+                                                <input type="checkbox" id="work-search-result-sel-1" class="js-check-row" name="work-search-result-no" value="1">
+                                                <label for="work-search-result-sel-1" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>1</td>
+                                    <td>123123123</td>
+                                    <td>기생충</td>
+                                    <td>Gisang</td>
+                                    <td>김철수 외 1명</td>
+                                    <td>123456</td>
+                                    <td>2026-04-24</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="btn-wrap mt20">
+                        <button type="button" class="btn-close" onclick="modalClose('workSearchPopup');">닫기</button>
+                        <button type="button" class="btn-apply">적용</button>
+                    </div>
+                </form>
+            </div>
+            <button type="button" class="close" onclick="modalClose('workSearchPopup');">닫기</button>
+        </div>
+    </div>
+    <!-- 대량 업로드 popup 끝 -->    
+
+
+    <script>
+        /* 사이드바 네비 현재 메뉴 활성 */
+        $(document).ready(function () {
+            setSidebarNavActive('work'); // 작품 관리
+        });
+
+        /* IDA 목록 — 수기 추가 (.btn-ida-row-add) */
+        $(document).on('click', '.btn-ida-row-add', function (e) {
+            e.preventDefault();
+            var $btn = $(this);
+            var $scope = $btn.closest('.indiv').find('.tbl-ida-list.tbl-check-scope');
+            if (!$scope.length) return;
+            var $tbody = $scope.find('tbody');
+            if (!$tbody.length) return;
+
+            var maxNo = 0;
+            $tbody.find('input.js-check-row').each(function () {
+                var v = parseInt(String($(this).val()), 10);
+                if (!isNaN(v) && v > maxNo) maxNo = v;
+            });
+            var rowNo = maxNo + 1;
+            var uid = 'ida-new-' + rowNo + '-' + Date.now();
+            var idChk = uid + '-chk';
+            var idTitle = uid + '-title';
+            var idEpisode = uid + '-episode';
+
+            var rowHtml =
+                '<tr>' +
+                '<td><div class="check-box-wrap center"><div class="check-box">' +
+                '<input type="checkbox" id="' +
+                idChk +
+                '" class="js-check-row" name="no" value="' +
+                rowNo +
+                '">' +
+                '<label for="' +
+                idChk +
+                '" class="blank"><span class="mark" aria-hidden="true"></span></label>' +
+                '</div></div></td>' +
+                '<td><div class="select-box wd100"><select>' +
+                '<option>select</option>' +
+                '<option value="">Main title</option>' +
+                '<option value="">Other title</option>' +
+                '</select></div></td>' +
+                '<td><div class="input-box wd100">' +
+                '<input type="text" id="' +
+                idTitle +
+                '" class="input" value="" autocomplete="off">' +
+                '</div></td>' +
+                '<td><div class="input-box wd100">' +
+                '<input type="text" id="' +
+                idEpisode +
+                '" class="input" value="" autocomplete="off">' +
+                '</div></td>' +
+                '<td><div class="select-box wd100"><select>' +
+                '<option value="">select</option>' +
+                '</select></div></td>' +
+                '<td><div class="select-box wd100"><select>' +
+                '<option value="">select</option>' +
+                '</select></div></td>' +
+                '</tr>';
+
+            $tbody.append(rowHtml);
+            syncTblCheckScope($scope);
+        });
+
+        /* IDA 선택 행 삭제 (.btn-ida-delete) */
+        $(document).on('click', '.btn-ida-delete', function (e) {
+            e.preventDefault();
+            var $scope = $(this).closest('.indiv').find('.tbl-ida-list.tbl-check-scope');
+            if (!$scope.length) return;
+            var $checked = $scope.find('tbody .js-check-row:checked');
+            if (!$checked.length) {
+                alert('삭제할 행을 선택해 주세요.');
+                return;
+            }
+            $checked.closest('tr').remove();
+            if (typeof syncTblCheckScope === 'function') {
+                syncTblCheckScope($scope);
+            }
+        });
+
+        /* Shooting language 목록 — 추가 (.btn-shooting-language-add) */
+        $(document).on('click', '.btn-shooting-language-add', function (e) {
+            e.preventDefault();
+            var $btn = $(this);
+            var $scope = $btn.closest('.indiv').find('.tbl-shooting-language-list.tbl-check-scope');
+            if (!$scope.length) return;
+            var $tbody = $scope.find('tbody');
+            if (!$tbody.length) return;
+
+            var maxNo = 0;
+            $tbody.find('input.js-check-row').each(function () {
+                var v = parseInt(String($(this).val()), 10);
+                if (!isNaN(v) && v > maxNo) maxNo = v;
+            });
+            var rowNo = maxNo + 1;
+            var uid = 'shooting-language-new-' + rowNo + '-' + Date.now();
+            var idChk = uid + '-chk';
+
+            var rowHtml =
+                '<tr>' +
+                '<td><div class="check-box-wrap center"><div class="check-box">' +
+                '<input type="checkbox" id="' +
+                idChk +
+                '" class="js-check-row" name="shooting-language-no" value="' +
+                rowNo +
+                '">' +
+                '<label for="' +
+                idChk +
+                '" class="blank"><span class="mark" aria-hidden="true"></span></label>' +
+                '</div></div></td>' +
+                '<td><div class="select-box wd100"><select>' +
+                '<option value="">select</option>' +
+                '</select></div></td>' +
+                '<td><div class="select-box wd100"><select>' +
+                '<option value="">select</option>' +
+                '</select></div></td>' +
+                '</tr>';
+
+            $tbody.append(rowHtml);
+            syncTblCheckScope($scope);
+        });
+
+        /* Shooting language 목록 — 선택 행 삭제 (.btn-shooting-language-delete) */
+        $(document).on('click', '.btn-shooting-language-delete', function (e) {
+            e.preventDefault();
+            var $scope = $(this).closest('.indiv').find('.tbl-shooting-language-list.tbl-check-scope');
+            if (!$scope.length) return;
+            var $checked = $scope.find('tbody .js-check-row:checked');
+            if (!$checked.length) {
+                alert('삭제할 행을 선택해 주세요.');
+                return;
+            }
+            $checked.closest('tr').remove();
+            if (typeof syncTblCheckScope === 'function') {
+                syncTblCheckScope($scope);
+            }
+        });
+
+        /* IDA Participants 목록 — 수기 추가 (.btn-ida-participants-row-add) */
+        $(document).on('click', '.btn-ida-participants-row-add', function (e) {
+            e.preventDefault();
+            var $btn = $(this);
+            var $scope = $btn.closest('.indiv').find('.tbl-ida-participants-list.tbl-check-scope');
+            if (!$scope.length) return;
+            var $tbody = $scope.find('tbody');
+            if (!$tbody.length) return;
+
+            var maxNo = 0;
+            $tbody.find('input.js-check-row').each(function () {
+                var v = parseInt(String($(this).val()), 10);
+                if (!isNaN(v) && v > maxNo) maxNo = v;
+            });
+            var rowNo = maxNo + 1;
+            var uid = 'ida-participants-new-' + rowNo + '-' + Date.now();
+            var idChk = uid + '-chk';
+            var radioName = 'ida-owner-radio-' + uid;
+
+            var rowHtml =
+                '<tr>' +
+                '<td><div class="check-box-wrap center"><div class="check-box">' +
+                '<input type="checkbox" id="' +
+                idChk +
+                '" class="js-check-row" name="ida-participants-no" value="' +
+                rowNo +
+                '">' +
+                '<label for="' +
+                idChk +
+                '" class="blank"><span class="mark" aria-hidden="true"></span></label>' +
+                '</div></div></td>' +
+                '<td><div class="input-box wd100">' +
+                '<input type="text" id="" class="input" value="" autocomplete="off">' +
+                '</div></td>' +
+                '<td><div class="input-box wd100">' +
+                '<input type="text" id="" class="input" value="" autocomplete="off">' +
+                '</div></td>' +
+                '<td><div class="input-box wd100">' +
+                '<input type="text" id="" class="input" value="" autocomplete="off">' +
+                '</div></td>' +
+                '<td><div class="input-box wd100">' +
+                '<input type="text" id="" class="input" value="" autocomplete="off">' +
+                '</div></td>' +
+                '<td><div class="radio-box justify-center">' +
+                '<div class="items">' +
+                '<input type="radio" id="' +
+                uid +
+                '-owner-on" name="' +
+                radioName +
+                '" value="ON" checked>' +
+                '<label for="' +
+                uid +
+                '-owner-on">ON</label>' +
+                '</div>' +
+                '<div class="items">' +
+                '<input type="radio" id="' +
+                uid +
+                '-owner-off" name="' +
+                radioName +
+                '" value="OFF">' +
+                '<label for="' +
+                uid +
+                '-owner-off">OFF</label>' +
+                '</div>' +
+                '</div></td>' +
+                '<td><div class="select-box wd100"><select>' +
+                '<option value="">select</option>' +
+                '</select></div></td>' +
+                '<td>0/DGK</td>' +
+                '<td><div class="dflex gap10">' +
+                '<div class="input-box flex1">' +
+                '<input type="text" id="" class="input" value="" autocomplete="off">' +
+                '</div>' +
+                '<span>/ DGK</span>' +
+                '</div></td>' +
+                '</tr>';
+
+            $tbody.append(rowHtml);
+            syncTblCheckScope($scope);
+        });
+
+        /* IDA Participants 목록 — 선택 행 삭제 (.btn-ida-participants-delete) */
+        $(document).on('click', '.btn-ida-participants-delete', function (e) {
+            e.preventDefault();
+            var $scope = $(this).closest('.indiv').find('.tbl-ida-participants-list.tbl-check-scope');
+            if (!$scope.length) return;
+            var $checked = $scope.find('tbody .js-check-row:checked');
+            if (!$checked.length) {
+                alert('삭제할 행을 선택해 주세요.');
+                return;
+            }
+            $checked.closest('tr').remove();
+            if (typeof syncTblCheckScope === 'function') {
+                syncTblCheckScope($scope);
+            }
+        });
+
+        /* IDA References 목록 — 수기 추가 (.btn-ida-references1-row-add) */
+        $(document).on('click', '.btn-ida-references1-row-add', function (e) {
+            e.preventDefault();
+            var $btn = $(this);
+            var $scope = $btn.closest('.indiv').find('.tbl-ida-references1-list.tbl-check-scope');
+            if (!$scope.length) return;
+            var $tbody = $scope.find('tbody');
+            if (!$tbody.length) return;
+
+            var maxNo = 0;
+            $tbody.find('input.js-check-row').each(function () {
+                var v = parseInt(String($(this).val()), 10);
+                if (!isNaN(v) && v > maxNo) maxNo = v;
+            });
+            var rowNo = maxNo + 1;
+            var uid = 'ida-references1-new-' + rowNo + '-' + Date.now();
+            var idChk = uid + '-chk';
+
+            var rowHtml =
+                '<tr>' +
+                '<td><div class="check-box-wrap center"><div class="check-box">' +
+                '<input type="checkbox" id="' +
+                idChk +
+                '" class="js-check-row" name="ida-references1-no" value="' +
+                rowNo +
+                '">' +
+                '<label for="' +
+                idChk +
+                '" class="blank"><span class="mark" aria-hidden="true"></span></label>' +
+                '</div></div></td>' +
+                '<td>DGK</td>' +
+                '<td><div class="input-box wd100">' +
+                '<input type="text" id="" class="input" value="" autocomplete="off">' +
+                '</div></td>' +
+                '</tr>';
+
+            $tbody.append(rowHtml);
+            syncTblCheckScope($scope);
+        });
+
+        /* IDA References 목록 — 선택 행 삭제 (.btn-ida-references1-delete) */
+        $(document).on('click', '.btn-ida-references1-delete', function (e) {
+            e.preventDefault();
+            var $scope = $(this).closest('.indiv').find('.tbl-ida-references1-list.tbl-check-scope');
+            if (!$scope.length) return;
+            var $checked = $scope.find('tbody .js-check-row:checked');
+            if (!$checked.length) {
+                alert('삭제할 행을 선택해 주세요.');
+                return;
+            }
+            $checked.closest('tr').remove();
+            if (typeof syncTblCheckScope === 'function') {
+                syncTblCheckScope($scope);
+            }
+        });
+
+        /* IDA References 목록 — 수기 추가 (.btn-ida-references2-row-add) */
+        $(document).on('click', '.btn-ida-references2-row-add', function (e) {
+            e.preventDefault();
+            var $btn = $(this);
+            var $scope = $btn.closest('.indiv').find('.tbl-ida-references2-list.tbl-check-scope');
+            if (!$scope.length) return;
+            var $tbody = $scope.find('tbody');
+            if (!$tbody.length) return;
+
+            var maxNo = 0;
+            $tbody.find('input.js-check-row').each(function () {
+                var v = parseInt(String($(this).val()), 10);
+                if (!isNaN(v) && v > maxNo) maxNo = v;
+            });
+            var rowNo = maxNo + 1;
+            var uid = 'ida-references2-new-' + rowNo + '-' + Date.now();
+            var idChk = uid + '-chk';
+
+            var rowHtml =
+                '<tr>' +
+                '<td><div class="check-box-wrap center"><div class="check-box">' +
+                '<input type="checkbox" id="' +
+                idChk +
+                '" class="js-check-row" name="ida-references2-no" value="' +
+                rowNo +
+                '">' +
+                '<label for="' +
+                idChk +
+                '" class="blank"><span class="mark" aria-hidden="true"></span></label>' +
+                '</div></div></td>' +
+                '<td><div class="select-box wd100"><select>' +
+                '<option value="">select</option>' +
+                '</select></div></td>' +
+                '<td><div class="input-box wd100">' +
+                '<input type="text" id="" class="input" value="" autocomplete="off">' +
+                '</div></td>' +
+                '</tr>';
+
+            $tbody.append(rowHtml);
+            syncTblCheckScope($scope);
+        });
+
+        /* IDA References 목록 — 선택 행 삭제 (.btn-ida-references2-delete) */
+        $(document).on('click', '.btn-ida-references2-delete', function (e) {
+            e.preventDefault();
+            var $scope = $(this).closest('.indiv').find('.tbl-ida-references2-list.tbl-check-scope');
+            if (!$scope.length) return;
+            var $checked = $scope.find('tbody .js-check-row:checked');
+            if (!$checked.length) {
+                alert('삭제할 행을 선택해 주세요.');
+                return;
+            }
+            $checked.closest('tr').remove();
+            if (typeof syncTblCheckScope === 'function') {
+                syncTblCheckScope($scope);
+            }
+        });
+    </script>
+</body>
+</html>        

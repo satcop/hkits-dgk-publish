@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=yes"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Cache-Control" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <meta name="format-detection" content="telephone=no">
+
+    <title>DGK 영화감독조합 내부데이터 통합관리 시스템</title>
+
+    <!-- font : 프리텐다드 -->
+    <link rel="preload" href="./font/woff2-subset/Pretendard-Regular.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/woff2-subset/Pretendard-Medium.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/woff2-subset/Pretendard-SemiBold.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/woff2-subset/Pretendard-Bold.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/woff2-subset/Pretendard-ExtraBold.subset.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="./font/woff2-subset/Pretendard-Black.subset.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- css : 스타일 -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- js : 자바스크립트 -->
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/common.js"></script>
+</head>
+<body>
+    <div id="wrap">
+
+        <!-- [공통] 사이드바 시작 -->
+        <aside class="sidebar">
+            <div class="inner">
+                <div class="logo">
+                    <div class="logo-switch">
+                        <img class="logo-full" src="./img/logo.svg" alt="DGK 영화감독조합 내부데이터 통합관리 시스템">
+                        <img class="logo-fold" src="./img/logo-fold.svg" alt="" width="44" height="55" aria-hidden="true">
+                    </div>
+                </div>
+                <nav class="nav">
+                    <div class="nav-list">
+                        <h3 class="title">기본 관리</h3>
+                        <ul>
+                            <li class="user"><a href="" title="회원 관리"><i class="icon-user"></i><span>회원 관리</span></a></li>
+                            <li class="work"><a href="" title="작품 관리"><i class="icon-work"></i><span>작품 관리</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-list">
+                        <h3 class="title">정산 관리</h3>
+                        <ul>
+                            <li class="deposit"><a href="" title="입금내역 관리"><i class="icon-deposit"></i><span>입금내역 관리</span></a></li>
+                            <li class="unsettled"><a href="" title="미정산내역"><i class="icon-unsettled"></i><span>미정산내역</span></a></li>
+                            <li class="history"><a href="" title="관리비율 이력"><i class="icon-history"></i><span>관리비율 이력</span></a></li>
+                            <li class="group"><a href="" title="단체 관리"><i class="icon-group"></i><span>단체 관리</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-list">
+                        <h3 class="title">회원 지급</h3>
+                        <ul>
+                            <li class="prepare"><a href="" title="지급 준비"><i class="icon-prepare"></i><span>지급 준비</span></a></li>
+                            <li class="waiting"><a href="" title="지급 대기"><i class="icon-waiting"></i><span>지급 대기</span></a></li>
+                            <li class="payment-history"><a href="" title="지급 이력"><i class="icon-payment-history"></i><span>지급 이력</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-list">
+                        <h3 class="title">통계</h3>
+                        <ul>
+                            <li class="stat-work"><a href="" title="작품별 통계"><i class="icon-stat-work"></i><span>작품별 통계</span></a></li>
+                            <li class="stat-member"><a href="" title="회원별 통계"><i class="icon-stat-member"></i><span>회원별 통계</span></a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="bottom">
+                    <button type="button" class="btn-toggle-sidebar">접기</button>
+                </div>
+            </div>
+        </aside>        
+        <!-- 사이드바 끝 -->
+
+        <div id="container">
+
+            <!-- [공통] 헤더 시작 -->
+            <header id="header">
+                <div class="inner">
+                    <div class="header-start">
+                        <p class="last-login">최근 접속 <time>2026. 04. 14. 14:30:02</time></p>
+                    </div>
+
+                    <div class="header-end">
+                        <div class="header-user">
+                            <p class="user-avatar">홍</p>
+                            <div class="user-info">
+                                <p class="user-name"><span>홍길동</span>님</p>
+                                <p class="user-role">administrator</p>
+                            </div>
+                            <button type="button" class="btn-logout">로그아웃</button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- 헤더 끝 -->
+
+            <!-- 컨텐츠 시작 -->
+            <div id="content">
+                
+                <!-- page head 시작 -->
+                <div class="page-head">
+                    <ul id="location">
+                        <li>홈</li>
+                        <li>기본 관리</li>
+                        <li>회원 관리</li>
+                    </ul>
+                    <h2 class="page-title">회원 관리</h2>                    
+                </div>
+                <!-- page head 끝 -->
+
+                <!-- page body 시작 -->
+                <div class="page-body">
+                    <div class="indiv">
+                        <h3 class="tit">조회</h3>
+                        <form class="search-form">
+                            <div class="tbl-input">
+                                <table>
+                                    <colgroup>
+                                        <col style="width:10%;">
+                                        <col style="width:15%;">
+                                        <col style="width:10%;">
+                                        <col style="width:15%;">
+                                        <col style="width:10%;">
+                                        <col style="width:15%;">
+                                        <col style="width:10%;">
+                                        <col style="width:15%;">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>
+                                                <label class="tit">회원상태</label>
+                                            </th>
+                                            <td>
+                                                <div class="select-box wd100">
+                                                    <select>
+                                                        <option value="">전체</option>
+                                                        <option value="">정상</option>
+                                                        <option value="">탈퇴</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <th>
+                                                <label class="tit">회원구분</label>
+                                            </th>
+                                            <td>
+                                                <div class="select-box wd100">
+                                                    <select>
+                                                        <option value="">전체</option>
+                                                        <option value="">정회원</option>
+                                                        <option value="">준회원</option>
+                                                        <option value="">대리중개</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <th>
+                                                <label class="tit">회원코드</label>
+                                            </th>
+                                            <td>
+                                                <div class="input-box wd100">
+                                                    <input type="text" class="input">
+                                                </div>
+                                            </td>                                            
+                                            <th>
+                                                <label class="tit">회원명</label>
+                                            </th>
+                                            <td>
+                                                <div class="input-box wd100">
+                                                    <input type="text" class="input">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <label class="tit">전화번호</label>
+                                            </th>
+                                            <td>
+                                                <div class="input-box wd100">
+                                                    <input type="text" class="input only-number" maxlength="11" placeholder="전화번호를 입력하세요 (‘-’ 제외)">
+                                                </div>
+                                            </td>
+                                            <th>
+                                                <label class="tit">작품명</label>
+                                            </th>
+                                            <td>
+                                                <div class="input-box wd100">
+                                                    <input type="text" class="input" placeholder="작품명을 입력하세요 (‘,’로 구분)">
+                                                </div>
+                                            </td>
+                                            <th>
+                                                <label class="tit">IPI 연동 상태</label>
+                                            </th>
+                                            <td>
+                                                <div class="select-box wd100">
+                                                    <select>
+                                                        <option value="">전체</option>
+                                                        <option value="">연동</option>
+                                                        <option value="">미연동</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <th>
+                                                <label class="tit">역할</label>
+                                            </th>
+                                            <td>
+                                                <div class="select-box wd100">
+                                                    <select>
+                                                        <option value="">전체</option>
+                                                        <option value="">감독</option>
+                                                        <option value="">연출</option>
+                                                        <option value="">감독,연출</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="btn-wrap mt20">
+                                <button type="reset" class="btn-reset">초기화</button>
+                                <button type="button" class="btn-search">조회</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="indiv">
+                        <h3 class="tit">목록</h3>
+                        <div class="tbl-top">
+                            <div class="left">
+                                <div class="item">
+                                    전체 <span>15</span> 페이지, <span>152</span> 건
+                                </div>
+                                <button type="button" class="btn-download">엑셀 다운로드</button>
+                            </div>
+                            <div class="right">
+                                <div class="select-box">
+                                    <select>
+                                        <option value="5" selected>5개씩 보기</option>
+                                        <option value="10">10개씩 보기</option>
+                                        <option value="20">20개씩 보기</option>
+                                        <option value="50">50개씩 보기</option>
+                                        <option value="100">100개씩 보기</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tbl-list no-wrap">
+                            <table>
+                                <colgroup>
+                                    <col style="width:80px;">
+                                    <col>
+                                    <col>
+                                    <col style="width:200px;">
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>   
+                                    <col>   
+                                    <col>   
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>DKG 번호</th>
+                                        <th>역할</th>
+                                        <th>회원명</th>
+                                        <th>회원상태</th>
+                                        <th>회원구분</th>
+                                        <th>전화번호</th>
+                                        <th>IPI 상태</th>
+                                        <th>승인일</th>
+                                        <th>상태</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!--
+                                        1. 회원상태 : <span class="normal">정상</span>
+                                        2. 회원상태 : <span class="withdraw">탈퇴</span>
+                                        3. 회원구분 : <span class="member">정회원</span>
+                                        4. 회원구분 : <span class="pre-member">준회원</span>
+                                        5. 회원구분 : <span class="non-member">대리중개</span>
+                                        6. 상태 : <span class="active">활성</span>
+                                        7. 상태 : <span class="inactive">비활성</span>                                    
+                                    -->
+                                    <tr class="new">
+                                        <td>5</td>
+                                        <td>DGK2025001</td>
+                                        <td>감독</td>
+                                        <td>
+                                            <div class="link"><a href="javascript:void(0);">홍길동</a></div>
+                                        </td>
+                                        <td><span class="normal">정상</span></td>
+                                        <td><span class="member">정회원</span></td>
+                                        <td>010-1234-5678</td>
+                                        <td>연동</td>
+                                        <td>2026.04.21</td>
+                                        <td><span class="active">활성</span></td>
+                                    </tr>
+                                    <tr class="new">
+                                        <td>4</td>
+                                        <td>DGK2025002</td>
+                                        <td>연출</td>
+                                        <td>
+                                            <div class="link"><a href="javascript:void(0);">고길동</a></div>
+                                        </td>
+                                        <td><span class="normal">정상</span></td>
+                                        <td><span class="pre-member">준회원</span></td>
+                                        <td>010-1234-5678</td>
+                                        <td>미연동</td>
+                                        <td>2026.04.21</td>
+                                        <td><span class="active">활성</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>DGK2025003</td>
+                                        <td>감독,연출</td>
+                                        <td>
+                                            <div class="link"><a href="javascript:void(0);">또치</a></div>
+                                        </td>
+                                        <td><span class="normal">정상</span></td>
+                                        <td><span class="member">정회원</span></td>
+                                        <td>010-1234-5678</td>
+                                        <td>연동</td>
+                                        <td>2026.04.21</td>
+                                        <td><span class="active">활성</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>DGK2025004</td>
+                                        <td>감독</td>
+                                        <td>
+                                            <div class="link"><a href="javascript:void(0);">마이클</a></div>
+                                        </td>
+                                        <td><span class="withdraw">탈퇴</span></td>
+                                        <td><span class="non-member">대리중개</span></td>
+                                        <td>010-1234-5678</td>
+                                        <td>미연동</td>
+                                        <td>2026.04.20</td>
+                                        <td><span class="inactive">비활성</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>DGK2025005</td>
+                                        <td>감독,연출</td>
+                                        <td>
+                                            <div class="link"><a href="javascript:void(0);">고은애</a></div>
+                                        </td>
+                                        <td><span class="withdraw">탈퇴</span></td>
+                                        <td><span class="non-member">대리중개</span></td>
+                                        <td>010-1234-5678</td>
+                                        <td>연동</td>
+                                        <td>2026.04.21</td>
+                                        <td><span class="inactive">비활성</span></td>
+                                    </tr>
+
+                                    <!-- no data 시작 -->
+                                    <!-- <tr>
+                                        <td colspan="10" class="no-data">
+                                            <p>데이터가 없습니다.</p>
+                                        </td>
+                                    </tr> -->
+                                    <!-- no data 끝 -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- paging 시작 -->
+                        <nav class="paging">
+                            <button type="button" class="paging__btn paging__btn--soft">처음</button>
+                            <button type="button" class="paging__btn paging__btn--soft">이전</button>
+                            <div class="paging__nums">
+                                <a href="javascript:void(0);" class="paging__num is-active">1</a>
+                                <a href="javascript:void(0);" class="paging__num">2</a>
+                                <a href="javascript:void(0);" class="paging__num">3</a>
+                                <a href="javascript:void(0);" class="paging__num">4</a>
+                                <a href="javascript:void(0);" class="paging__num">5</a>
+                            </div>
+                            <button type="button" class="paging__btn">다음</button>
+                            <button type="button" class="paging__btn">맨끝</button>
+                        </nav>
+                        <!-- paging 끝 -->
+                    </div>
+                </div>                
+                <!-- page body 끝 -->
+
+            </div>
+            <!-- 컨텐츠 끝 -->
+
+        </div>
+        
+    </div>
+
+    <script>
+        /* 사이드바 네비 현재 메뉴 활성 */
+        $(document).ready(function () {
+            setSidebarNavActive('user'); // 회원 관리
+        });
+    </script>
+</body>
+</html>        

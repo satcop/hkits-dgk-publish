@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=yes"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Cache-Control" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <meta name="format-detection" content="telephone=no">
+
+    <title>DGK 영화감독조합 내부데이터 통합관리 시스템</title>
+
+    <!-- font : 프리텐다드 -->
+    <link rel="preload" href="./font/woff2-subset/Pretendard-Regular.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/woff2-subset/Pretendard-Medium.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/woff2-subset/Pretendard-SemiBold.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/woff2-subset/Pretendard-Bold.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/woff2-subset/Pretendard-ExtraBold.subset.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="./font/woff2-subset/Pretendard-Black.subset.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- css : 스타일 -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- js : 자바스크립트 -->
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/common.js"></script>
+</head>
+<body>
+    <div id="wrap">
+
+        <!-- [공통] 사이드바 시작 -->
+        <aside class="sidebar">
+            <div class="inner">
+                <div class="logo">
+                    <div class="logo-switch">
+                        <img class="logo-full" src="./img/logo.svg" alt="DGK 영화감독조합 내부데이터 통합관리 시스템">
+                        <img class="logo-fold" src="./img/logo-fold.svg" alt="" width="44" height="55" aria-hidden="true">
+                    </div>
+                </div>
+                <nav class="nav">
+                    <div class="nav-list">
+                        <h3 class="title">기본 관리</h3>
+                        <ul>
+                            <li class="user"><a href="" title="회원 관리"><i class="icon-user"></i><span>회원 관리</span></a></li>
+                            <li class="work"><a href="" title="작품 관리"><i class="icon-work"></i><span>작품 관리</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-list">
+                        <h3 class="title">정산 관리</h3>
+                        <ul>
+                            <li class="deposit"><a href="" title="입금내역 관리"><i class="icon-deposit"></i><span>입금내역 관리</span></a></li>
+                            <li class="unsettled"><a href="" title="미정산내역"><i class="icon-unsettled"></i><span>미정산내역</span></a></li>
+                            <li class="history"><a href="" title="관리비율 이력"><i class="icon-history"></i><span>관리비율 이력</span></a></li>
+                            <li class="group"><a href="" title="단체 관리"><i class="icon-group"></i><span>단체 관리</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-list">
+                        <h3 class="title">회원 지급</h3>
+                        <ul>
+                            <li class="prepare"><a href="" title="지급 준비"><i class="icon-prepare"></i><span>지급 준비</span></a></li>
+                            <li class="waiting"><a href="" title="지급 대기"><i class="icon-waiting"></i><span>지급 대기</span></a></li>
+                            <li class="payment-history"><a href="" title="지급 이력"><i class="icon-payment-history"></i><span>지급 이력</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-list">
+                        <h3 class="title">통계</h3>
+                        <ul>
+                            <li class="stat-work"><a href="" title="작품별 통계"><i class="icon-stat-work"></i><span>작품별 통계</span></a></li>
+                            <li class="stat-member"><a href="" title="회원별 통계"><i class="icon-stat-member"></i><span>회원별 통계</span></a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="bottom">
+                    <button type="button" class="btn-toggle-sidebar">접기</button>
+                </div>
+            </div>
+        </aside>        
+        <!-- 사이드바 끝 -->
+
+        <div id="container">
+
+            <!-- [공통] 헤더 시작 -->
+            <header id="header">
+                <div class="inner">
+                    <div class="header-start">
+                        <p class="last-login">최근 접속 <time>2026. 04. 14. 14:30:02</time></p>
+                    </div>
+
+                    <div class="header-end">
+                        <div class="header-user">
+                            <p class="user-avatar">홍</p>
+                            <div class="user-info">
+                                <p class="user-name"><span>홍길동</span>님</p>
+                                <p class="user-role">administrator</p>
+                            </div>
+                            <button type="button" class="btn-logout">로그아웃</button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- 헤더 끝 -->
+
+            <!-- 컨텐츠 시작 -->
+            <div id="content">
+                
+                <!-- page head 시작 -->
+                <div class="page-head">
+                    <ul id="location">
+                        <li>홈</li>
+                        <li>회원 지급</li>
+                        <li>지급 준비</li>
+                        <li>상세</li>
+                    </ul>
+                    <h2 class="page-title">상세</h2>                    
+                </div>
+                <!-- page head 끝 -->
+
+                <!-- page body 시작 -->
+                <form class="deposit-detail-form">
+                    <div class="page-body">
+                        <div class="page-buttons">
+                            <button type="reset" class="btn-reset">초기화</button>
+                            <span class="divider">|</span>
+                            <button type="button" class="btn-list">목록</button>
+                            <button type="button" class="btn-save">저장</button>
+                        </div>
+
+                        <div class="indiv tab-menu">
+                            <ul role="tablist" aria-label="지급 준비 상세 구분">
+                                <li class="active" role="presentation"><button type="button" role="tab" aria-selected="true" aria-controls="tab-panel-1" id="tab-1">기본정보</button></li>
+                                <li role="presentation"><button type="button" role="tab" aria-selected="false" aria-controls="tab-panel-2" id="tab-2">정산 및 공제</button></li>
+                                <li role="presentation"><button type="button" role="tab" aria-selected="false" aria-controls="tab-panel-3" id="tab-3">지급이력</button></li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <!-- 기본정보 시작 -->
+                            <div class="tab-content-item active" id="tab-panel-1" role="tabpanel" aria-labelledby="tab-1">
+                                <div class="indiv">
+                                    <h3 class="tit">기본정보</h3>
+                                    <div class="tbl-input">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:12%">
+                                                <col style="width:21.33%">
+                                                <col style="width:12%">
+                                                <col style="width:21.33%">
+                                                <col style="width:12%">
+                                                <col style="width:21.33%">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th><label class="tit">DGK 회원 코드</label></th>
+                                                    <td>
+                                                        <p>DGK00001</p>
+                                                    </td>
+                                                    <th><label class="tit">회원명</label></th>
+                                                    <td>
+                                                        <p>홍길동</p>
+                                                    </td>
+                                                    <th><label class="tit">IPI</label></th>
+                                                    <td>
+                                                        <p>1234</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th><label class="tit">조회기간</th>
+                                                    <td>
+                                                        <div class="date-range">
+                                                            <div class="input-box">
+                                                                <input type="date" class="input calendar" placeholder="시작일" value="2026-04-24">
+                                                            </div>
+                                                            <span class="divider">~</span>
+                                                            <div class="input-box">
+                                                                <input type="date" class="input calendar" placeholder="종료일" value="2026-04-24">
+                                                            </div>
+                                                            <button type="button" class="btn-search">조회</button>
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit">총 정산액</label></th>
+                                                    <td>
+                                                        <p>1,000,000</p>
+                                                    </td>
+                                                    <th><label class="tit">총 미정산액</label></th>
+                                                    <td>
+                                                        <p>50,000</p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="indiv">
+                                    <h3 class="tit">입금정보 <em class="req">*</em></h3>
+                                    <div class="tbl-input">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:12%">
+                                                <col style="width:21.33%">
+                                                <col style="width:12%">
+                                                <col style="width:21.33%">
+                                                <col style="width:12%">
+                                                <col style="width:21.33%">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th><span class="tit">통화</span></th>
+                                                    <td>
+                                                        <div class="select-box">
+                                                            <select>
+                                                                <option value="">전체</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit">원통화 총액</label></th>
+                                                    <td>
+                                                        <div class="input-box wd100">
+                                                            <input type="text" class="input only-number" value="0" inputmode="numeric" autocomplete="off">
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit">원화환산액</label></th>
+                                                    <td>
+                                                        <div class="input-box wd100">
+                                                            <input type="text" class="input only-number" value="0" inputmode="numeric" autocomplete="off">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th><span class="tit">1차 환율</span></th>
+                                                    <td>
+                                                        <div class="input-box wd100">
+                                                            <input type="text" class="input only-number" value="0" inputmode="numeric" autocomplete="off">
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit">1차 환율 기준일</label></th>
+                                                    <td>
+                                                        <div class="input-box">
+                                                            <input type="date" class="input calendar" value="2026-04-24">
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit">입금일</label></th>
+                                                    <td>
+                                                        <div class="input-box">
+                                                            <input type="date" class="input calendar" value="2026-04-24">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th><span class="tit">2차 환율</span></th>
+                                                    <td>
+                                                        <div class="input-box wd100">
+                                                            <input type="text" class="input only-number" value="0" inputmode="numeric" autocomplete="off">
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit">2차 환율 기준일</label></th>
+                                                    <td>
+                                                        <div class="input-box">
+                                                            <input type="date" class="input calendar" value="2026-04-24">
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit">은행확인일</label></th>
+                                                    <td>
+                                                        <div class="input-box">
+                                                            <input type="date" class="input calendar" value="2026-04-24">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="indiv">
+                                    <div class="tit-wrap">
+                                        <h3 class="tit">CDF 버전 이력</h3>
+                                        <div class="in-btn-wrap">
+                                            <button type="button" class="btn-cdf-version-delete btn-gray">삭제</button>
+                                            <button type="button" class="btn-cdf-version-add btn-primary">CDF 버전 추가</button>
+                                        </div>
+                                    </div>
+                                    <div class="tbl-list tbl-cdf-version-list tbl-check-scope body-scroll">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:8rem">
+                                                <col style="width:10rem">
+                                                <col style="width:10rem">
+                                                <col>
+                                                <col style="width:15rem">
+                                                <col style="width:20rem">
+                                                <col style="width:15rem">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col" class="th-cdf-version-check-all">
+                                                        <div class="check-box-wrap center">
+                                                            <div class="check-box">
+                                                                <input type="checkbox" id="cdf-version-check-all" class="js-check-all" value="1">
+                                                                <label for="cdf-version-check-all" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                            </div>
+                                                        </div>
+                                                    </th>
+                                                    <th scope="col">CDF 반영</th>
+                                                    <th scope="col">No</th>
+                                                    <th scope="col">파일명</th>
+                                                    <th scope="col">등록자</th>
+                                                    <th scope="col">등록일시</th>
+                                                    <th scope="col">상태</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="check-box-wrap center">
+                                                            <div class="check-box">
+                                                                <input type="checkbox" id="cdf-version-sel-1" class="js-check-row" name="no" value="1">
+                                                                <label for="cdf-version-sel-1" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="check-box-wrap center">
+                                                            <div class="check-box">
+                                                                <input type="checkbox" id="cdf-version-apply-1" name="cdf-version-apply" value="반영">
+                                                                <label for="cdf-version-apply-1" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>4</td>
+                                                    <td>
+                                                        <div class="list-file-box">
+                                                            <a href="#" class="file-link">CDF_001.xls</a>
+                                                            <span class="file-meta">(120KB)</span>
+                                                            <button type="button" class="btn-file-remove" aria-label="첨부 파일 삭제"><span class="ico-del" aria-hidden="true"></span></button>
+                                                        </div>
+                                                    </td>
+                                                    <td>홍길동</td>
+                                                    <td>2026.04.24</td>
+                                                    <td>이력</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="check-box-wrap center">
+                                                            <div class="check-box">
+                                                                <input type="checkbox" id="cdf-version-sel-2" class="js-check-row" name="no" value="1">
+                                                                <label for="cdf-version-sel-2" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="check-box-wrap center">
+                                                            <div class="check-box">
+                                                                <input type="checkbox" id="cdf-version-apply-2" name="cdf-version-apply" value="반영">
+                                                                <label for="cdf-version-apply-2" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>
+                                                        <div class="list-file-box">
+                                                            <a href="#" class="file-link">CDF_002.xls</a>
+                                                            <span class="file-meta">(120KB)</span>
+                                                            <button type="button" class="btn-file-remove" aria-label="첨부 파일 삭제"><span class="ico-del" aria-hidden="true"></span></button>
+                                                        </div>
+                                                    </td>
+                                                    <td>홍길동</td>
+                                                    <td>2026.04.24</td>
+                                                    <td>이력</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="check-box-wrap center">
+                                                            <div class="check-box">
+                                                                <input type="checkbox" id="cdf-version-sel-3" class="js-check-row" name="no" value="1">
+                                                                <label for="cdf-version-sel-3" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="check-box-wrap center">
+                                                            <div class="check-box">
+                                                                <input type="checkbox" id="cdf-version-apply-3" name="cdf-version-apply" value="반영">
+                                                                <label for="cdf-version-apply-3" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>2</td>
+                                                    <td>
+                                                        <div class="list-file-box">
+                                                            <a href="#" class="file-link">CDF_003.xls</a>
+                                                            <span class="file-meta">(120KB)</span>
+                                                            <button type="button" class="btn-file-remove" aria-label="첨부 파일 삭제"><span class="ico-del" aria-hidden="true"></span></button>
+                                                        </div>
+                                                    </td>
+                                                    <td>홍길동</td>
+                                                    <td>2026.04.24</td>
+                                                    <td>이력</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="check-box-wrap center">
+                                                            <div class="check-box">
+                                                                <input type="checkbox" id="cdf-version-sel-4" class="js-check-row" name="no" value="1">
+                                                                <label for="cdf-version-sel-4" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="check-box-wrap center">
+                                                            <div class="check-box">
+                                                                <input type="checkbox" id="cdf-version-apply-4" name="cdf-version-apply" value="반영">
+                                                                <label for="cdf-version-apply-4" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>1</td>
+                                                    <td>
+                                                        <div class="list-file-box">
+                                                            <button type="button" class="btn-find-file">파일찾기</button>
+                                                        </div>
+                                                    </td>
+                                                    <td>홍길동</td>
+                                                    <td>2026.04.24</td>
+                                                    <td>이력</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 기본정보 끝 -->
+                            <!-- CDF 시작 -->
+                            <div class="tab-content-item" id="tab-panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+                                <div class="indiv">
+                                    <h3 class="tit">검증 요약</h3>
+                                    <div class="verify">
+                                        <ul>
+                                            <li class="auto-match">
+                                                <span class="name">자동매칭</span>
+                                                <span class="count">112 / 124</span>
+                                            </li>
+                                            <li class="text-match">
+                                                <span class="name">텍스트 매칭</span>
+                                                <span class="count">8 / 12</span>
+                                            </li>
+                                            <li class="total-unmatch">
+                                                <span class="name">전체 미매칭</span>
+                                                <span class="count">4 <span>건</span></span>
+                                            </li>
+                                            <li class="guest">
+                                                <span class="name">비회원</span>
+                                                <span class="count">2 <span>건</span></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="indiv">
+                                    <h3 class="tit">CDF 검수</h3>
+
+                                    <div class="tbl-input">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:12%">
+                                                <col style="width:21.33%">
+                                                <col style="width:12%">
+                                                <col style="width:21.33%">
+                                                <col style="width:12%">
+                                                <col style="width:21.33%">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th><label class="tit">IDA 매칭결과</label></th>
+                                                    <td>
+                                                        <div class="radio-box">
+                                                            <div class="items">
+                                                                <input type="radio" name="ida-matching-result" id="ida-matching-result-all" value="all" checked>
+                                                                <label for="ida-matching-result-all">전체</label>
+                                                            </div>
+                                                            <div class="items">
+                                                                <input type="radio" name="ida-matching-result" id="ida-matching-result-none" value="none">
+                                                                <label for="ida-matching-result-none">미매칭 보기</label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit">IPI 매칭결과</label></th>
+                                                    <td>
+                                                        <div class="radio-box">
+                                                            <div class="items">
+                                                                <input type="radio" name="ipi-matching-result" id="ipi-matching-result-all" value="all" checked>
+                                                                <label for="ipi-matching-result-all">전체</label>
+                                                            </div>
+                                                            <div class="items">
+                                                                <input type="radio" name="ipi-matching-result" id="ipi-matching-result-none" value="none">
+                                                                <label for="ipi-matching-result-none">미매칭 보기</label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit">매칭상태</label></th>
+                                                    <td>
+                                                        <div class="radio-box">
+                                                            <div class="items">
+                                                                <input type="radio" name="matching-status" id="matching-status-all" value="all" checked>
+                                                                <label for="matching-status-all">전체</label>
+                                                            </div>
+                                                            <div class="items">
+                                                                <input type="radio" name="matching-status" id="matching-status-matching" value="matching">
+                                                                <label for="matching-status-matching">매칭</label>
+                                                            </div>
+                                                            <div class="items">
+                                                                <input type="radio" name="matching-status" id="matching-status-none" value="none">
+                                                                <label for="matching-status-none">미매칭</label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th><label class="tit">작품명/에피소드</th>
+                                                    <td>
+                                                        <div class="input-box">
+                                                            <input type="text" class="input" value="">
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit">수신 Name</label></th>
+                                                    <td>
+                                                        <div class="input-box">
+                                                            <input type="text" class="input" value="">
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit">처리상태</label></th>
+                                                    <td>
+                                                        <div class="select-box">
+                                                            <select>
+                                                                <option value="">전체</option>
+                                                                <option value="">확정</option>
+                                                                <option value="">검수</option>
+                                                                <option value="">보류</option>
+                                                                <option value="">제외</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="btn-wrap mt20">
+                                        <button type="reset" class="btn-reset">초기화</button>
+                                        <button type="button" class="btn-search">조회</button>
+                                    </div>
+
+                                    <div class="tbl-top mt30">
+                                        <div class="left">
+                                            <div class="item">
+                                                총 <span>4</span> 건
+                                            </div>
+                                        </div>
+                                        <div class="right">
+                                            <div class="radio-box">
+                                                <div class="items">
+                                                    <input type="radio" name="cdf-ratio" id="cdf-ratio-include" value="include" checked>
+                                                    <label for="cdf-ratio-include">지분율 포함</label>
+                                                </div>
+                                                <div class="items">
+                                                    <input type="radio" name="cdf-ratio" id="cdf-ratio-exclude" value="exclude">
+                                                    <label for="cdf-ratio-exclude">지분율 미포함</label>
+                                                </div>
+                                            </div>
+                                            <span class="divider" style="margin:0 0.8rem;">|</span>
+                                            <button type="button" class="btn-revalidate btn-secondary">재검증</button>
+                                            <button type="button" class="btn-calculate btn-primary">정산 진행</button>
+                                        </div>
+                                    </div>
+                                    <div class="tbl-list no-wrap body-scroll">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:80px">
+                                                <col span="15">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">No</th>
+                                                    <th scope="col">IDA 코드</th>
+                                                    <th scope="col">작품명/에피소드 (Title)</th>
+                                                    <th scope="col">DGK 작품코드</th>
+                                                    <th scope="col">IPI 코드</th>
+                                                    <th scope="col">IPI Name</th>
+                                                    <th scope="col">수신 Name</th>
+                                                    <th scope="col">DGK 회원 코드</th>
+                                                    <th scope="col">역할</th>
+                                                    <th scope="col">지분</th>
+                                                    <th scope="col">Gross Amount</th>
+                                                    <th scope="col">Tax Withholding (10%)</th>
+                                                    <th scope="col">Net Amount</th>
+                                                    <th scope="col">USD</th>
+                                                    <th scope="col">KRW</th>
+                                                    <th scope="col">매칭상태</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="col-no">4</td>
+                                                    <td>IDA2024-SE01</td>
+                                                    <td class="left">Stranger in Seoul (Ep.1) / 이방인의 밤 1화</td>
+                                                    <td>DGK-MV-1001</td>
+                                                    <td>008.123.456.78</td>
+                                                    <td>Kim Min Soo</td>
+                                                    <td>MINSOO KIM</td>
+                                                    <td>DGK-M-8821</td>
+                                                    <td>감독</td>
+                                                    <td>12.50%</td>
+                                                    <td>1,250,000</td>
+                                                    <td>125,000</td>
+                                                    <td>1,125,000</td>
+                                                    <td>850.00</td>
+                                                    <td>1,125,000</td>
+                                                    <td>매칭</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="col-no">3</td>
+                                                    <td>IDA2023-AU</td>
+                                                    <td class="left">Autumn Breeze (OST Part.2) / 가을 바람 OST 2</td>
+                                                    <td>DGK-MV-0992</td>
+                                                    <td>001.789.112.00</td>
+                                                    <td>Park Ji Young</td>
+                                                    <td>JIYOUNG PARK</td>
+                                                    <td>DGK-M-7650</td>
+                                                    <td>음악</td>
+                                                    <td>8.00%</td>
+                                                    <td>890,000</td>
+                                                    <td>89,000</td>
+                                                    <td>801,000</td>
+                                                    <td>600.00</td>
+                                                    <td>801,000</td>
+                                                    <td>매칭</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="col-no">2</td>
+                                                    <td>IDA2022-CL</td>
+                                                    <td class="left">City Lights (Remix Ver.) / 도시의 불빛 리믹스</td>
+                                                    <td>DGK-MV-0880</td>
+                                                    <td>002.456.001.22</td>
+                                                    <td>Lee Han</td>
+                                                    <td>HAN LEE</td>
+                                                    <td>DGK-M-3201</td>
+                                                    <td>연출</td>
+                                                    <td>5.00%</td>
+                                                    <td>640,000</td>
+                                                    <td>64,000</td>
+                                                    <td>576,000</td>
+                                                    <td>420.00</td>
+                                                    <td>576,000</td>
+                                                    <td>매칭</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="col-no">1</td>
+                                                    <td></td>
+                                                    <td class="left">The Silent Wave (Main) / 조용한 파도 (메인)</td>
+                                                    <td><button type="button" class="btn-dgk-work-code-search">검색</button></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td><button type="button" class="btn-dgk-member-code-search" onclick="modalOpen('memberSearchPopup');">검색</button></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>미매칭</td>
+                                                </tr>
+
+                                                <!-- no-data 시작 -->
+                                                <!-- <tr>
+                                                    <td colspan="16" class="no-data">데이터가 없습니다.</td>
+                                                </tr> -->
+                                                <!-- no-data 종료 -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- CDF 끝 -->
+                            <!-- 금액 산출 시작 -->
+                            <div class="tab-content-item" id="tab-panel-3" role="tabpanel" aria-labelledby="tab-3" hidden>
+                                <div class="indiv">
+                                    <div class="tit-wrap">
+                                        <h3 class="tit">정산 설정</h3>
+                                        <div class="in-btn-wrap">
+                                            <button type="button" class="btn-primary btn-add-other-fee">기타수수료 추가</button>
+                                        </div>
+                                    </div>
+                                    <div class="tbl-input">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:12%">
+                                                <col style="width:21.33%">
+                                                <col style="width:12%">
+                                                <col style="width:21.33%">
+                                                <col style="width:12%">
+                                                <col style="width:21.33%">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th><label class="tit">DGK 수수료(정회원)</label></th>
+                                                    <td>
+                                                        <div class="dflex gap10 acenter">
+                                                            <div class="input-box">
+                                                                <input type="text" class="input" value="">
+                                                            </div>
+                                                            <span>%</span>
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit">복지기금</label></th>
+                                                    <td>
+                                                        <div class="dflex gap10 acenter">
+                                                            <div class="input-box">
+                                                                <input type="text" class="input" value="">
+                                                            </div>
+                                                            <span>%</span>
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit">원천세(사업/지방)</label></th>
+                                                    <td>
+                                                        <div class="dflex gap10 acenter">
+                                                            <div class="input-box">
+                                                                <input type="text" class="input" value="">
+                                                            </div>
+                                                            <span>%</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- 기타수수료 (행 복제 — .other-fee-row) -->
+                                                <tr class="other-fee-row">
+                                                    <th>
+                                                        <div class="input-box">
+                                                            <input type="text" class="input white" value="" placeholder="기타 수수료 항목명">
+                                                        </div>
+                                                    </th>
+                                                    <td colspan="5">
+                                                        <div class="dflex gap10 acenter">
+                                                            <div class="input-box">
+                                                                <input type="text" class="input" value="" placeholder="비율">
+                                                            </div>
+                                                            <span>%</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="btn-wrap mt20">
+                                        <button type="button" class="btn-secondary btn-recalculate">재계산</button>
+                                        <button type="button" class="btn-primary btn-calculate">금액산출</button>
+                                    </div>
+
+                                    <div class="tbl-top mt30">
+                                        <div class="left">
+                                            <div class="item">
+                                                총 <span>3</span> 건
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tbl-list body-scroll no-wrap">
+                                        <table>
+                                            <colgroup>
+                                                <col class="col-no" style="width:80px">
+                                                <col span="18">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col" class="col-no">No</th>
+                                                    <th scope="col">Last_Name</th>
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">IPI_Name</th>
+                                                    <th scope="col">권리자</th>
+                                                    <th scope="col">회원구분</th>
+                                                    <th scope="col">IDA</th>
+                                                    <th scope="col">Title</th>
+                                                    <th scope="col">한글</th>
+                                                    <th scope="col">Net_Amount</th>
+                                                    <th scope="col">NET_USD</th>
+                                                    <th scope="col">분배금액(A)</th>
+                                                    <th scope="col">DGK수수료(B)</th>
+                                                    <th scope="col">복지기금(C)</th>
+                                                    <th scope="col">개인별 정산액(D=A-B-C)</th>
+                                                    <th scope="col">개인소득세(E)</th>
+                                                    <th scope="col">개인주민세(F)</th>
+                                                    <th scope="col">최종 개인지급액(D-E-F)</th>
+                                                    <th scope="col">상태</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="col-no">3</td>
+                                                    <td>Kim</td>
+                                                    <td>Minsoo</td>
+                                                    <td>IPI-00789654321</td>
+                                                    <td>김민수</td>
+                                                    <td>정회원</td>
+                                                    <td>IDA202401</td>
+                                                    <td>Stranger in Seoul (Main Theme)</td>
+                                                    <td>이방인의 밤 (메인)</td>
+                                                    <td>1,250,000</td>
+                                                    <td>850.00</td>
+                                                    <td>1,200,000</td>
+                                                    <td>60,000</td>
+                                                    <td>20,000</td>
+                                                    <td>1,120,000</td>
+                                                    <td>84,000</td>
+                                                    <td>8,400</td>
+                                                    <td>1,027,600</td>
+                                                    <td>
+                                                        <div class="select-box w150">
+                                                            <select>
+                                                                <option value="">전체</option>
+                                                                <option value="">확정</option>
+                                                                <option value="" selected>검수중</option>
+                                                                <option value="">보류</option>
+                                                                <option value="">제외</option>
+                                                                <option value="">세금제외</option>
+                                                                <option value="">정산완료</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="col-no">2</td>
+                                                    <td>Kim</td>
+                                                    <td>Minsoo</td>
+                                                    <td>IPI-00789654321</td>
+                                                    <td>김민수</td>
+                                                    <td>정회원</td>
+                                                    <td>IDA202310</td>
+                                                    <td>Autumn Breeze (OST Part.2)</td>
+                                                    <td>가을 바람 (OST 2)</td>
+                                                    <td>890,000</td>
+                                                    <td>600.00</td>
+                                                    <td>850,000</td>
+                                                    <td>42,500</td>
+                                                    <td>10,000</td>
+                                                    <td>797,500</td>
+                                                    <td>59,800</td>
+                                                    <td>5,980</td>
+                                                    <td>731,720</td>
+                                                    <td>
+                                                        <div class="select-box w150">
+                                                            <select>
+                                                                <option value="">전체</option>
+                                                                <option value="" selected>확정</option>
+                                                                <option value="">검수중</option>
+                                                                <option value="">보류</option>
+                                                                <option value="">제외</option>
+                                                                <option value="">세금제외</option>
+                                                                <option value="">정산완료</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="col-no">1</td>
+                                                    <td>Kim</td>
+                                                    <td>Minsoo</td>
+                                                    <td>IPI-00789654321</td>
+                                                    <td>김민수</td>
+                                                    <td>정회원</td>
+                                                    <td>IDA202205</td>
+                                                    <td>City Lights (Remix Ver.)</td>
+                                                    <td>도시의 불빛 (리믹스)</td>
+                                                    <td>640,000</td>
+                                                    <td>420.00</td>
+                                                    <td>600,000</td>
+                                                    <td>30,000</td>
+                                                    <td>5,000</td>
+                                                    <td>565,000</td>
+                                                    <td>42,300</td>
+                                                    <td>4,230</td>
+                                                    <td>518,470</td>
+                                                    <td>
+                                                        <div class="select-box w150">
+                                                            <select>
+                                                                <option value="">전체</option>
+                                                                <option value="">확정</option>
+                                                                <option value="">검수중</option>
+                                                                <option value="">보류</option>
+                                                                <option value="">제외</option>
+                                                                <option value="">세금제외</option>
+                                                                <option value="" selected>정산완료</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <!-- no-data 시작 -->
+                                                <!-- <tr>
+                                                    <td colspan="19" class="no-data">데이터가 없습니다.</td>
+                                                </tr> -->
+                                                <!-- no-data 종료 -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="indiv">
+                                    <div class="tit-wrap">
+                                        <h3 class="tit">합계</h3>
+                                        <div class="in-btn-wrap">
+                                            <button type="button" class="btn-primary btn-confirm-calculate">정산 확정</button>
+                                        </div>
+                                    </div>
+                                    <div class="tbl-input">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:10%">
+                                                <col style="width:10%">
+                                                <col style="width:10%">
+                                                <col style="width:10%">
+                                                <col style="width:10%">
+                                                <col style="width:10%">
+                                                <col style="width:10%">
+                                                <col style="width:10%">
+                                                <col style="width:10%">
+                                                <col style="width:10%">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th><label class="tit">Net_Amount</label></th>
+                                                    <td>5,120.80 EUR</td>
+                                                    <th><label class="tit">NET_USD</label></th>
+                                                    <td>7,420,500 KRW</td>
+                                                    <th><label class="tit">분배금액</label></th>
+                                                    <td>4,951,181 KRW</td>
+                                                    <th><label class="tit">실제입금액(A)</label></th>
+                                                    <td>
+                                                        <div class="input-box">
+                                                            <input type="text" class="input" value="">
+                                                        </div>
+                                                    </td>
+                                                    <th><label class="tit">송금수수료(B)</label></th>
+                                                    <td>
+                                                        <div class="input-box">
+                                                            <input type="text" class="input" value="">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th><label class="tit">DGK 수수료 총액(B 차감)</label></th>
+                                                    <td>4,951,181 KRW</td>
+                                                    <th><label class="tit">복지기금 총액</label></th>
+                                                    <td>4,951,181 KRW</td>
+                                                    <th><label class="tit">개인소득세 총액</label></th>
+                                                    <td>4,951,181 KRW</td>
+                                                    <th><label class="tit">개인주민세 총액</label></th>
+                                                    <td>4,951,181 KRW</td>
+                                                    <th><label class="tit">최종 개인지금 총액</label></th>
+                                                    <td>4,951,181 KRW</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 금액 산출 끝 -->
+                        </div>
+                    </div>
+                </form>              
+                <!-- page body 끝 -->
+
+            </div>
+            <!-- 컨텐츠 끝 -->
+
+        </div>
+        
+    </div>
+
+
+    <script>
+        /* 사이드바 네비 현재 메뉴 활성 */
+        $(document).ready(function () {
+            setSidebarNavActive('prepare'); // 지급 준비
+        });
+
+        /* 지급 준비 상세 탭 */
+        $(document).on('click', '.tab-menu button[type="button"]', function () {
+            var $btn = $(this);
+            var $li = $btn.closest('li');
+            var idx = $li.index();
+
+            $li.addClass('active').siblings().removeClass('active');
+            $('.tab-menu button[role="tab"]').attr('aria-selected', 'false');
+            $btn.attr('aria-selected', 'true');
+
+            var $panels = $('.tab-content .tab-content-item');
+            $panels.removeClass('active').attr('hidden', true);
+            $panels.eq(idx).addClass('active').removeAttr('hidden');
+        });
+    </script>
+</body>
+</html>        
