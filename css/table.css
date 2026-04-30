@@ -32,7 +32,15 @@
 }
 .tbl-input .input-box .input,
 .tbl-input .select-box select {
-    background:#F7F7F7;
+    background:#fff;
+}
+/* 가로 스크롤로 셀이 줄어들 때 select가 option 라벨보다 좁아지지 않게 */
+.tbl-input .select-box select,
+.tbl-list td .select-box select {
+    min-width: max-content;
+}
+.tbl-list td .select-box select {
+    color:#757575;
 }
 .tbl-input .input-box .input.white {
     background:#fff;
@@ -122,7 +130,7 @@
     gap:0.8rem;
 }
 .tbl-top .right .select-box select {
-    background:#F7F7F7;
+    background:#fff;
 }
 
 .tbl-top .divider {
@@ -150,6 +158,7 @@
 .tbl-list th { font-size:1.4rem; color:#2F313D; background:#F6F5F3; font-weight:500; white-space:nowrap; } 
 .tbl-list td { font-size:1.4rem; color:#757575; font-weight:500; } 
 .tbl-list td.left { text-align:left;} 
+.tbl-list td.right { text-align:right;} 
 
 .tbl-list td span.normal {display:inline-block; height:26px; line-height:25px; border-radius:100vh; padding:0 0.8rem; background:#EBF7F1; border:solid 1px #C4DED0; color:#2A7A4B; font-size:12px; font-weight:bold; } /* 회원상태 : 정상 */
 .tbl-list td span.withdraw {display:inline-block; height:26px; line-height:25px; border-radius:100vh; padding:0 0.8rem; background:#FAEEEE; border:solid 1px #FAC8C8; color:#D22A2A; font-size:12px; font-weight:bold; } /* 회원상태 : 탈퇴 */
@@ -191,7 +200,7 @@
 
 .tbl-list td .select-box select,
 .tbl-list td .input-box .input {
-    background:#F7F7F7;
+    background:#fff;
 }
 .tbl-list td .input-box .input.white {
     background:#fff;
@@ -226,11 +235,27 @@
     background: #F6F5F3;
     box-shadow: 0 1px 0 #DFE1E0;
 }
+.tbl-list.body-scroll tfoot th,
+.tbl-list.body-scroll tfoot td {
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+    background: #F6F5F3;
+    box-shadow: 0 -1px 0 #DFE1E0;
+}
 .tbl-filmography.body-scroll thead th,
 .tbl-list.tbl-filmography.body-scroll thead th {
     background: #1a3a5c;
     color: #fff;
     box-shadow: 0 1px 0 #2a4d73;
+}
+.tbl-filmography.body-scroll tfoot th,
+.tbl-filmography.body-scroll tfoot td,
+.tbl-list.tbl-filmography.body-scroll tfoot th,
+.tbl-list.tbl-filmography.body-scroll tfoot td {
+    background: #1a3a5c;
+    color: #fff;
+    box-shadow: 0 -1px 0 #2a4d73;
 }
 
 /* no-wrap */
@@ -270,3 +295,10 @@
     background:#FDECEC !important;
 }
 
+/* clickable */
+.tbl-list tr.clickable td {
+    cursor:pointer;
+}
+.tbl-list tr.clickable:hover td {
+    background:#fafafa;
+}

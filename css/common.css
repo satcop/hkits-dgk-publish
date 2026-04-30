@@ -251,7 +251,9 @@ caption, legend, .hidden, .visually-hidden, hr {
 .row .col {
     flex:1;
 }
-
+.row .col.flex-2 {
+    flex:2;
+}
 
 
 /* date-range */

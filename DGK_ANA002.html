@@ -109,38 +109,15 @@
                 <div class="page-head">
                     <ul id="location">
                         <li>홈</li>
-                        <li>회원 지급</li>
-                        <li>지급 준비</li>
+                        <li>통계</li>
+                        <li>회원별 통계</li>
                     </ul>
-                    <h2 class="page-title">지급 준비</h2>                    
+                    <h2 class="page-title">회원별 통계</h2>                    
                 </div>
                 <!-- page head 끝 -->
 
                 <!-- page body 시작 -->
                 <div class="page-body">
-
-                    <div class="indiv">
-                        <div class="verify">
-                            <ul>
-                                <li class="auto-match">
-                                    <span class="name">대기 회원수</span>
-                                    <span class="count">5,000 <span>명</span></span>
-                                </li>
-                                <li class="text-match">
-                                    <span class="name">대기 총액</span>
-                                    <span class="count">1,000,000 <span>원</span></span>
-                                </li>
-                                <li class="total-unmatch">
-                                    <span class="name">보류 총액</span>
-                                    <span class="count">50,000 <span>원</span></span>
-                                </li>
-                                <li class="guest">
-                                    <span class="name">비회원 정산액</span>
-                                    <span class="count">10,000 <span>원</span></span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                     
                     <div class="indiv">
                         <h3 class="tit">조회</h3>
@@ -153,10 +130,24 @@
                                         <col width="12%">
                                         <col width="21.33%">
                                         <col width="12%">
-                                        <col width="21.33%">
+                                        <col width="21.34%">
                                     </colgroup>
                                     <tbody>
                                         <tr>
+                                            <th>
+                                                <label class="tit">지급일</label>
+                                            </th>
+                                            <td>
+                                                <div class="date-range">
+                                                    <div class="input-box">
+                                                        <input type="date" class="input calendar" value="">
+                                                    </div>
+                                                    <span class="divider">~</span>
+                                                    <div class="input-box">
+                                                        <input type="date" class="input calendar" value="">
+                                                    </div>
+                                                </div>
+                                            </td>
                                             <th>
                                                 <label class="tit">DGK 회원 코드</label>
                                             </th>
@@ -173,18 +164,10 @@
                                                     <input type="text" class="input">
                                                 </div>
                                             </td>
-                                            <th>
-                                                <label class="tit">IPI</label>
-                                            </th>
-                                            <td>
-                                                <div class="input-box">
-                                                    <input type="text" class="input">
-                                                </div>
-                                            </td>
                                         </tr>
                                         <tr>
                                             <th>
-                                                <label class="tit">입금번호 포함</label>
+                                                <label class="tit">IPI 코드</label>
                                             </th>
                                             <td>
                                                 <div class="input-box">
@@ -192,29 +175,15 @@
                                                 </div>
                                             </td>
                                             <th>
-                                                <label class="tit">정산단체포함</label>
+                                                <label class="tit">단체</label>
                                             </th>
-                                            <td>
+                                            <td colspan="3">
                                                 <div class="select-box">
                                                     <select>
                                                         <option value="">전체</option>
                                                     </select>
                                                 </div>
-                                            </td>  
-                                            <th>
-                                                <label class="tit">정산일</label>
-                                            </th>
-                                            <td>
-                                                <div class="date-range">
-                                                    <div class="input-box">
-                                                        <input type="date" class="input calendar" value="">
-                                                    </div>
-                                                    <span class="divider">~</span>
-                                                    <div class="input-box">
-                                                        <input type="date" class="input calendar" value="">
-                                                    </div>
-                                                </div>
-                                            </td>                                                                                      
+                                            </td>                                                                                       
                                         </tr>
                                     </tbody>
                                 </table>
@@ -237,120 +206,149 @@
                                     </div>
                                     <button type="button" class="btn-download">엑셀 다운로드</button>
                                 </div>
-                                <div class="right">
-                                    <button type="button" class="btn-secondary">일괄 대기 전환</button>
-                                </div>
                             </div>
-                            <div class="tbl-list no-wrap tbl-check-scope body-scroll">
+                            <div class="tbl-list no-wrap body-scroll">
                                 <table>
                                     <colgroup>
                                         <col style="width:80px;">
-                                        <col style="width:80px;">
-                                        <col>
-                                        <col>
-                                        <col>
-                                        <col>
-                                        <col>
+                                        <col span="19">
                                     </colgroup>
                                     <thead>
                                         <tr>
-                                            <th scope="col">
-                                                <div class="check-box-wrap center">
-                                                    <div class="check-box">
-                                                        <input type="checkbox" id="member-sel-all" class="js-check-all" value="1">
-                                                        <label for="member-sel-all" class="blank"><span class="mark" aria-hidden="true"></span></label>
-                                                    </div>
-                                                </div>
-                                            </th>
                                             <th scope="col">No</th>
-                                            <th scope="col">DGK 회원 코드</th>
-                                            <th scope="col">DGK 회원명</th>
-                                            <th scope="col">IPI 코드</th>
-                                            <th scope="col">최근 정산일</th>
-                                            <th scope="col">누적 미정산 총액</th>
+                                            <th scope="col">지급일</th>
+                                            <th scope="col">단체</th>
+                                            <th scope="col">Last_Name</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">IPI_Name</th>
+                                            <th scope="col">권리자</th>
+                                            <th scope="col">회원구분</th>
+                                            <th scope="col">IDA</th>
+                                            <th scope="col">Title</th>
+                                            <th scope="col">한글</th>
+                                            <th scope="col">Net_Amount</th>
+                                            <th scope="col">NET_USD</th>
+                                            <th scope="col">분배금액(A)</th>
+                                            <th scope="col">DGK수수료(B)</th>
+                                            <th scope="col">복지기금(C)</th>
+                                            <th scope="col">개인별 정산액(D=A-B-C)</th>
+                                            <th scope="col">개인소득세(E)</th>
+                                            <th scope="col">개인주민세(F)</th>
+                                            <th scope="col">최종 개인지급액(D-E-F)</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>
-                                                <div class="check-box-wrap center">
-                                                    <div class="check-box">
-                                                        <input type="checkbox" id="member-sel-4" class="js-check-row" name="no" value="1">
-                                                        <label for="member-sel-4" class="blank"><span class="mark" aria-hidden="true"></span></label>
-                                                    </div>
-                                                </div>
-                                            </td>
                                             <td class="col-no">4</td>
-                                            <td>
-                                                <div class="link"><a href="javascript:void(0);">DGK00004</a></div>
-                                            </td>
-                                            <td>감 김</td>
-                                            <td>1234</td>
-                                            <td>2025.01.01</td>
-                                            <td>1,000,000</td>
+                                            <td>2026.06.08</td>
+                                            <td>한국영화프로듀서조합</td>
+                                            <td>KIM</td>
+                                            <td>Minho</td>
+                                            <td>IPI00123456789</td>
+                                            <td>김민호</td>
+                                            <td>정회원</td>
+                                            <td>IDA2026-P041</td>
+                                            <td>Silver Lining Project</td>
+                                            <td>은밀한 선행</td>
+                                            <td>11,240,000</td>
+                                            <td>8,920</td>
+                                            <td>9,050,000</td>
+                                            <td>452,500</td>
+                                            <td>226,250</td>
+                                            <td>8,371,250</td>
+                                            <td>837,125</td>
+                                            <td>83,712</td>
+                                            <td>7,450,413</td>
                                         </tr>
                                         <tr>
-                                            <td>
-                                                <div class="check-box-wrap center">
-                                                    <div class="check-box">
-                                                        <input type="checkbox" id="member-sel-3" class="js-check-row" name="no" value="1">
-                                                        <label for="member-sel-3" class="blank"><span class="mark" aria-hidden="true"></span></label>
-                                                    </div>
-                                                </div>
-                                            </td>
                                             <td class="col-no">3</td>
-                                            <td>
-                                                <div class="link"><a href="javascript:void(0);">DGK00003</a></div>
-                                            </td>
-                                            <td>박철수</td>
-                                            <td>1234</td>
-                                            <td>2025.01.01</td>
-                                            <td>1,000,000</td>
+                                            <td>2026.05.19</td>
+                                            <td>영화미술감독협회</td>
+                                            <td>LEE</td>
+                                            <td>Suji</td>
+                                            <td>IPI00988776655</td>
+                                            <td>이수지</td>
+                                            <td>준회원</td>
+                                            <td>IDA2026-M118</td>
+                                            <td>Studio Archive No.7</td>
+                                            <td>세븐스 아카이브</td>
+                                            <td>9,675,400</td>
+                                            <td>7,630</td>
+                                            <td>7,740,320</td>
+                                            <td>387,016</td>
+                                            <td>193,508</td>
+                                            <td>7,159,796</td>
+                                            <td>716,980</td>
+                                            <td>71,698</td>
+                                            <td>6,371,118</td>
                                         </tr>
                                         <tr>
-                                            <td>
-                                                <div class="check-box-wrap center">
-                                                    <div class="check-box">
-                                                        <input type="checkbox" id="member-sel-2" class="js-check-row" name="no" value="1">
-                                                        <label for="member-sel-2" class="blank"><span class="mark" aria-hidden="true"></span></label>
-                                                    </div>
-                                                </div>
-                                            </td>
                                             <td class="col-no">2</td>
-                                            <td>
-                                                <div class="link"><a href="javascript:void(0);">DGK00002</a></div>
-                                            </td>
-                                            <td>홍길동</td>
-                                            <td>1234</td>
-                                            <td>2025.01.01</td>
-                                            <td>1,000,000</td>
+                                            <td>2026.04.27</td>
+                                            <td>시나리오작가조합</td>
+                                            <td>PARK</td>
+                                            <td>Hayeon</td>
+                                            <td>IPI00654321001</td>
+                                            <td>박하연</td>
+                                            <td>정회원</td>
+                                            <td>IDA2026-S055</td>
+                                            <td>Windless Harbor</td>
+                                            <td>바람 없는 항구</td>
+                                            <td>13,982,600</td>
+                                            <td>11,050</td>
+                                            <td>11,186,080</td>
+                                            <td>559,304</td>
+                                            <td>279,652</td>
+                                            <td>10,347,124</td>
+                                            <td>1,034,712</td>
+                                            <td>103,471</td>
+                                            <td>9,208,941</td>
                                         </tr>
                                         <tr>
-                                            <td>
-                                                <div class="check-box-wrap center">
-                                                    <div class="check-box">
-                                                        <input type="checkbox" id="member-sel-1" class="js-check-row" name="no" value="1">
-                                                        <label for="member-sel-1" class="blank"><span class="mark" aria-hidden="true"></span></label>
-                                                    </div>
-                                                </div>
-                                            </td>
                                             <td class="col-no">1</td>
-                                            <td>
-                                                <div class="link"><a href="javascript:void(0);">DGK00001</a></div>
-                                            </td>
-                                            <td>박영희</td>
-                                            <td>1234</td>
-                                            <td>2025.01.01</td>
-                                            <td>1,000,000</td>
+                                            <td>2026.04.15</td>
+                                            <td>영화감독조합</td>
+                                            <td>CHO</td>
+                                            <td>Wonpil</td>
+                                            <td>IPI00335779900</td>
+                                            <td>조원필</td>
+                                            <td>정회원</td>
+                                            <td>IDA2026-D099</td>
+                                            <td>Parallel Echo</td>
+                                            <td>평행한 메아리</td>
+                                            <td>7,128,950</td>
+                                            <td>5,090</td>
+                                            <td>5,703,160</td>
+                                            <td>285,158</td>
+                                            <td>142,579</td>
+                                            <td>5,275,423</td>
+                                            <td>527,542</td>
+                                            <td>52,754</td>
+                                            <td>4,695,127</td>
                                         </tr>
+                                        
                                         <!-- no data 시작 -->
                                         <!-- <tr>
-                                            <td colspan="7" class="no-data">
+                                            <td colspan="20" class="no-data">
                                                 <p>데이터가 없습니다.</p>
                                             </td>
                                         </tr> -->
                                         <!-- no data 끝 -->
                                     </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th colspan="11">합계</th>
+                                            <th>42,026,950</th>
+                                            <th>32,690</th>
+                                            <th>33,679,560</th>
+                                            <th>1,683,978</th>
+                                            <th>841,989</th>
+                                            <th>31,153,593</th>
+                                            <th>3,116,359</th>
+                                            <th>311,635</th>
+                                            <th>27,725,599</th>
+                                        </tr>
+                                    </tfoot>
                                 </table>
                             </div>
                         </form>
@@ -369,7 +367,7 @@
     <script>
         /* 사이드바 네비 현재 메뉴 활성 */
         $(document).ready(function () {
-            setSidebarNavActive('prepare'); // 지급 준비
+            setSidebarNavActive('stat-member'); // 회원별 통계
         });
     </script>
 </body>

@@ -110,37 +110,14 @@
                     <ul id="location">
                         <li>홈</li>
                         <li>회원 지급</li>
-                        <li>지급 준비</li>
+                        <li>지급 대기</li>
                     </ul>
-                    <h2 class="page-title">지급 준비</h2>                    
+                    <h2 class="page-title">지급 대기</h2>                    
                 </div>
                 <!-- page head 끝 -->
 
                 <!-- page body 시작 -->
                 <div class="page-body">
-
-                    <div class="indiv">
-                        <div class="verify">
-                            <ul>
-                                <li class="auto-match">
-                                    <span class="name">대기 회원수</span>
-                                    <span class="count">5,000 <span>명</span></span>
-                                </li>
-                                <li class="text-match">
-                                    <span class="name">대기 총액</span>
-                                    <span class="count">1,000,000 <span>원</span></span>
-                                </li>
-                                <li class="total-unmatch">
-                                    <span class="name">보류 총액</span>
-                                    <span class="count">50,000 <span>원</span></span>
-                                </li>
-                                <li class="guest">
-                                    <span class="name">비회원 정산액</span>
-                                    <span class="count">10,000 <span>원</span></span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                     
                     <div class="indiv">
                         <h3 class="tit">조회</h3>
@@ -153,10 +130,24 @@
                                         <col width="12%">
                                         <col width="21.33%">
                                         <col width="12%">
-                                        <col width="21.33%">
+                                        <col width="21.34%">
                                     </colgroup>
                                     <tbody>
                                         <tr>
+                                            <th>
+                                                <label class="tit">지급대기 전환일 <em class="req">*</em></label>
+                                            </th>
+                                            <td>
+                                                <div class="date-range">
+                                                    <div class="input-box">
+                                                        <input type="date" class="input calendar" value="">
+                                                    </div>
+                                                    <span class="divider">~</span>
+                                                    <div class="input-box">
+                                                        <input type="date" class="input calendar" value="">
+                                                    </div>
+                                                </div>
+                                            </td>
                                             <th>
                                                 <label class="tit">DGK 회원 코드</label>
                                             </th>
@@ -173,6 +164,8 @@
                                                     <input type="text" class="input">
                                                 </div>
                                             </td>
+                                        </tr>
+                                        <tr>
                                             <th>
                                                 <label class="tit">IPI</label>
                                             </th>
@@ -181,40 +174,19 @@
                                                     <input type="text" class="input">
                                                 </div>
                                             </td>
-                                        </tr>
-                                        <tr>
                                             <th>
-                                                <label class="tit">입금번호 포함</label>
+                                                <label class="tit">상태</label>
                                             </th>
-                                            <td>
-                                                <div class="input-box">
-                                                    <input type="text" class="input">
-                                                </div>
-                                            </td>
-                                            <th>
-                                                <label class="tit">정산단체포함</label>
-                                            </th>
-                                            <td>
+                                            <td colspan="3">
                                                 <div class="select-box">
                                                     <select>
                                                         <option value="">전체</option>
+                                                        <option value="">입금대기</option>
+                                                        <option value="">입금완료</option>
+                                                        <option value="">입금오류</option>
                                                     </select>
                                                 </div>
-                                            </td>  
-                                            <th>
-                                                <label class="tit">정산일</label>
-                                            </th>
-                                            <td>
-                                                <div class="date-range">
-                                                    <div class="input-box">
-                                                        <input type="date" class="input calendar" value="">
-                                                    </div>
-                                                    <span class="divider">~</span>
-                                                    <div class="input-box">
-                                                        <input type="date" class="input calendar" value="">
-                                                    </div>
-                                                </div>
-                                            </td>                                                                                      
+                                            </td>                                                                                       
                                         </tr>
                                     </tbody>
                                 </table>
@@ -235,10 +207,20 @@
                                     <div class="item">
                                         전체 <span>4</span> 건
                                     </div>
-                                    <button type="button" class="btn-download">엑셀 다운로드</button>
+                                    <div class="top-btn-wrap">
+                                        <button type="button" class="btn-upload" onclick="modalOpen('uploadPopup');">대량 업로드</button>
+                                        <button type="button" class="btn-download">엑셀 다운로드</button>
+                                    </div>
                                 </div>
                                 <div class="right">
-                                    <button type="button" class="btn-secondary">일괄 대기 전환</button>
+                                    <div class="select-box">
+                                        <select>
+                                            <option value="" selected>입금완료</option>
+                                            <option value="">입금대기</option>
+                                            <option value="">입금오류</option>
+                                        </select>
+                                    </div>
+                                    <button type="button" class="btn-primary">상태 전환</button>
                                 </div>
                             </div>
                             <div class="tbl-list no-wrap tbl-check-scope body-scroll">
@@ -246,28 +228,28 @@
                                     <colgroup>
                                         <col style="width:80px;">
                                         <col style="width:80px;">
-                                        <col>
-                                        <col>
-                                        <col>
-                                        <col>
-                                        <col>
+                                        <col span="10">
                                     </colgroup>
                                     <thead>
                                         <tr>
                                             <th scope="col">
                                                 <div class="check-box-wrap center">
                                                     <div class="check-box">
-                                                        <input type="checkbox" id="member-sel-all" class="js-check-all" value="1">
-                                                        <label for="member-sel-all" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                        <input type="checkbox" id="waiting-sel-all" class="js-check-all" value="1">
+                                                        <label for="waiting-sel-all" class="blank"><span class="mark" aria-hidden="true"></span></label>
                                                     </div>
                                                 </div>
                                             </th>
                                             <th scope="col">No</th>
+                                            <th scope="col">지급대기 전환일</th>
                                             <th scope="col">DGK 회원 코드</th>
                                             <th scope="col">DGK 회원명</th>
                                             <th scope="col">IPI 코드</th>
                                             <th scope="col">최근 정산일</th>
-                                            <th scope="col">누적 미정산 총액</th>
+                                            <th scope="col">지금액</th>
+                                            <th scope="col">지급일</th>
+                                            <th scope="col">상태</th>
+                                            <th scope="col">정산서</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -275,77 +257,94 @@
                                             <td>
                                                 <div class="check-box-wrap center">
                                                     <div class="check-box">
-                                                        <input type="checkbox" id="member-sel-4" class="js-check-row" name="no" value="1">
-                                                        <label for="member-sel-4" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                        <input type="checkbox" id="waiting-sel-4" class="js-check-row" name="no" value="1">
+                                                        <label for="waiting-sel-4" class="blank"><span class="mark" aria-hidden="true"></span></label>
                                                     </div>
                                                 </div>
                                             </td>
                                             <td class="col-no">4</td>
-                                            <td>
-                                                <div class="link"><a href="javascript:void(0);">DGK00004</a></div>
-                                            </td>
+                                            <td>2026.04.29</td>
+                                            <td>DGK00004</td>
                                             <td>감 김</td>
                                             <td>1234</td>
                                             <td>2025.01.01</td>
                                             <td>1,000,000</td>
+                                            <td>2026.04.29</td>
+                                            <td>입금완료</td>
+                                            <td>
+                                                <div class="link"><a href="javascript:void(0);">정산서보기</a></div>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>
                                                 <div class="check-box-wrap center">
                                                     <div class="check-box">
-                                                        <input type="checkbox" id="member-sel-3" class="js-check-row" name="no" value="1">
-                                                        <label for="member-sel-3" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                        <input type="checkbox" id="waiting-sel-3" class="js-check-row" name="no" value="1">
+                                                        <label for="waiting-sel-3" class="blank"><span class="mark" aria-hidden="true"></span></label>
                                                     </div>
                                                 </div>
                                             </td>
                                             <td class="col-no">3</td>
-                                            <td>
-                                                <div class="link"><a href="javascript:void(0);">DGK00003</a></div>
-                                            </td>
+                                            <td></td>
+                                            <td>DGK00003</td>
                                             <td>박철수</td>
                                             <td>1234</td>
                                             <td>2025.01.01</td>
                                             <td>1,000,000</td>
+                                            <td></td>
+                                            <td>입금대기</td>
+                                            <td>
+                                                <div class="link"><a href="javascript:void(0);">정산서보기</a></div>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>
                                                 <div class="check-box-wrap center">
                                                     <div class="check-box">
-                                                        <input type="checkbox" id="member-sel-2" class="js-check-row" name="no" value="1">
-                                                        <label for="member-sel-2" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                        <input type="checkbox" id="waiting-sel-2" class="js-check-row" name="no" value="1">
+                                                        <label for="waiting-sel-2" class="blank"><span class="mark" aria-hidden="true"></span></label>
                                                     </div>
                                                 </div>
                                             </td>
                                             <td class="col-no">2</td>
-                                            <td>
-                                                <div class="link"><a href="javascript:void(0);">DGK00002</a></div>
-                                            </td>
+                                            <td></td>
+                                            <td>DGK00002</td>
                                             <td>홍길동</td>
                                             <td>1234</td>
                                             <td>2025.01.01</td>
                                             <td>1,000,000</td>
+                                            <td></td>
+                                            <td>입금대기</td>
+                                            <td>
+                                                <div class="link"><a href="javascript:void(0);">정산서보기</a></div>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>
                                                 <div class="check-box-wrap center">
                                                     <div class="check-box">
-                                                        <input type="checkbox" id="member-sel-1" class="js-check-row" name="no" value="1">
-                                                        <label for="member-sel-1" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                        <input type="checkbox" id="waiting-sel-1" class="js-check-row" name="no" value="1">
+                                                        <label for="waiting-sel-1" class="blank"><span class="mark" aria-hidden="true"></span></label>
                                                     </div>
                                                 </div>
                                             </td>
                                             <td class="col-no">1</td>
-                                            <td>
-                                                <div class="link"><a href="javascript:void(0);">DGK00001</a></div>
-                                            </td>
+                                            <td></td>
+                                            <td>DGK00001</td>
                                             <td>박영희</td>
                                             <td>1234</td>
                                             <td>2025.01.01</td>
                                             <td>1,000,000</td>
+                                            <td></td>
+                                            <td>입금대기</td>
+                                            <td>
+                                                <div class="link"><a href="javascript:void(0);">정산서보기</a></div>
+                                            </td>
                                         </tr>
+                                        
                                         <!-- no data 시작 -->
                                         <!-- <tr>
-                                            <td colspan="7" class="no-data">
+                                            <td colspan="11" class="no-data">
                                                 <p>데이터가 없습니다.</p>
                                             </td>
                                         </tr> -->
@@ -366,10 +365,73 @@
     </div>
 
 
+    <!-- 대량 업로드 popup 시작 -->
+    <div class="layer-popup uploadPopup">
+        <div class="md-content" style="max-width:60rem;">
+            <div class="md-header no-bottom">
+                <h2 class="tit">대량 업로드</h2>
+            </div>
+            <div class="md-body">
+                <form class="upload-form">
+                    <div class="tbl-input mt20">
+                        <table>
+                            <colgroup>
+                                <col style="width:100px;">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        <label class="tit">샘플 파일</label>
+                                    </th>
+                                    <td>
+                                        <a href="javascript:void(0);" class="link">sample.xlsx</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <label class="tit">파일 첨부</label>
+                                    </th>
+                                    <td>
+                                        <!-- 파일 업로드 시작 : 기존 파일 없을 시 file-drop-zone 클래스에 is-filled 클래스 제거, 기존파일 있을 시 file-drop-zone 클래스에 is-filled 클래스 추가 -->
+                                        <div class="file-drop-zone" data-max-mb="100" data-accept="xls,xlsx" data-msg-invalid-ext="엑셀 파일(.xls, .xlsx)만 업로드할 수 있습니다.">
+                                            <input type="file" id="upload-file" name="upload_file" class="file-native" accept=".xls,.xlsx,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+                                            <div class="file-drop-main">
+                                                <div class="file-drop-empty">
+                                                    <p class="file-drop-hint">파일 선택 또는 여기에 드래그</p>
+                                                    <p class="file-drop-sub">업로드된 파일 없음</p>
+                                                </div>
+                                                <div class="file-drop-filled">
+                                                    <a href="#" class="file-link"></a><!-- 기존 파일 없을 시 공백, 기존 파일 있을 시 파일명 표시 -->
+                                                    <span class="file-meta"></span><!-- 기존 파일 없을 시 공백, 기존 파일 있을 시 파일 크기 표시 -->
+                                                    <button type="button" class="btn-file-remove" aria-label="첨부 파일 삭제"><span class="ico-del" aria-hidden="true"></span></button>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn-file-pick" aria-label="파일 선택"><img src="./img/upload.svg" alt=""></button>
+                                        </div>
+                                        <!-- 파일 업로드 종료 -->
+                                        <p class="note-text mt10">* 엑셀 파일(.xls, .xlsx)만 업로드 가능 / 최대 크기 100MB 이하</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="btn-wrap mt20">
+                        <button type="button" class="btn-close" onclick="modalClose('uploadPopup');">닫기</button>
+                        <button type="button" class="btn-apply">적용</button>
+                    </div>
+                </form>
+            </div>
+            <button type="button" class="close" onclick="modalClose('uploadPopup');">닫기</button>
+        </div>
+    </div>
+    <!-- 대량 업로드 popup 끝 -->    
+
+
     <script>
         /* 사이드바 네비 현재 메뉴 활성 */
         $(document).ready(function () {
-            setSidebarNavActive('prepare'); // 지급 준비
+            setSidebarNavActive('waiting'); // 지급 대기
         });
     </script>
 </body>

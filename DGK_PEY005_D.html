@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=yes"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Cache-Control" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <meta name="format-detection" content="telephone=no">
+
+    <title>DGK 영화감독조합 내부데이터 통합관리 시스템</title>
+
+    <!-- font : 프리텐다드 -->
+    <link rel="preload" href="./font/woff2-subset/Pretendard-Regular.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/woff2-subset/Pretendard-Medium.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/woff2-subset/Pretendard-SemiBold.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/woff2-subset/Pretendard-Bold.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/woff2-subset/Pretendard-ExtraBold.subset.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="./font/woff2-subset/Pretendard-Black.subset.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- css : 스타일 -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- js : 자바스크립트 -->
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/common.js"></script>
+</head>
+<body>
+    <div id="wrap">
+
+        <!-- [공통] 사이드바 시작 -->
+        <aside class="sidebar">
+            <div class="inner">
+                <div class="logo">
+                    <div class="logo-switch">
+                        <img class="logo-full" src="./img/logo.svg" alt="DGK 영화감독조합 내부데이터 통합관리 시스템">
+                        <img class="logo-fold" src="./img/logo-fold.svg" alt="" width="44" height="55" aria-hidden="true">
+                    </div>
+                </div>
+                <nav class="nav">
+                    <div class="nav-list">
+                        <h3 class="title">기본 관리</h3>
+                        <ul>
+                            <li class="user"><a href="" title="회원 관리"><i class="icon-user"></i><span>회원 관리</span></a></li>
+                            <li class="work"><a href="" title="작품 관리"><i class="icon-work"></i><span>작품 관리</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-list">
+                        <h3 class="title">정산 관리</h3>
+                        <ul>
+                            <li class="deposit"><a href="" title="입금내역 관리"><i class="icon-deposit"></i><span>입금내역 관리</span></a></li>
+                            <li class="unsettled"><a href="" title="미정산내역"><i class="icon-unsettled"></i><span>미정산내역</span></a></li>
+                            <li class="history"><a href="" title="관리비율 이력"><i class="icon-history"></i><span>관리비율 이력</span></a></li>
+                            <li class="group"><a href="" title="단체 관리"><i class="icon-group"></i><span>단체 관리</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-list">
+                        <h3 class="title">회원 지급</h3>
+                        <ul>
+                            <li class="prepare"><a href="" title="지급 준비"><i class="icon-prepare"></i><span>지급 준비</span></a></li>
+                            <li class="waiting"><a href="" title="지급 대기"><i class="icon-waiting"></i><span>지급 대기</span></a></li>
+                            <li class="payment-history"><a href="" title="지급 이력"><i class="icon-payment-history"></i><span>지급 이력</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-list">
+                        <h3 class="title">통계</h3>
+                        <ul>
+                            <li class="stat-work"><a href="" title="작품별 통계"><i class="icon-stat-work"></i><span>작품별 통계</span></a></li>
+                            <li class="stat-member"><a href="" title="회원별 통계"><i class="icon-stat-member"></i><span>회원별 통계</span></a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="bottom">
+                    <button type="button" class="btn-toggle-sidebar">접기</button>
+                </div>
+            </div>
+        </aside>        
+        <!-- 사이드바 끝 -->
+
+        <div id="container">
+
+            <!-- [공통] 헤더 시작 -->
+            <header id="header">
+                <div class="inner">
+                    <div class="header-start">
+                        <p class="last-login">최근 접속 <time>2026. 04. 14. 14:30:02</time></p>
+                    </div>
+
+                    <div class="header-end">
+                        <div class="header-user">
+                            <p class="user-avatar">홍</p>
+                            <div class="user-info">
+                                <p class="user-name"><span>홍길동</span>님</p>
+                                <p class="user-role">administrator</p>
+                            </div>
+                            <button type="button" class="btn-logout">로그아웃</button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- 헤더 끝 -->
+
+            <!-- 컨텐츠 시작 -->
+            <div id="content">
+                
+                <!-- page head 시작 -->
+                <div class="page-head">
+                    <ul id="location">
+                        <li>홈</li>
+                        <li>회원 지급</li>
+                        <li>지급 준비</li>
+                        <li>상세</li>
+                    </ul>
+                    <h2 class="page-title">상세</h2>                    
+                </div>
+                <!-- page head 끝 -->
+
+                <!-- page body 시작 -->
+                <form class="deposit-detail-form">
+                    <div class="page-body">
+                        <div class="page-buttons">
+                            <button type="button" class="btn-list">목록</button>
+                        </div>
+
+                        <div class="indiv tab-menu">
+                            <ul role="tablist" aria-label="지급 준비 상세 구분">
+                                <li class="active" role="presentation"><button type="button" role="tab" aria-selected="true" aria-controls="tab-panel-1" id="tab-1">기본정보</button></li>
+                                <li role="presentation"><button type="button" role="tab" aria-selected="false" aria-controls="tab-panel-2" id="tab-2">정산 및 공제</button></li>
+                                <li role="presentation"><button type="button" role="tab" aria-selected="false" aria-controls="tab-panel-3" id="tab-3">지급이력</button></li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <!-- 기본정보 시작 -->
+                            <div class="tab-content-item active" id="tab-panel-1" role="tabpanel" aria-labelledby="tab-1">
+                                <div class="indiv">
+                                    <h3 class="tit">기본정보</h3>
+                                    <form class="search-form">
+                                        <div class="tbl-input">
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width:12%">
+                                                    <col style="width:21.33%">
+                                                    <col style="width:12%">
+                                                    <col style="width:21.33%">
+                                                    <col style="width:12%">
+                                                    <col style="width:21.33%">
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <th><label class="tit">DGK 회원 코드</label></th>
+                                                        <td>
+                                                            <p>DGK00001</p>
+                                                        </td>
+                                                        <th><label class="tit">회원명</label></th>
+                                                        <td>
+                                                            <p>홍길동</p>
+                                                        </td>
+                                                        <th><label class="tit">IPI</label></th>
+                                                        <td>
+                                                            <p>1234</p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th><label class="tit">조회기간</th>
+                                                        <td>
+                                                            <div class="date-range">
+                                                                <div class="input-box">
+                                                                    <input type="date" class="input calendar" placeholder="시작일" value="2026-04-24">
+                                                                </div>
+                                                                <span class="divider">~</span>
+                                                                <div class="input-box">
+                                                                    <input type="date" class="input calendar" placeholder="종료일" value="2026-04-24">
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <th><label class="tit">총 정산액</label></th>
+                                                        <td>
+                                                            <p>1,000,000</p>
+                                                        </td>
+                                                        <th><label class="tit">총 미정산액</label></th>
+                                                        <td>
+                                                            <p>50,000</p>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="btn-wrap mt20">
+                                            <button type="reset" class="btn-reset">초기화</button>
+                                            <button type="button" class="btn-search">조회</button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col flex-2">
+                                        <div class="indiv">
+                                            <h3 class="tit">참여 작품 내역</h3>
+                                            <div class="tbl-list no-wrap body-scroll">
+                                                <table>
+                                                    <colgroup>
+                                                        <col style="width:80px">
+                                                        <col span="7">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">No</th>
+                                                            <th scope="col">구분</th>
+                                                            <th scope="col">IDA</th>
+                                                            <th scope="col">DGK 작품코드</th>
+                                                            <th scope="col">작품명</th>
+                                                            <th scope="col">직책</th>
+                                                            <th scope="col">지분</th>
+                                                            <th scope="col">정산액(원)</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="clickable" onclick="">
+                                                            <td class="col-no">1</td>
+                                                            <td>영화</td>
+                                                            <td>1111</td>
+                                                            <td>DGK00101</td>
+                                                            <td>기생충-1</td>
+                                                            <td>감독</td>
+                                                            <td>50%</td>
+                                                            <td>1,250,000</td>
+                                                        </tr>
+
+                                                        <!-- no-data 시작 -->
+                                                        <!-- <tr>
+                                                            <td colspan="8" class="no-data">데이터가 없습니다.</td>
+                                                        </tr> -->
+                                                        <!-- no-data 종료 -->
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th colspan="7">합계</th>
+                                                            <th>1,250,000</th>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="indiv">
+                                            <h3 class="tit">작품별 정산 상태</h3>
+                                            <div class="tbl-list no-wrap body-scroll">
+                                                <table>
+                                                    <colgroup>
+                                                        <col style="width:80px">
+                                                        <col span="4">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">No</th>
+                                                            <th scope="col">입금관리번호</th>
+                                                            <th scope="col">단체</th>
+                                                            <th scope="col">정산액(원)</th>
+                                                            <th scope="col">상태</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="col-no">1</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td>1,000</td>
+                                                            <td>정산</td>
+                                                        </tr>
+
+                                                        <!-- no-data 시작 -->
+                                                        <!-- <tr>
+                                                            <td colspan="5" class="no-data">데이터가 없습니다.</td>
+                                                        </tr> -->
+                                                        <!-- no-data 종료 -->
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th colspan="3">합계</th>
+                                                            <th>1,000</th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 기본정보 끝 -->
+                            <!-- 정산 및 공제 시작 -->
+                            <div class="tab-content-item" id="tab-panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+                                <div class="indiv">
+                                    <div class="tit-wrap">
+                                        <h3 class="tit">미정산 내역</h3>
+                                        <div class="in-btn-wrap">
+                                            <button type="button" class="btn-primary">정산 추가</button>
+                                        </div>
+                                    </div>
+                                    <div class="tbl-list no-wrap tbl-check-scope body-scroll">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:80px">
+                                                <col style="width:80px">
+                                                <col span="10">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">
+                                                        <div class="check-box-wrap center">
+                                                            <div class="check-box">
+                                                                <input type="checkbox" id="unsettled-sel-all" class="js-check-all" value="1">
+                                                                <label for="unsettled-sel-all" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                            </div>
+                                                        </div>
+                                                    </th>
+                                                    <th scope="col">No</th>
+                                                    <th scope="col">최종수정일</th>
+                                                    <th scope="col">입금번호</th>
+                                                    <th scope="col">단체</th>
+                                                    <th scope="col">구분</th>
+                                                    <th scope="col">IDA</th>
+                                                    <th scope="col">DGK 작품코드</th>
+                                                    <th scope="col">작품명</th>
+                                                    <th scope="col">직책</th>
+                                                    <th scope="col">지분</th>
+                                                    <th scope="col">최종 개인지급액</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="check-box-wrap center">
+                                                            <div class="check-box">
+                                                                <input type="checkbox" id="unsettled-sel-1" class="js-check-row" name="no" value="1">
+                                                                <label for="unsettled-sel-1" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="col-no">1</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>영화</td>
+                                                    <td>1111</td>
+                                                    <td>DGK00101</td>
+                                                    <td>기생충-1</td>
+                                                    <td>감독</td>
+                                                    <td>50%</td>
+                                                    <td>1,000,000</td>
+                                                </tr>
+
+                                                <!-- no-data 시작 -->
+                                                <!-- <tr>
+                                                    <td colspan="12" class="no-data">데이터가 없습니다.</td>
+                                                </tr> -->
+                                                <!-- no-data 종료 -->
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <th colspan="11">합계</th>
+                                                    <th>1,000,000</th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="indiv">
+                                    <div class="tit-wrap">
+                                        <h3 class="tit">이번 정산 내역</h3>
+                                        <div class="in-btn-wrap">
+                                            <button type="button" class="btn-gray">제외</button>
+                                            <button type="button" class="btn-primary">지급 대기</button>
+                                        </div>
+                                    </div>
+                                    <div class="tbl-list no-wrap tbl-check-scope body-scroll">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:80px">
+                                                <col style="width:80px">
+                                                <col span="10">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">
+                                                        <div class="check-box-wrap center">
+                                                            <div class="check-box">
+                                                                <input type="checkbox" id="settled-sel-all" class="js-check-all" value="1">
+                                                                <label for="settled-sel-all" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                            </div>
+                                                        </div>
+                                                    </th>
+                                                    <th scope="col">No</th>
+                                                    <th scope="col">최종수정일</th>
+                                                    <th scope="col">입금번호</th>
+                                                    <th scope="col">단체</th>
+                                                    <th scope="col">구분</th>
+                                                    <th scope="col">IDA</th>
+                                                    <th scope="col">DGK 작품코드</th>
+                                                    <th scope="col">작품명</th>
+                                                    <th scope="col">직책</th>
+                                                    <th scope="col">지분</th>
+                                                    <th scope="col">최종 개인지급액</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="check-box-wrap center">
+                                                            <div class="check-box">
+                                                                <input type="checkbox" id="settled-sel-1" class="js-check-row" name="no" value="1">
+                                                                <label for="settled-sel-1" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="col-no">1</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>영화</td>
+                                                    <td>1111</td>
+                                                    <td>DGK00101</td>
+                                                    <td>기생충-1</td>
+                                                    <td>감독</td>
+                                                    <td>50%</td>
+                                                    <td>1,000,000</td>
+                                                </tr>
+
+                                                <!-- no-data 시작 -->
+                                                <!-- <tr>
+                                                    <td colspan="12" class="no-data">데이터가 없습니다.</td>
+                                                </tr> -->
+                                                <!-- no-data 종료 -->
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <th colspan="11">합계</th>
+                                                    <th>1,000,000</th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>                                
+                            </div>
+                            <!-- 정산 및 공제 끝 -->
+                            <!-- 지급이력 시작 -->
+                            <div class="tab-content-item" id="tab-panel-3" role="tabpanel" aria-labelledby="tab-3" hidden>
+                                <div class="indiv">
+                                    <h3 class="tit">조회</h3>
+                                    <form class="search-form">
+                                        <div class="tbl-input">
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width:15%">
+                                                    <col>
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <th><label class="tit">지급대기 전환일</th>
+                                                        <td>
+                                                            <div class="date-range">
+                                                                <div class="input-box">
+                                                                    <input type="date" class="input calendar" placeholder="시작일" value="2026-04-24">
+                                                                </div>
+                                                                <span class="divider">~</span>
+                                                                <div class="input-box">
+                                                                    <input type="date" class="input calendar" placeholder="종료일" value="2026-04-24">
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="btn-wrap mt20">
+                                            <button type="reset" class="btn-reset">초기화</button>
+                                            <button type="button" class="btn-search">조회</button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="indiv">
+                                    <h3 class="tit">목록</h3>
+                                    <div class="tbl-list no-wrap body-scroll">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:80px">
+                                                <col span="12">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">No</th>
+                                                    <th scope="col">상태</th>
+                                                    <th scope="col">입금상태</th>
+                                                    <th scope="col">지급대기 전환일</th>
+                                                    <th scope="col">입금관리번호</th>
+                                                    <th scope="col">단체</th>
+                                                    <th scope="col">구분</th>
+                                                    <th scope="col">IDA</th>
+                                                    <th scope="col">DGK 작품코드</th>
+                                                    <th scope="col">작품명</th>
+                                                    <th scope="col">직책</th>
+                                                    <th scope="col">지분</th>
+                                                    <th scope="col">정산액(원)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="col-no">2</td>
+                                                    <td>지급대기</td>
+                                                    <td>미입금</td>
+                                                    <td>2025.01.01</td>
+                                                    <td></td>
+                                                    <td>DGK</td>
+                                                    <td>영화</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="col-no">1</td>
+                                                    <td>지급완료</td>
+                                                    <td>입금완료</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+
+                                                <!-- no-data 시작 -->
+                                                <!-- <tr>
+                                                    <td colspan="13" class="no-data">데이터가 없습니다.</td>
+                                                </tr> -->
+                                                <!-- no-data 종료 -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 지급이력 끝 -->
+                        </div>
+                    </div>
+                </form>              
+                <!-- page body 끝 -->
+
+            </div>
+            <!-- 컨텐츠 끝 -->
+
+        </div>
+        
+    </div>
+
+
+    <script>
+        /* 사이드바 네비 현재 메뉴 활성 */
+        $(document).ready(function () {
+            setSidebarNavActive('prepare'); // 지급 준비
+        });
+
+        /* 지급 준비 상세 탭 */
+        $(document).on('click', '.tab-menu button[type="button"]', function () {
+            var $btn = $(this);
+            var $li = $btn.closest('li');
+            var idx = $li.index();
+
+            $li.addClass('active').siblings().removeClass('active');
+            $('.tab-menu button[role="tab"]').attr('aria-selected', 'false');
+            $btn.attr('aria-selected', 'true');
+
+            var $panels = $('.tab-content .tab-content-item');
+            $panels.removeClass('active').attr('hidden', true);
+            $panels.eq(idx).addClass('active').removeAttr('hidden');
+        });
+    </script>
+</body>
+</html>        

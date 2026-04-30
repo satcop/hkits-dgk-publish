@@ -18,3 +18,5 @@ hkits-dgk-publish
 
     - https://satcop.github.io/hkits-dgk-publish/
 
+# 2026년 4월 30일
+* 퍼블완료후 업로드(추후 수정사항 있음)

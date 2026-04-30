@@ -244,6 +244,8 @@ select {
     color:#000; 
     font-size:13px; 
     font-weight:500;
+    white-space:nowrap;
+    min-width: max-content;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none; 
@@ -348,7 +350,7 @@ select::-o-expand {display:none;}
     position: relative;
     min-width:148px;
     outline:0;
-    background:#f5f5f5;
+    background:#fff;
     width:auto;
 }
 /* date 아이콘 포커스를 위한 위치,사이즈 지정 */
@@ -424,7 +426,7 @@ select::-o-expand {display:none;}
     font-weight: 400;
     border-radius: 0 0 0.6rem 0.6rem;
     border: solid 1px #ddd;
-    background: #F7F7F7;
+    background: #fff;
     transition: all 0.35s;
 }
 .textarea-box .textarea:focus {
