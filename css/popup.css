@@ -63,6 +63,20 @@
     word-wrap:break-word;
 }
 
+/* 팝업 본문: 페이지 .page-body 밖에서도 tit-wrap + in-btn-wrap 정렬 */
+.layer-popup .md-body .indiv .tit-wrap.tit-wrap--popup-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    margin-bottom: 1rem;
+}
+.layer-popup .md-body .indiv .tit-wrap.tit-wrap--popup-toolbar .in-btn-wrap {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
 /* Modal Close */
 .layer-popup .md-content .close {
     display: inline-block;

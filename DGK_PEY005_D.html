@@ -60,15 +60,14 @@
                         <h3 class="title">회원 지급</h3>
                         <ul>
                             <li class="prepare"><a href="" title="지급 준비"><i class="icon-prepare"></i><span>지급 준비</span></a></li>
-                            <li class="waiting"><a href="" title="지급 대기"><i class="icon-waiting"></i><span>지급 대기</span></a></li>
-                            <li class="payment-history"><a href="" title="지급 이력"><i class="icon-payment-history"></i><span>지급 이력</span></a></li>
+                            <li class="waiting"><a href="" title="지급 대기"><i class="icon-waiting"></i><span>지급 대기</span></a></li>                            
                         </ul>
                     </div>
                     <div class="nav-list">
                         <h3 class="title">통계</h3>
                         <ul>
                             <li class="stat-work"><a href="" title="작품별 통계"><i class="icon-stat-work"></i><span>작품별 통계</span></a></li>
-                            <li class="stat-member"><a href="" title="회원별 통계"><i class="icon-stat-member"></i><span>회원별 통계</span></a></li>
+                            <li class="stat-member"><a href="" title="회원별 정산관리"><i class="icon-stat-member"></i><span>회원별 정산관리</span></a></li>
                         </ul>
                     </div>
                 </nav>
@@ -126,176 +125,16 @@
 
                         <div class="indiv tab-menu">
                             <ul role="tablist" aria-label="지급 준비 상세 구분">
-                                <li class="active" role="presentation"><button type="button" role="tab" aria-selected="true" aria-controls="tab-panel-1" id="tab-1">기본정보</button></li>
-                                <li role="presentation"><button type="button" role="tab" aria-selected="false" aria-controls="tab-panel-2" id="tab-2">정산 및 공제</button></li>
-                                <li role="presentation"><button type="button" role="tab" aria-selected="false" aria-controls="tab-panel-3" id="tab-3">지급이력</button></li>
+                                <li class="active" role="presentation"><button type="button" role="tab" aria-selected="true" aria-controls="tab-panel-1" id="tab-1">정산 및 공제</button></li>
+                                <li role="presentation"><button type="button" role="tab" aria-selected="false" aria-controls="tab-panel-2" id="tab-2">지급이력</button></li>
                             </ul>
                         </div>
                         <div class="tab-content">
-                            <!-- 기본정보 시작 -->
+                            <!-- 정산 및 공제 시작 -->
                             <div class="tab-content-item active" id="tab-panel-1" role="tabpanel" aria-labelledby="tab-1">
                                 <div class="indiv">
-                                    <h3 class="tit">기본정보</h3>
-                                    <form class="search-form">
-                                        <div class="tbl-input">
-                                            <table>
-                                                <colgroup>
-                                                    <col style="width:12%">
-                                                    <col style="width:21.33%">
-                                                    <col style="width:12%">
-                                                    <col style="width:21.33%">
-                                                    <col style="width:12%">
-                                                    <col style="width:21.33%">
-                                                </colgroup>
-                                                <tbody>
-                                                    <tr>
-                                                        <th><label class="tit">DGK 회원 코드</label></th>
-                                                        <td>
-                                                            <p>DGK00001</p>
-                                                        </td>
-                                                        <th><label class="tit">회원명</label></th>
-                                                        <td>
-                                                            <p>홍길동</p>
-                                                        </td>
-                                                        <th><label class="tit">IPI</label></th>
-                                                        <td>
-                                                            <p>1234</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th><label class="tit">조회기간</th>
-                                                        <td>
-                                                            <div class="date-range">
-                                                                <div class="input-box">
-                                                                    <input type="date" class="input calendar" placeholder="시작일" value="2026-04-24">
-                                                                </div>
-                                                                <span class="divider">~</span>
-                                                                <div class="input-box">
-                                                                    <input type="date" class="input calendar" placeholder="종료일" value="2026-04-24">
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <th><label class="tit">총 정산액</label></th>
-                                                        <td>
-                                                            <p>1,000,000</p>
-                                                        </td>
-                                                        <th><label class="tit">총 미정산액</label></th>
-                                                        <td>
-                                                            <p>50,000</p>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="btn-wrap mt20">
-                                            <button type="reset" class="btn-reset">초기화</button>
-                                            <button type="button" class="btn-search">조회</button>
-                                        </div>
-                                    </form>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col flex-2">
-                                        <div class="indiv">
-                                            <h3 class="tit">참여 작품 내역</h3>
-                                            <div class="tbl-list no-wrap body-scroll">
-                                                <table>
-                                                    <colgroup>
-                                                        <col style="width:80px">
-                                                        <col span="7">
-                                                    </colgroup>
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col">No</th>
-                                                            <th scope="col">구분</th>
-                                                            <th scope="col">IDA</th>
-                                                            <th scope="col">DGK 작품코드</th>
-                                                            <th scope="col">작품명</th>
-                                                            <th scope="col">직책</th>
-                                                            <th scope="col">지분</th>
-                                                            <th scope="col">정산액(원)</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr class="clickable" onclick="">
-                                                            <td class="col-no">1</td>
-                                                            <td>영화</td>
-                                                            <td>1111</td>
-                                                            <td>DGK00101</td>
-                                                            <td>기생충-1</td>
-                                                            <td>감독</td>
-                                                            <td>50%</td>
-                                                            <td>1,250,000</td>
-                                                        </tr>
-
-                                                        <!-- no-data 시작 -->
-                                                        <!-- <tr>
-                                                            <td colspan="8" class="no-data">데이터가 없습니다.</td>
-                                                        </tr> -->
-                                                        <!-- no-data 종료 -->
-                                                    </tbody>
-                                                    <tfoot>
-                                                        <tr>
-                                                            <th colspan="7">합계</th>
-                                                            <th>1,250,000</th>
-                                                        </tr>
-                                                    </tfoot>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="indiv">
-                                            <h3 class="tit">작품별 정산 상태</h3>
-                                            <div class="tbl-list no-wrap body-scroll">
-                                                <table>
-                                                    <colgroup>
-                                                        <col style="width:80px">
-                                                        <col span="4">
-                                                    </colgroup>
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col">No</th>
-                                                            <th scope="col">입금관리번호</th>
-                                                            <th scope="col">단체</th>
-                                                            <th scope="col">정산액(원)</th>
-                                                            <th scope="col">상태</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="col-no">1</td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td>1,000</td>
-                                                            <td>정산</td>
-                                                        </tr>
-
-                                                        <!-- no-data 시작 -->
-                                                        <!-- <tr>
-                                                            <td colspan="5" class="no-data">데이터가 없습니다.</td>
-                                                        </tr> -->
-                                                        <!-- no-data 종료 -->
-                                                    </tbody>
-                                                    <tfoot>
-                                                        <tr>
-                                                            <th colspan="3">합계</th>
-                                                            <th>1,000</th>
-                                                            <th></th>
-                                                        </tr>
-                                                    </tfoot>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 기본정보 끝 -->
-                            <!-- 정산 및 공제 시작 -->
-                            <div class="tab-content-item" id="tab-panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
-                                <div class="indiv">
                                     <div class="tit-wrap">
-                                        <h3 class="tit">미정산 내역</h3>
+                                        <h3 class="tit">지급대기 전환 전 내역</h3>
                                         <div class="in-btn-wrap">
                                             <button type="button" class="btn-primary">정산 추가</button>
                                         </div>
@@ -350,7 +189,7 @@
                                                     <td>기생충-1</td>
                                                     <td>감독</td>
                                                     <td>50%</td>
-                                                    <td>1,000,000</td>
+                                                    <td class="right">1,000,000</td>
                                                 </tr>
 
                                                 <!-- no-data 시작 -->
@@ -362,7 +201,7 @@
                                             <tfoot>
                                                 <tr>
                                                     <th colspan="11">합계</th>
-                                                    <th>1,000,000</th>
+                                                    <th class="right">1,000,000</th>
                                                 </tr>
                                             </tfoot>
                                         </table>
@@ -427,7 +266,7 @@
                                                     <td>기생충-1</td>
                                                     <td>감독</td>
                                                     <td>50%</td>
-                                                    <td>1,000,000</td>
+                                                    <td class="right">1,000,000</td>
                                                 </tr>
 
                                                 <!-- no-data 시작 -->
@@ -439,7 +278,7 @@
                                             <tfoot>
                                                 <tr>
                                                     <th colspan="11">합계</th>
-                                                    <th>1,000,000</th>
+                                                    <th class="right">1,000,000</th>
                                                 </tr>
                                             </tfoot>
                                         </table>
@@ -448,7 +287,7 @@
                             </div>
                             <!-- 정산 및 공제 끝 -->
                             <!-- 지급이력 시작 -->
-                            <div class="tab-content-item" id="tab-panel-3" role="tabpanel" aria-labelledby="tab-3" hidden>
+                            <div class="tab-content-item" id="tab-panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
                                 <div class="indiv">
                                     <h3 class="tit">조회</h3>
                                     <form class="search-form">
@@ -489,60 +328,48 @@
                                         <table>
                                             <colgroup>
                                                 <col style="width:80px">
-                                                <col span="12">
+                                                <col span="8">
                                             </colgroup>
                                             <thead>
                                                 <tr>
                                                     <th scope="col">No</th>
-                                                    <th scope="col">상태</th>
-                                                    <th scope="col">입금상태</th>
+                                                    <th scope="col">지급상태</th>
                                                     <th scope="col">지급대기 전환일</th>
-                                                    <th scope="col">입금관리번호</th>
+                                                    <th scope="col">정산ID</th>
                                                     <th scope="col">단체</th>
-                                                    <th scope="col">구분</th>
-                                                    <th scope="col">IDA</th>
-                                                    <th scope="col">DGK 작품코드</th>
+                                                    <th scope="col">회차</th>
                                                     <th scope="col">작품명</th>
-                                                    <th scope="col">직책</th>
-                                                    <th scope="col">지분</th>
-                                                    <th scope="col">정산액(원)</th>
+                                                    <th scope="col">역할</th>
+                                                    <th scope="col">최종 개인 지급액(원)</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
                                                     <td class="col-no">2</td>
                                                     <td>지급대기</td>
-                                                    <td>미입금</td>
-                                                    <td>2025.01.01</td>
-                                                    <td></td>
+                                                    <td>2026.04.24</td>
+                                                    <td>STL-2026-0008</td>
                                                     <td>DGK</td>
-                                                    <td>영화</td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
+                                                    <td>12</td>
+                                                    <td class="left">설국열차</td>
+                                                    <td>감독</td>
+                                                    <td class="right">1,500,000</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="col-no">1</td>
                                                     <td>지급완료</td>
-                                                    <td>입금완료</td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
+                                                    <td>2026.03.15</td>
+                                                    <td>STL-2026-0005</td>
+                                                    <td>DGK</td>
+                                                    <td>8</td>
+                                                    <td class="left">기생충</td>
+                                                    <td>감독</td>
+                                                    <td class="right">2,300,000</td>
                                                 </tr>
 
                                                 <!-- no-data 시작 -->
                                                 <!-- <tr>
-                                                    <td colspan="13" class="no-data">데이터가 없습니다.</td>
+                                                    <td colspan="9" class="no-data">데이터가 없습니다.</td>
                                                 </tr> -->
                                                 <!-- no-data 종료 -->
                                             </tbody>
@@ -568,21 +395,6 @@
         /* 사이드바 네비 현재 메뉴 활성 */
         $(document).ready(function () {
             setSidebarNavActive('prepare'); // 지급 준비
-        });
-
-        /* 지급 준비 상세 탭 */
-        $(document).on('click', '.tab-menu button[type="button"]', function () {
-            var $btn = $(this);
-            var $li = $btn.closest('li');
-            var idx = $li.index();
-
-            $li.addClass('active').siblings().removeClass('active');
-            $('.tab-menu button[role="tab"]').attr('aria-selected', 'false');
-            $btn.attr('aria-selected', 'true');
-
-            var $panels = $('.tab-content .tab-content-item');
-            $panels.removeClass('active').attr('hidden', true);
-            $panels.eq(idx).addClass('active').removeAttr('hidden');
         });
     </script>
 </body>

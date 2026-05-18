@@ -60,15 +60,14 @@
                         <h3 class="title">회원 지급</h3>
                         <ul>
                             <li class="prepare"><a href="" title="지급 준비"><i class="icon-prepare"></i><span>지급 준비</span></a></li>
-                            <li class="waiting"><a href="" title="지급 대기"><i class="icon-waiting"></i><span>지급 대기</span></a></li>
-                            <li class="payment-history"><a href="" title="지급 이력"><i class="icon-payment-history"></i><span>지급 이력</span></a></li>
+                            <li class="waiting"><a href="" title="지급 대기"><i class="icon-waiting"></i><span>지급 대기</span></a></li>                            
                         </ul>
                     </div>
                     <div class="nav-list">
                         <h3 class="title">통계</h3>
                         <ul>
                             <li class="stat-work"><a href="" title="작품별 통계"><i class="icon-stat-work"></i><span>작품별 통계</span></a></li>
-                            <li class="stat-member"><a href="" title="회원별 통계"><i class="icon-stat-member"></i><span>회원별 통계</span></a></li>
+                            <li class="stat-member"><a href="" title="회원별 정산관리"><i class="icon-stat-member"></i><span>회원별 정산관리</span></a></li>
                         </ul>
                     </div>
                 </nav>
@@ -191,11 +190,9 @@
 
                         <div class="indiv">
                             <div class="tit-wrap">
-                                <h3 class="tit">IDA  Title</h3>
+                                <h3 class="tit">IDA Title</h3>
                                 <div class="in-btn-wrap">
                                     <button type="button" class="btn-ida-delete btn-gray">삭제</button>
-                                    <span class="divider">|</span>
-                                    <button type="button" class="btn-ida-search-add btn-secondary">검색 추가</button>
                                     <button type="button" class="btn-ida-row-add btn-primary">수기 추가</button>
                                 </div>
                             </div>
@@ -621,7 +618,7 @@
 
                         <div class="indiv">
                             <div class="tit-wrap">
-                                <h3 class="tit">IDA Participants</h3>
+                                <h3 class="tit">IDA Participants <em class="required">*</em></h3>
                                 <div class="in-btn-wrap">
                                     <button type="button" class="btn-ida-participants-delete btn-gray">삭제</button>
                                     <span class="divider">|</span>
@@ -633,14 +630,8 @@
                                 <table>
                                     <colgroup>
                                         <col style="width:8rem">
-                                        <col>
-                                        <col>
-                                        <col>
-                                        <col>
-                                        <col>
-                                        <col>
-                                        <col>
-                                        <col>
+                                        <col style="width:20rem">
+                                        <col span="6">
                                     </colgroup>
                                     <thead>
                                         <tr>
@@ -687,7 +678,7 @@
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="radio-box justify-center">
+                                                <div class="radio-box no-wrap justify-center">
                                                     <div class="items">
                                                         <input type="radio" id="ida-owner-radio-1-on" name="ida-owner-radio-1" value="ON" checked>
                                                         <label for="ida-owner-radio-1-on">ON</label>
@@ -709,7 +700,7 @@
                                                 0/DGK
                                             </td>
                                             <td>
-                                                <div class="dflex gap10">
+                                                <div class="dflex acenter gap10">
                                                     <div class="input-box flex1">
                                                         <input type="text" id="" class="input" autocomplete="off">
                                                     </div>
@@ -745,7 +736,7 @@
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="radio-box justify-center">
+                                                <div class="radio-box no-wrap justify-center">
                                                     <div class="items">
                                                         <input type="radio" id="ida-owner-radio-2-on" name="ida-owner-radio-2" value="ON" checked>
                                                         <label for="ida-owner-radio-2-on">ON</label>
@@ -767,7 +758,7 @@
                                                 0/DGK
                                             </td>
                                             <td>
-                                                <div class="dflex gap10">
+                                                <div class="dflex acenter gap10">
                                                     <div class="input-box flex1">
                                                         <input type="text" id="" class="input" autocomplete="off">
                                                     </div>
@@ -834,7 +825,7 @@
                             </div>
                             <div class="indiv col">
                                 <div class="tit-wrap">
-                                    <h3 class="tit">IDA References</h3>
+                                    <h3 class="tit">IDA Link</h3>
                                     <div class="in-btn-wrap">
                                         <button type="button" class="btn-ida-references2-delete btn-gray">삭제</button>
                                         <button type="button" class="btn-ida-references2-row-add btn-primary">추가</button>
@@ -856,7 +847,7 @@
                                                         </div>
                                                     </div>
                                                 </th>
-                                                <th scope="col">Society <em class="required">*</em></th>
+                                                <th scope="col">Subject <em class="required">*</em></th>
                                                 <th scope="col">IDA Reference <em class="required">*</em></th>
                                             </tr>
                                         </thead>
@@ -921,7 +912,7 @@
                             <tbody>
                                 <tr>
                                     <th>
-                                        <label class="tit">작품코드</label>
+                                        <label class="tit">DGK 작품코드</label>
                                     </th>
                                     <td>
                                         <div class="input-box wd100">
@@ -939,7 +930,7 @@
                                 </tr>
                                 <tr>
                                     <th>
-                                        <label class="tit">IDA 코드</label>
+                                        <label class="tit">IDA REF</label>
                                     </th>
                                     <td>
                                         <div class="input-box wd100">
@@ -967,11 +958,11 @@
                     <div class="tbl-top mt30">
                         <div class="left">
                             <div class="item">
-                                총 <span>1</span> 건
+                                총 <span>2</span> 건
                             </div>
                         </div>
                     </div>
-                    <div class="tbl-list tbl-work-search-result-list tbl-check-scope body-scroll">
+                    <div class="tbl-list no-wrap tbl-check-scope body-scroll">
                         <table>
                             <colgroup>
                                 <col style="width:8rem;">
@@ -981,7 +972,10 @@
                                 <col>
                                 <col>
                                 <col>
-                                <col style="width:12rem;">
+                                <col>
+                                <col>
+                                <col>
+                                <col>
                             </colgroup>
                             <thead>
                                 <tr>
@@ -994,12 +988,15 @@
                                         </div>
                                     </th>
                                     <th scope="col">No</th>
-                                    <th scope="col">작품코드</th>
+                                    <th scope="col">DGK 작품코드</th>
+                                    <th scope="col">작품구분</th>
                                     <th scope="col">작품명</th>
-                                    <th scope="col">부제</th>
+                                    <th scope="col">시즌</th>
+                                    <th scope="col">에피소드 회차</th>
+                                    <th scope="col">제작년도</th>
                                     <th scope="col">참여자</th>
-                                    <th scope="col">IDA 코드</th>
-                                    <th scope="col">등록일</th>
+                                    <th scope="col">포멧</th>
+                                    <th scope="col">IDA REF</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -1012,27 +1009,59 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="col-no">1</td>
-                                    <td>123123123</td>
-                                    <td>기생충</td>
-                                    <td>Gisang</td>
-                                    <td>김철수 외 1명</td>
-                                    <td>123456</td>
-                                    <td>2026-04-24</td>
+                                    <td class="col-no">2</td>
+                                    <td>DGK-WK-2025010</td>
+                                    <td>드라마</td>
+                                    <td>오징어 게임</td>
+                                    <td>S01</td>
+                                    <td>EP08</td>
+                                    <td>2021</td>
+                                    <td>황동혁 외 3명</td>
+                                    <td>시리즈</td>
+                                    <td>IDA456789</td>
                                 </tr>
+                                <tr>
+                                    <td>
+                                        <div class="check-box-wrap center">
+                                            <div class="check-box">
+                                                <input type="checkbox" id="work-search-result-sel-2" class="js-check-row" name="work-search-result-no" value="2">
+                                                <label for="work-search-result-sel-2" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="col-no">1</td>
+                                    <td>DGK-WK-2025001</td>
+                                    <td>영화</td>
+                                    <td>기생충</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>2019</td>
+                                    <td>봉준호 외 2명</td>
+                                    <td>장편</td>
+                                    <td>IDA123456</td>
+                                </tr>
+
+                                <!-- no data 시작 -->
+                                <!-- <tr>
+                                    <td colspan="11" class="no-data">
+                                        <p>데이터가 없습니다.</p>
+                                    </td>
+                                </tr> -->
+                                <!-- no data 끝 -->
                             </tbody>
                         </table>
                     </div>
                     <div class="btn-wrap mt20">
                         <button type="button" class="btn-close" onclick="modalClose('workSearchPopup');">닫기</button>
                         <button type="button" class="btn-apply">적용</button>
+                        <button type="button" class="btn-unmanaged-work btn-secondary">미관리 작품</button>
                     </div>
                 </form>
             </div>
             <button type="button" class="close" onclick="modalClose('workSearchPopup');">닫기</button>
         </div>
     </div>
-    <!-- 대량 업로드 popup 끝 -->    
+    <!-- 작품 검색 popup 끝 -->    
 
 
     <script>

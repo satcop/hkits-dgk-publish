@@ -60,15 +60,14 @@
                         <h3 class="title">회원 지급</h3>
                         <ul>
                             <li class="prepare"><a href="" title="지급 준비"><i class="icon-prepare"></i><span>지급 준비</span></a></li>
-                            <li class="waiting"><a href="" title="지급 대기"><i class="icon-waiting"></i><span>지급 대기</span></a></li>
-                            <li class="payment-history"><a href="" title="지급 이력"><i class="icon-payment-history"></i><span>지급 이력</span></a></li>
+                            <li class="waiting"><a href="" title="지급 대기"><i class="icon-waiting"></i><span>지급 대기</span></a></li>                            
                         </ul>
                     </div>
                     <div class="nav-list">
                         <h3 class="title">통계</h3>
                         <ul>
                             <li class="stat-work"><a href="" title="작품별 통계"><i class="icon-stat-work"></i><span>작품별 통계</span></a></li>
-                            <li class="stat-member"><a href="" title="회원별 통계"><i class="icon-stat-member"></i><span>회원별 통계</span></a></li>
+                            <li class="stat-member"><a href="" title="회원별 정산관리"><i class="icon-stat-member"></i><span>회원별 정산관리</span></a></li>
                         </ul>
                     </div>
                 </nav>
@@ -118,190 +117,661 @@
 
                 <!-- page body 시작 -->
                 <div class="page-body">
-                    <div class="indiv">
-                        <h3 class="tit">조회</h3>
-                        <form class="search-form">
-                            <div class="tbl-input">
-                                <table>
-                                    <colgroup>
-                                        <col style="width:12%">
-                                        <col style="width:21.33%">
-                                        <col style="width:12%">
-                                        <col style="width:21.33%">
-                                        <col style="width:12%">
-                                        <col style="width:21.33%">
-                                    </colgroup>
-                                    <tbody>
-                                        <tr>
-                                            <th>
-                                                <label class="tit">매칭상태</label>
-                                            </th>
-                                            <td>
-                                                <div class="select-box">
-                                                    <select>
-                                                        <option value="">전체</option>
-                                                        <option value="">매칭</option>
-                                                        <option value="">미매칭</option>
-                                                    </select>
-                                                </div>
-                                            </td>
-                                            <th>
-                                                <label class="tit">해외단체</label>
-                                            </th>
-                                            <td>
-                                                <div class="select-box">
-                                                    <select>
-                                                        <option value="">전체</option>
-                                                    </select>
-                                                </div>
-                                            </td>
-                                            <th>
-                                                <label class="tit">수신 Name</label>
-                                            </th>
-                                            <td>
-                                                <div class="input-box">
-                                                    <input type="text" class="input" value="">
-                                                </div>
-                                            </td>                                                                                      
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
 
-                            <div class="btn-wrap mt20">
-                                <button type="reset" class="btn-reset">초기화</button>
-                                <button type="button" class="btn-search">조회</button>
-                            </div>
-                        </form>
+                    <div class="indiv tab-menu">
+                        <ul role="tablist" aria-label="미정산내역 구분">
+                            <li class="active" role="presentation"><button type="button" role="tab" aria-selected="true" aria-controls="tab-panel-1" id="tab-1">미매칭내역</button></li>
+                            <li role="presentation"><button type="button" role="tab" aria-selected="false" aria-controls="tab-panel-2" id="tab-2">매칭이력</button></li>
+                        </ul>
                     </div>
 
-                    <div class="indiv">
-                        <h3 class="tit">목록</h3>
-                        <div class="tbl-top">
-                            <div class="left">
-                                <div class="item">
-                                    전체 <span>15</span> 페이지, <span>152</span> 건
-                                </div>
-                                <div class="top-btn-wrap">
-                                    <button type="button" class="btn-re-match btn-primary">재매칭</button>
-                                </div>
+                    <div class="tab-content">
+                        <!-- 미매칭내역 시작 -->
+                        <div class="tab-content-item active" id="tab-panel-1" role="tabpanel" aria-labelledby="tab-1">
+                            <div class="indiv">
+                                <h3 class="tit">조회</h3>
+                                <form class="search-form">
+                                    <div class="tbl-input">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:12%">
+                                                <col style="width:21.33%">
+                                                <col style="width:12%">
+                                                <col style="width:21.33%">
+                                                <col style="width:12%">
+                                                <col style="width:21.34%">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th>
+                                                        <label class="tit">정산확정일</label>
+                                                    </th>
+                                                    <td>
+                                                        <div class="date-range">
+                                                            <div class="input-box">
+                                                                <input type="date" class="input calendar" value="">
+                                                            </div>
+                                                            <span class="divider">~</span>
+                                                            <div class="input-box">
+                                                                <input type="date" class="input calendar" value="">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <th>
+                                                        <label class="tit">회원명</label>
+                                                    </th>
+                                                    <td>
+                                                        <div class="input-box">
+                                                            <input type="text" class="input" value="">
+                            
+                                                        </div>
+                                                    </td>
+                                                    <th>
+                                                        <label class="tit">해외단체</label>
+                                                    </th>
+                                                    <td>
+                                                        <div class="select-box">
+                                                            <select>
+                                                                <option value="">전체</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        <label class="tit">정산ID</label>
+                                                    </th>
+                                                    <td>
+                                                        <div class="input-box">
+                                                            <input type="text" class="input" value="">
+                                                        </div>
+                                                    </td>
+                                                    <th>
+                                                        <label class="tit">작품명</label>
+                                                    </th>
+                                                    <td>
+                                                        <div class="input-box">
+                                                            <input type="text" class="input" value="">
+                                                        </div>
+                                                    </td>
+                                                    <th>
+                                                        <label class="tit">검토상태</label>
+                                                    </th>
+                                                    <td>
+                                                        <div class="select-box">
+                                                            <select>
+                                                                <option value="">전체</option>
+                                                                <option value="">Y</option>
+                                                                <option value="">N</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="btn-wrap mt20">
+                                        <button type="reset" class="btn-reset">초기화</button>
+                                        <button type="button" class="btn-search">조회</button>
+                                    </div>
+                                </form>
                             </div>
-                            <div class="right">
-                                <div class="select-box">
-                                    <select>
-                                        <option value="5" selected>5개씩 보기</option>
-                                        <option value="10">10개씩 보기</option>
-                                        <option value="20">20개씩 보기</option>
-                                        <option value="50">50개씩 보기</option>
-                                        <option value="100">100개씩 보기</option>
-                                    </select>
-                                </div>
+                            <div class="indiv">
+                                <form class="list-form">
+                                    <h3 class="tit">목록</h3>
+                                    <div class="tbl-top">
+                                        <div class="left">
+                                            <div class="item">
+                                                전체 <span>15</span> 페이지, <span>152</span> 건
+                                            </div>
+                                            <div class="top-btn-wrap">
+                                                <button type="button" class="btn-save">저장</button>
+                                            </div>
+                                        </div>
+                                        <div class="right">
+                                            <div class="select-box">
+                                                <select>
+                                                    <option value="5" selected>5개씩 보기</option>
+                                                    <option value="10">10개씩 보기</option>
+                                                    <option value="20">20개씩 보기</option>
+                                                    <option value="50">50개씩 보기</option>
+                                                    <option value="100">100개씩 보기</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tbl-list no-wrap">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:80px;">
+                                                <col span="24">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">No</th>
+                                                    <th scope="col">등록일</th>
+                                                    <th scope="col">해외단체</th>
+                                                    <th scope="col">정산ID</th>
+                                                    <th scope="col">IDA REF</th>
+                                                    <th scope="col">작품명</th>
+                                                    <th scope="col">시즌</th>
+                                                    <th scope="col">에피소드</th>
+                                                    <th scope="col">DGK 작품코드</th>
+                                                    <th scope="col">IPI 코드</th>
+                                                    <th scope="col">IPI Name</th>
+                                                    <th scope="col">수신 Name</th>
+                                                    <th scope="col">DGK 회원코드</th>
+                                                    <th scope="col">역할</th>
+                                                    <th scope="col">CDF 지분</th>
+                                                    <th scope="col">DGK 지분</th>
+                                                    <th scope="col">Gross Amount</th>
+                                                    <th scope="col">Tax Withholding (10%)</th>
+                                                    <th scope="col">Net Amount</th>
+                                                    <th scope="col">USD</th>
+                                                    <th scope="col">KRW</th>
+                                                    <th scope="col">매칭상태</th>
+                                                    <th scope="col">확인필요사항</th>
+                                                    <th scope="col">비고</th>
+                                                    <th scope="col">검토상태</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="col-no">4</td>
+                                                    <td>2026.05.01</td>
+                                                    <td>SACD</td>
+                                                    <td>
+                                                        <div class="link"><a href="javascript:void(0);">ING001</a></div>
+                                                    </td>
+                                                    <td>IDA-A0014</td>
+                                                    <td class="left">설국열차</td>
+                                                    <td>1</td>
+                                                    <td>1회차</td>
+                                                    <td>
+                                                        <div class="link"><a href="javascript:void(0);" onclick="modalOpen('workSearchPopup');">DGK001-S91</a></div>
+                                                    </td>
+                                                    <td>00789654321</td>
+                                                    <td>Kim Min Soo</td>
+                                                    <td>Kim</td>
+                                                    <td>
+                                                        <div class="link"><a href="javascript:void(0);" onclick="modalOpen('memberSearchPopup');">DGK00001</a></div>
+                                                    </td>
+                                                    <td>감독</td>
+                                                    <td class="right">50%</td>
+                                                    <td class="right">50%</td>
+                                                    <td class="right">1,250,000</td>
+                                                    <td class="right">125,000</td>
+                                                    <td class="right">1,125,000</td>
+                                                    <td class="right">850.00</td>
+                                                    <td class="right">1,125,000</td>
+                                                    <td>미매칭</td>
+                                                    <td>-</td>
+                                                    <td></td>
+                                                    <td>
+                                                        <div class="select-box">
+                                                            <select>
+                                                                <option value="">선택</option>
+                                                                <option value="" selected>Y</option>
+                                                                <option value="">N</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="error">
+                                                    <td class="col-no">3</td>
+                                                    <td>2026.05.01</td>
+                                                    <td>SACEM</td>
+                                                    <td>
+                                                        <div class="link"><a href="javascript:void(0);">ING002</a></div>
+                                                    </td>
+                                                    <td>-</td>
+                                                    <td class="left">Snow</td>
+                                                    <td>1</td>
+                                                    <td>10차</td>
+                                                    <td>
+                                                        <button type="button" class="btn-dgk-work-code-search" onclick="modalOpen('workSearchPopup');">검색</button>
+                                                    </td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>gimgim</td>
+                                                    <td>
+                                                        <button type="button" class="btn-dgk-member-code-search" onclick="modalOpen('memberSearchPopup');">검색</button>
+                                                    </td>
+                                                    <td>-</td>
+                                                    <td class="right">-</td>
+                                                    <td class="right">-</td>
+                                                    <td class="right">890,000</td>
+                                                    <td class="right">89,000</td>
+                                                    <td class="right">801,000</td>
+                                                    <td class="right">600.00</td>
+                                                    <td class="right">801,000</td>
+                                                    <td>오류</td>
+                                                    <td>지분율확인</td>
+                                                    <td></td>
+                                                    <td>
+                                                        <div class="select-box">
+                                                            <select>
+                                                                <option value="">선택</option>
+                                                                <option value="">Y</option>
+                                                                <option value="" selected>N</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="col-no">2</td>
+                                                    <td>2026.04.28</td>
+                                                    <td>SACD</td>
+                                                    <td>
+                                                        <div class="link"><a href="javascript:void(0);">ING003</a></div>
+                                                    </td>
+                                                    <td>IDA-A0012</td>
+                                                    <td class="left">기생충</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>
+                                                        <div class="link"><a href="javascript:void(0);" onclick="modalOpen('workSearchPopup');">DGK002-S01</a></div>
+                                                    </td>
+                                                    <td>00789123456</td>
+                                                    <td>Hong Gil Dong</td>
+                                                    <td>Hong</td>
+                                                    <td>
+                                                        <div class="link"><a href="javascript:void(0);" onclick="modalOpen('memberSearchPopup');">DGK00002</a></div>
+                                                    </td>
+                                                    <td>감독</td>
+                                                    <td class="right">100%</td>
+                                                    <td class="right">100%</td>
+                                                    <td class="right">2,100,000</td>
+                                                    <td class="right">210,000</td>
+                                                    <td class="right">1,890,000</td>
+                                                    <td class="right">1,420.00</td>
+                                                    <td class="right">1,890,000</td>
+                                                    <td>미매칭</td>
+                                                    <td>권리자확인</td>
+                                                    <td></td>
+                                                    <td>
+                                                        <div class="select-box">
+                                                            <select>
+                                                                <option value="">선택</option>
+                                                                <option value="">Y</option>
+                                                                <option value="" selected>N</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="col-no">1</td>
+                                                    <td>2026.04.28</td>
+                                                    <td>SACEM</td>
+                                                    <td>
+                                                        <div class="link"><a href="javascript:void(0);">ING004</a></div>
+                                                    </td>
+                                                    <td>-</td>
+                                                    <td class="left">Train</td>
+                                                    <td>2</td>
+                                                    <td>5회차</td>
+                                                    <td>-</td>
+                                                    <td>00876543210</td>
+                                                    <td>Park Director</td>
+                                                    <td>Park</td>
+                                                    <td>
+                                                        <div class="select-box">
+                                                            <select>
+                                                                <option value="">선택</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                    <td>-</td>
+                                                    <td class="right">-</td>
+                                                    <td class="right">-</td>
+                                                    <td class="right">640,000</td>
+                                                    <td class="right">64,000</td>
+                                                    <td class="right">576,000</td>
+                                                    <td class="right">420.00</td>
+                                                    <td class="right">576,000</td>
+                                                    <td>미매칭</td>
+                                                    <td>-</td>
+                                                    <td></td>
+                                                    <td>
+                                                        <div class="select-box">
+                                                            <select>
+                                                                <option value="">선택</option>
+                                                                <option value="">Y</option>
+                                                                <option value="" selected>N</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- no data 시작 -->
+                                                <!-- <tr>
+                                                    <td colspan="25" class="no-data">
+                                                        <p>데이터가 없습니다.</p>
+                                                    </td>
+                                                </tr> -->
+                                                <!-- no data 끝 -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </form>
+                                <!-- paging 시작 -->
+                                <nav class="paging">
+                                    <button type="button" class="paging__btn paging__btn--soft">처음</button>
+                                    <button type="button" class="paging__btn paging__btn--soft">이전</button>
+                                    <div class="paging__nums">
+                                        <a href="javascript:void(0);" class="paging__num is-active">1</a>
+                                        <a href="javascript:void(0);" class="paging__num">2</a>
+                                        <a href="javascript:void(0);" class="paging__num">3</a>
+                                        <a href="javascript:void(0);" class="paging__num">4</a>
+                                        <a href="javascript:void(0);" class="paging__num">5</a>
+                                    </div>
+                                    <button type="button" class="paging__btn">다음</button>
+                                    <button type="button" class="paging__btn">맨끝</button>
+                                </nav>
+                                <!-- paging 끝 -->
                             </div>
                         </div>
-                        <div class="tbl-list no-wrap">
-                            <table>
-                                <colgroup>
-                                    <col style="width:80px;">
-                                    <col>
-                                    <col>
-                                    <col>
-                                    <col>
-                                    <col>
-                                    <col>   
-                                    <col>   
-                                    <col>   
-                                    <col>   
-                                </colgroup>
-                                <thead>
-                                    <tr>
-                                        <th scope="col">No</th>
-                                        <th scope="col">해외단체</th>
-                                        <th scope="col">입금관리번호</th>
-                                        <th scope="col">IDA 코드</th>
-                                        <th scope="col">작품명/에피소드 (Title)</th>
-                                        <th scope="col">DGK 작품코드</th>
-                                        <th scope="col">수신 Name</th>
-                                        <th scope="col">DGK 회원 코드</th>
-                                        <th scope="col">매칭상태</th>
-                                        <th scope="col">처리상태</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="col-no">4</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td>123456</td>
-                                        <td>설국열차/1</td>
-                                        <td>DKG001-S91</td>
-                                        <td>Kim</td>
-                                        <td>DGK00001</td>
-                                        <td>매칭</td>
-                                        <td>보류</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="col-no">3</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td>-</td>
-                                        <td>Snow 10차</td>
-                                        <td>-</td>
-                                        <td>gimgim</td>
-                                        <td><button type="button" class="btn-dgk-member-code-search" onclick="modalOpen('memberSearchPopup');">검색</button></td>
-                                        <td>미매칭</td>
-                                        <td>제외</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="col-no">2</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td>123456</td>
-                                        <td>설국열차/1</td>
-                                        <td>DKG001-S91</td>
-                                        <td>gimgim</td>
-                                        <td>DGK00001</td>
-                                        <td></td>
-                                        <td>보류</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="col-no">1</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td>-</td>
-                                        <td>Snow 10차</td>
-                                        <td>DKG001-S91</td>
-                                        <td>KIM</td>
-                                        <td><button type="button" class="btn-dgk-member-code-search" onclick="modalOpen('memberSearchPopup');">검색</button></td>
-                                        <td></td>
-                                        <td>제외</td>
-                                    </tr>
+                        <!-- 미매칭내역 끝 -->
 
-                                    <!-- no data 시작 -->
-                                    <!-- <tr>
-                                        <td colspan="10" class="no-data">
-                                            <p>데이터가 없습니다.</p>
-                                        </td>
-                                    </tr> -->
-                                    <!-- no data 끝 -->
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <!-- paging 시작 -->
-                        <nav class="paging">
-                            <button type="button" class="paging__btn paging__btn--soft">처음</button>
-                            <button type="button" class="paging__btn paging__btn--soft">이전</button>
-                            <div class="paging__nums">
-                                <a href="javascript:void(0);" class="paging__num is-active">1</a>
-                                <a href="javascript:void(0);" class="paging__num">2</a>
-                                <a href="javascript:void(0);" class="paging__num">3</a>
-                                <a href="javascript:void(0);" class="paging__num">4</a>
-                                <a href="javascript:void(0);" class="paging__num">5</a>
+                        <!-- 매칭이력 시작 -->
+                        <div class="tab-content-item" id="tab-panel-2" role="tabpanel" aria-labelledby="tab-2">
+                            <div class="indiv">
+                                <h3 class="tit">조회</h3>
+                                <form class="search-form">
+                                    <div class="tbl-input">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:12%">
+                                                <col style="width:21.33%">
+                                                <col style="width:12%">
+                                                <col style="width:21.33%">
+                                                <col style="width:12%">
+                                                <col style="width:21.34%">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th>
+                                                        <label class="tit">매칭일</label>
+                                                    </th>
+                                                    <td>
+                                                        <div class="date-range">
+                                                            <div class="input-box">
+                                                                <input type="date" class="input calendar" value="">
+                                                            </div>
+                                                            <span class="divider">~</span>
+                                                            <div class="input-box">
+                                                                <input type="date" class="input calendar" value="">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <th>
+                                                        <label class="tit">회원명</label>
+                                                    </th>
+                                                    <td>
+                                                        <div class="input-box">
+                                                            <input type="text" class="input" value="">
+                            
+                                                        </div>
+                                                    </td>
+                                                    <th>
+                                                        <label class="tit">해외단체</label>
+                                                    </th>
+                                                    <td>
+                                                        <div class="select-box">
+                                                            <select>
+                                                                <option value="">전체</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        <label class="tit">정산ID</label>
+                                                    </th>
+                                                    <td>
+                                                        <div class="input-box">
+                                                            <input type="text" class="input" value="">
+                                                        </div>
+                                                    </td>
+                                                    <th>
+                                                        <label class="tit">작품명</label>
+                                                    </th>
+                                                    <td>
+                                                        <div class="input-box">
+                                                            <input type="text" class="input" value="">
+                                                        </div>
+                                                    </td>
+                                                    <th>
+                                                        <label class="tit">검토상태</label>
+                                                    </th>
+                                                    <td>
+                                                        <div class="select-box">
+                                                            <select>
+                                                                <option value="">전체</option>
+                                                                <option value="">Y</option>
+                                                                <option value="">N</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="btn-wrap mt20">
+                                        <button type="reset" class="btn-reset">초기화</button>
+                                        <button type="button" class="btn-search">조회</button>
+                                    </div>
+                                </form>
                             </div>
-                            <button type="button" class="paging__btn">다음</button>
-                            <button type="button" class="paging__btn">맨끝</button>
-                        </nav>
-                        <!-- paging 끝 -->
+                            <div class="indiv">
+                                <form class="list-form">
+                                    <h3 class="tit">목록</h3>
+                                    <div class="tbl-top">
+                                        <div class="left">
+                                            <div class="item">
+                                                전체 <span>15</span> 페이지, <span>152</span> 건
+                                            </div>
+                                        </div>
+                                        <div class="right">
+                                            <div class="select-box">
+                                                <select>
+                                                    <option value="5" selected>5개씩 보기</option>
+                                                    <option value="10">10개씩 보기</option>
+                                                    <option value="20">20개씩 보기</option>
+                                                    <option value="50">50개씩 보기</option>
+                                                    <option value="100">100개씩 보기</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tbl-list no-wrap">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:80px;">
+                                                <col span="24">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">No</th>
+                                                    <th scope="col">등록일</th>
+                                                    <th scope="col">해외단체</th>
+                                                    <th scope="col">정산ID</th>
+                                                    <th scope="col">IDA REF</th>
+                                                    <th scope="col">작품명</th>
+                                                    <th scope="col">시즌</th>
+                                                    <th scope="col">에피소드</th>
+                                                    <th scope="col">DGK 작품코드</th>
+                                                    <th scope="col">IPI 코드</th>
+                                                    <th scope="col">IPI Name</th>
+                                                    <th scope="col">수신 Name</th>
+                                                    <th scope="col">DGK 회원코드</th>
+                                                    <th scope="col">역할</th>
+                                                    <th scope="col">CDF 지분</th>
+                                                    <th scope="col">DGK 지분</th>
+                                                    <th scope="col">Gross Amount</th>
+                                                    <th scope="col">Tax Withholding (10%)</th>
+                                                    <th scope="col">Net Amount</th>
+                                                    <th scope="col">USD</th>
+                                                    <th scope="col">KRW</th>
+                                                    <th scope="col">매칭상태</th>
+                                                    <th scope="col">확인필요사항</th>
+                                                    <th scope="col">비고</th>
+                                                    <th scope="col">검토상태</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="col-no">4</td>
+                                                    <td>2026.05.01</td>
+                                                    <td>SACD</td>
+                                                    <td>
+                                                        <div class="link"><a href="javascript:void(0);">ING001</a></div>
+                                                    </td>
+                                                    <td>IDA-A0014</td>
+                                                    <td class="left">설국열차</td>
+                                                    <td>1</td>
+                                                    <td>1회차</td>
+                                                    <td>
+                                                        <div class="link"><a href="javascript:void(0);" onclick="modalOpen('workSearchPopup');">DGK001-S91</a></div>
+                                                    </td>
+                                                    <td>00789654321</td>
+                                                    <td>Kim Min Soo</td>
+                                                    <td>Kim</td>
+                                                    <td>
+                                                        <div class="link"><a href="javascript:void(0);" onclick="modalOpen('memberSearchPopup');">DGK00001</a></div>
+                                                    </td>
+                                                    <td>감독</td>
+                                                    <td class="right">50%</td>
+                                                    <td class="right">50%</td>
+                                                    <td class="right">1,250,000</td>
+                                                    <td class="right">125,000</td>
+                                                    <td class="right">1,125,000</td>
+                                                    <td class="right">850.00</td>
+                                                    <td class="right">1,125,000</td>
+                                                    <td>자동매칭</td>
+                                                    <td>-</td>
+                                                    <td></td>
+                                                    <td>Y</td>
+                                                </tr>
+                                                <tr class="error">
+                                                    <td class="col-no">3</td>
+                                                    <td>2026.05.01</td>
+                                                    <td>SACEM</td>
+                                                    <td>
+                                                        <div class="link"><a href="javascript:void(0);">ING002</a></div>
+                                                    </td>
+                                                    <td>-</td>
+                                                    <td class="left">Snow</td>
+                                                    <td>1</td>
+                                                    <td>10차</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>gimgim</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td class="right">-</td>
+                                                    <td class="right">-</td>
+                                                    <td class="right">890,000</td>
+                                                    <td class="right">89,000</td>
+                                                    <td class="right">801,000</td>
+                                                    <td class="right">600.00</td>
+                                                    <td class="right">801,000</td>
+                                                    <td>오류</td>
+                                                    <td>지분율확인</td>
+                                                    <td></td>
+                                                    <td>N</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="col-no">2</td>
+                                                    <td>2026.04.28</td>
+                                                    <td>SACD</td>
+                                                    <td>
+                                                        <div class="link"><a href="javascript:void(0);">ING003</a></div>
+                                                    </td>
+                                                    <td>IDA-A0012</td>
+                                                    <td class="left">기생충</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>
+                                                        <div class="link"><a href="javascript:void(0);" onclick="modalOpen('workSearchPopup');">DGK002-S01</a></div>
+                                                    </td>
+                                                    <td>00789123456</td>
+                                                    <td>Hong Gil Dong</td>
+                                                    <td>Hong</td>
+                                                    <td>
+                                                        <div class="link"><a href="javascript:void(0);" onclick="modalOpen('memberSearchPopup');">DGK00002</a></div>
+                                                    </td>
+                                                    <td>감독</td>
+                                                    <td class="right">100%</td>
+                                                    <td class="right">100%</td>
+                                                    <td class="right">2,100,000</td>
+                                                    <td class="right">210,000</td>
+                                                    <td class="right">1,890,000</td>
+                                                    <td class="right">1,420.00</td>
+                                                    <td class="right">1,890,000</td>
+                                                    <td>텍스트매칭</td>
+                                                    <td>권리자확인</td>
+                                                    <td></td>
+                                                    <td>N</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="col-no">1</td>
+                                                    <td>2026.04.28</td>
+                                                    <td>SACEM</td>
+                                                    <td>
+                                                        <div class="link"><a href="javascript:void(0);">ING004</a></div>
+                                                    </td>
+                                                    <td>-</td>
+                                                    <td class="left">Train</td>
+                                                    <td>2</td>
+                                                    <td>5회차</td>
+                                                    <td>-</td>
+                                                    <td>00876543210</td>
+                                                    <td>Park Director</td>
+                                                    <td>Park</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td class="right">-</td>
+                                                    <td class="right">-</td>
+                                                    <td class="right">640,000</td>
+                                                    <td class="right">64,000</td>
+                                                    <td class="right">576,000</td>
+                                                    <td class="right">420.00</td>
+                                                    <td class="right">576,000</td>
+                                                    <td>자동매칭</td>
+                                                    <td>-</td>
+                                                    <td></td>
+                                                    <td>N</td>
+                                                </tr>
+                                                <!-- no data 시작 -->
+                                                <!-- <tr>
+                                                    <td colspan="25" class="no-data">
+                                                        <p>데이터가 없습니다.</p>
+                                                    </td>
+                                                </tr> -->
+                                                <!-- no data 끝 -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </form>
+                                <!-- paging 시작 -->
+                                <nav class="paging">
+                                    <button type="button" class="paging__btn paging__btn--soft">처음</button>
+                                    <button type="button" class="paging__btn paging__btn--soft">이전</button>
+                                    <div class="paging__nums">
+                                        <a href="javascript:void(0);" class="paging__num is-active">1</a>
+                                        <a href="javascript:void(0);" class="paging__num">2</a>
+                                        <a href="javascript:void(0);" class="paging__num">3</a>
+                                        <a href="javascript:void(0);" class="paging__num">4</a>
+                                        <a href="javascript:void(0);" class="paging__num">5</a>
+                                    </div>
+                                    <button type="button" class="paging__btn">다음</button>
+                                    <button type="button" class="paging__btn">맨끝</button>
+                                </nav>
+                                <!-- paging 끝 -->
+                            </div>
+                        </div>
+                        <!-- 매칭이력 끝 -->
                     </div>
                 </div>                
                 <!-- page body 끝 -->
@@ -314,9 +784,180 @@
     </div>
 
 
+    <!-- 작품 검색 popup 시작 -->
+    <div class="layer-popup workSearchPopup">
+        <div class="md-content" style="max-width:100rem;">
+            <div class="md-header no-bottom">
+                <h2 class="tit">작품 검색</h2>
+            </div>
+            <div class="md-body">
+                <form class="work-search-form">
+                    <div class="tbl-input mt20">
+                        <table>
+                            <colgroup>
+                                <col style="width:20%;">
+                                <col style="width:30%;">
+                                <col style="width:20%;">
+                                <col style="width:30%;">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        <label class="tit">DGK 작품코드</label>
+                                    </th>
+                                    <td>
+                                        <div class="input-box wd100">
+                                            <input type="text" id="" class="input" autocomplete="off">
+                                        </div>
+                                    </td>
+                                    <th>
+                                        <label class="tit">작품명</label>
+                                    </th>
+                                    <td>
+                                        <div class="input-box wd100">
+                                            <input type="text" id="" class="input" autocomplete="off">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <label class="tit">IDA REF</label>
+                                    </th>
+                                    <td>
+                                        <div class="input-box wd100">
+                                            <input type="text" id="" class="input" autocomplete="off">
+                                        </div>
+                                    </td>
+                                    <th>
+                                        <label class="tit">참여자명</label>
+                                    </th>
+                                    <td>
+                                        <div class="input-box wd100">
+                                            <input type="text" id="" class="input" autocomplete="off">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="btn-wrap mt20">
+                        <button type="reset" class="btn-reset">초기화</button>
+                        <button type="button" class="btn-search">조회</button>
+                    </div>
+                </form>
+                <form class="work-search-result-form">
+                    <div class="tbl-top mt30">
+                        <div class="left">
+                            <div class="item">
+                                총 <span>2</span> 건
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tbl-list no-wrap tbl-check-scope body-scroll">
+                        <table>
+                            <colgroup>
+                                <col style="width:8rem;">
+                                <col style="width:8rem;">
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">
+                                        <div class="check-box-wrap center">
+                                            <div class="check-box">
+                                                <input type="checkbox" id="work-search-result-check-all" class="js-check-all" value="1">
+                                                <label for="work-search-result-check-all" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <th scope="col">No</th>
+                                    <th scope="col">DGK 작품코드</th>
+                                    <th scope="col">작품구분</th>
+                                    <th scope="col">작품명</th>
+                                    <th scope="col">시즌</th>
+                                    <th scope="col">에피소드 회차</th>
+                                    <th scope="col">제작년도</th>
+                                    <th scope="col">참여자</th>
+                                    <th scope="col">포멧</th>
+                                    <th scope="col">IDA REF</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="check-box-wrap center">
+                                            <div class="check-box">
+                                                <input type="checkbox" id="work-search-result-sel-1" class="js-check-row" name="work-search-result-no" value="1">
+                                                <label for="work-search-result-sel-1" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="col-no">2</td>
+                                    <td>DGK-WK-2025010</td>
+                                    <td>드라마</td>
+                                    <td>오징어 게임</td>
+                                    <td>S01</td>
+                                    <td>EP08</td>
+                                    <td>2021</td>
+                                    <td>황동혁 외 3명</td>
+                                    <td>시리즈</td>
+                                    <td>IDA456789</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="check-box-wrap center">
+                                            <div class="check-box">
+                                                <input type="checkbox" id="work-search-result-sel-2" class="js-check-row" name="work-search-result-no" value="2">
+                                                <label for="work-search-result-sel-2" class="blank"><span class="mark" aria-hidden="true"></span></label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="col-no">1</td>
+                                    <td>DGK-WK-2025001</td>
+                                    <td>영화</td>
+                                    <td>기생충</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>2019</td>
+                                    <td>봉준호 외 2명</td>
+                                    <td>장편</td>
+                                    <td>IDA123456</td>
+                                </tr>
+
+                                <!-- no data 시작 -->
+                                <!-- <tr>
+                                    <td colspan="11" class="no-data">
+                                        <p>데이터가 없습니다.</p>
+                                    </td>
+                                </tr> -->
+                                <!-- no data 끝 -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="btn-wrap mt20">
+                        <button type="button" class="btn-close" onclick="modalClose('workSearchPopup');">닫기</button>
+                        <button type="button" class="btn-apply">적용</button>
+                        <button type="button" class="btn-unmanaged-work btn-secondary">미관리 작품</button>
+                    </div>
+                </form>
+            </div>
+            <button type="button" class="close" onclick="modalClose('workSearchPopup');">닫기</button>
+        </div>
+    </div>
+    <!-- 작품 검색 popup 끝 -->    
+
+
     <!-- 회원 검색 popup 시작 -->
     <div class="layer-popup memberSearchPopup">
-        <div class="md-content" style="max-width:80rem;">
+        <div class="md-content" style="max-width:100rem;">
             <div class="md-header no-bottom">
                 <h2 class="tit">회원 검색</h2>
             </div>
@@ -333,7 +974,7 @@
                             <tbody>
                                 <tr>
                                     <th>
-                                        <label class="tit">회원코드</label>
+                                        <label class="tit">DGK 회원코드</label>
                                     </th>
                                     <td>
                                         <div class="input-box wd100">
@@ -351,7 +992,7 @@
                                 </tr>
                                 <tr>
                                     <th>
-                                        <label class="tit">IPI</label>
+                                        <label class="tit">IPI BN</label>
                                     </th>
                                     <td>
                                         <div class="input-box wd100">
@@ -383,37 +1024,39 @@
                     <div class="tbl-top mt30">
                         <div class="left">
                             <div class="item">
-                                총 <span>1</span> 건
+                                총 <span>2</span> 건
                             </div>
                         </div>
                     </div>
-                    <div class="tbl-list tbl-member-search-result-list body-scroll">
+                    <div class="tbl-list tbl-member-search-result-list no-wrap body-scroll">
                         <table>
                             <colgroup>
-                                <col style="width:6rem;">
-                                <col style="width:6rem;">
-                                <col>
-                                <col>
-                                <col>
-                                <col>
-                                <col>
-                                <col>
-                                <col>
+                                <col style="width:8rem;">
+                                <col style="width:8rem;">
+                                <col span="11">
                             </colgroup>
                             <thead>
                                 <tr>
                                     <th scope="col">선택</th>
                                     <th scope="col">No</th>
-                                    <th scope="col">DGK번호</th>
-                                    <th scope="col"></th>
+                                    <th scope="col">DGK 회원코드</th>
                                     <th scope="col">회원명</th>
-                                    <th scope="col">회원상태</th>
                                     <th scope="col">회원구분</th>
+                                    <th scope="col">회원상태</th>
+                                    <th scope="col">성별</th>
+                                    <th scope="col">생년월일</th>
                                     <th scope="col">전화번호</th>
-                                    <th scope="col">IPI상태</th>
+                                    <th scope="col">이메일</th>
+                                    <th scope="col">IPI BN</th>
+                                    <th scope="col">대표필모</th>
+                                    <th scope="col">가입승인일</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <!--
+                                    회원상태 : <span class="normal">정상</span>, <span class="withdraw">탈퇴</span>, <span class="stop">정지</span>
+                                    회원구분 : <span class="member">정회원</span>, <span class="pre-member">준회원</span>, <span class="non-member">대리중개</span>                                   
+                                -->
                                 <tr>
                                     <td>
                                         <div class="radio-box center">
@@ -425,12 +1068,16 @@
                                     </td>
                                     <td class="col-no">2</td>
                                     <td>DGK2025002</td>
-                                    <td></td>
-                                    <td>김경희</td>
-                                    <td>정상</td>
-                                    <td>정회원</td>
+                                    <td>고길동</td>
+                                    <td><span class="pre-member">준회원</span></td>
+                                    <td><span class="normal">정상</span></td>
+                                    <td>M</td>
+                                    <td>1990.01.01</td>
                                     <td>010-1234-5678</td>
-                                    <td>연동</td>
+                                    <td>go@gmail.com</td>
+                                    <td></td>
+                                    <td>오징어 게임</td>
+                                    <td>2026.04.21</td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -443,17 +1090,21 @@
                                     </td>
                                     <td class="col-no">1</td>
                                     <td>DGK2025001</td>
-                                    <td></td>
-                                    <td>박감독</td>
-                                    <td>정상</td>
-                                    <td>준회원</td>
+                                    <td>홍길동</td>
+                                    <td><span class="member">정회원</span></td>
+                                    <td><span class="normal">정상</span></td>
+                                    <td>F</td>
+                                    <td>1990.01.01</td>
                                     <td>010-2345-6789</td>
-                                    <td>미연동</td>
+                                    <td>hong@gmail.com</td>
+                                    <td></td>
+                                    <td>기생충</td>
+                                    <td>2026.04.21</td>
                                 </tr>
 
                                 <!-- no data 시작 -->
                                 <!-- <tr>
-                                    <td colspan="9" class="no-data">
+                                    <td colspan="13" class="no-data">
                                         <p>데이터가 없습니다.</p>
                                     </td>
                                 </tr> -->
@@ -464,13 +1115,14 @@
                     <div class="btn-wrap mt20">
                         <button type="button" class="btn-close" onclick="modalClose('memberSearchPopup');">닫기</button>
                         <button type="button" class="btn-apply">적용</button>
+                        <button type="button" class="btn-unmanaged-member btn-secondary">미관리 회원</button>
                     </div>
                 </form>
             </div>
             <button type="button" class="close" onclick="modalClose('memberSearchPopup');">닫기</button>
         </div>
     </div>
-    <!-- 회원 검색 popup 끝 -->       
+    <!-- 회원 검색 popup 끝 -->      
 
 
     <script>

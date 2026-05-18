@@ -60,15 +60,14 @@
                         <h3 class="title">회원 지급</h3>
                         <ul>
                             <li class="prepare"><a href="" title="지급 준비"><i class="icon-prepare"></i><span>지급 준비</span></a></li>
-                            <li class="waiting"><a href="" title="지급 대기"><i class="icon-waiting"></i><span>지급 대기</span></a></li>
-                            <li class="payment-history"><a href="" title="지급 이력"><i class="icon-payment-history"></i><span>지급 이력</span></a></li>
+                            <li class="waiting"><a href="" title="지급 대기"><i class="icon-waiting"></i><span>지급 대기</span></a></li>                            
                         </ul>
                     </div>
                     <div class="nav-list">
                         <h3 class="title">통계</h3>
                         <ul>
                             <li class="stat-work"><a href="" title="작품별 통계"><i class="icon-stat-work"></i><span>작품별 통계</span></a></li>
-                            <li class="stat-member"><a href="" title="회원별 통계"><i class="icon-stat-member"></i><span>회원별 통계</span></a></li>
+                            <li class="stat-member"><a href="" title="회원별 정산관리"><i class="icon-stat-member"></i><span>회원별 정산관리</span></a></li>
                         </ul>
                     </div>
                 </nav>
@@ -231,104 +230,174 @@
                             <table>
                                 <colgroup>
                                     <col style="width:80px;">
-                                    <col>
-                                    <col>
-                                    <col>
-                                    <col>
-                                    <col>
-                                    <col>   
-                                    <col>   
-                                    <col>   
+                                    <col span="20">  
                                 </colgroup>
                                 <thead>
                                     <tr>
                                         <th scope="col">No</th>
-                                        <th scope="col">입금관리번호</th>
+                                        <th scope="col">정산ID</th>
+                                        <th scope="col">정산관리번호</th>
                                         <th scope="col">단체명</th>
-                                        <th scope="col">입금일</th>
-                                        <th scope="col">통화</th>
-                                        <th scope="col">총 입금액</th>
-                                        <th scope="col">환전액</th>
-                                        <th scope="col">~~</th>
+                                        <th scope="col">회차</th>
+                                        <th scope="col">입금 유형</th>
+                                        <th scope="col">송금일</th>
+                                        <th scope="col">수취일</th>
+                                        <th scope="col">환전일</th>
+                                        <th scope="col">입금통화</th>
+                                        <th scope="col">입금액(해외)</th>
+                                        <th scope="col">입금액(원화)</th>
+                                        <th scope="col">정산 기준 금액(KRW)</th>
+                                        <th scope="col">미분배대상금액</th>
+                                        <th scope="col">분배대상금액</th>
+                                        <th scope="col">DGK수수료 총액</th>
+                                        <th scope="col">복지기금</th>
+                                        <th scope="col">개인정산액(세금포함)</th>
+                                        <th scope="col">미지급 잔액</th>
                                         <th scope="col">상태</th>
+                                        <th scope="col">비고</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr class="clickable" onclick="">
                                         <td class="col-no">5</td>
-                                        <td>
-                                            <div class="link"><a href="javascript:void(0);">IN-20250412-001</a></div>
-                                        </td>
-                                        <td>SACD (프랑스)</td>
-                                        <td>2026.04.20</td>
-                                        <td>EUR</td>
-                                        <td>3,450.00</td>
-                                        <td>6,200,000</td>
-                                        <td>-</td>
-                                        <td>정산완료</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="col-no">4</td>
-                                        <td>
-                                            <div class="link"><a href="javascript:void(0);">IN-20250412-002</a></div>
-                                        </td>
-                                        <td>ARS (영국)</td>
-                                        <td>2026.04.12</td>
-                                        <td>GBP</td>
-                                        <td>5,000,000</td>
-                                        <td>5,000,000</td>
-                                        <td>-</td>
-                                        <td>정산대기</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="col-no">3</td>
-                                        <td>
-                                            <div class="link"><a href="javascript:void(0);">Free-20250412-001</a></div>
-                                        </td>
-                                        <td>ARS (영국)</td>
-                                        <td>2026.04.10</td>
-                                        <td>GBP</td>
-                                        <td>1,200,000</td>
-                                        <td>10,200,000</td>
-                                        <td>-</td>
-                                        <td>입금등록</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="col-no">2</td>
-                                        <td>
-                                            <div class="link"><a href="javascript:void(0);">Free-20250412-002</a></div>
-                                        </td>
-                                        <td>ARS (영국)</td>
-                                        <td>2026.04.02</td>
-                                        <td>GBP</td>
-                                        <td>8,200.00</td>
-                                        <td>11,800,000</td>
-                                        <td>-</td>
-                                        <td>검토대기</td>
-                                    </tr>
-                                    <!-- 상태가 검토연결완료인 경우 클래스 disabled 추가 -->
-                                    <tr class="disabled">
-                                        <td class="col-no">1</td>
-                                        <td>
-                                            <div class="link"><a href="javascript:void(0);">Free-20250412-003</a></div>
-                                        </td>
-                                        <td>ARS (영국)</td>
+                                        <td>IN-2026-00005</td>
+                                        <td>DGK-202604-EVT-005</td>
+                                        <td>Netflix Korea</td>
+                                        <td>12</td>
+                                        <td>해외송금</td>
                                         <td>2026.04.01</td>
-                                        <td>GBP</td>
-                                        <td>12,500.00</td>
-                                        <td>16,500,000</td>
+                                        <td>2026.04.03</td>
+                                        <td>2026.04.04</td>
+                                        <td>USD</td>
+                                        <td class="right">8,500.00</td>
+                                        <td class="right">11,475,000</td>
+                                        <td class="right">11,200,000</td>
+                                        <td class="right">0</td>
+                                        <td class="right">10,800,000</td>
+                                        <td class="right">324,000</td>
+                                        <td class="right">76,000</td>
+                                        <td class="right">10,200,000</td>
+                                        <td class="right">0</td>
+                                        <td>정산완료</td>
                                         <td>-</td>
+                                    </tr>
+                                    <tr class="clickable" onclick="">
+                                        <td class="col-no">4</td>
+                                        <td>IN-2026-00004</td>
+                                        <td>DGK-202604-EVT-004</td>
+                                        <td>Walt Disney Company</td>
+                                        <td>3</td>
+                                        <td>해외송금</td>
+                                        <td>2026.03.28</td>
+                                        <td>2026.03.30</td>
+                                        <td>2026.03.31</td>
+                                        <td>EUR</td>
+                                        <td class="right">6,200.50</td>
+                                        <td class="right">9,180,740</td>
+                                        <td class="right">9,000,000</td>
+                                        <td class="right">50,000</td>
+                                        <td class="right">8,650,000</td>
+                                        <td class="right">259,500</td>
+                                        <td class="right">40,500</td>
+                                        <td class="right">8,200,000</td>
+                                        <td class="right">100,000</td>
+                                        <td>정산대기</td>
+                                        <td>환율 재확인</td>
+                                    </tr>
+                                    <tr class="clickable" onclick="">
+                                        <td class="col-no">3</td>
+                                        <td>FREE-2026-00003</td>
+                                        <td>DGK-202604-EVT-003</td>
+                                        <td>Amazon Studios</td>
+                                        <td>7</td>
+                                        <td>국내입금</td>
+                                        <td>2026.03.20</td>
+                                        <td>2026.03.20</td>
+                                        <td>-</td>
+                                        <td>KRW</td>
+                                        <td class="right">-</td>
+                                        <td class="right">5,500,000</td>
+                                        <td class="right">5,500,000</td>
+                                        <td class="right">0</td>
+                                        <td class="right">5,200,000</td>
+                                        <td class="right">156,000</td>
+                                        <td class="right">144,000</td>
+                                        <td class="right">4,750,000</td>
+                                        <td class="right">150,000</td>
+                                        <td>검토대기</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr class="clickable" onclick="">
+                                        <td class="col-no">2</td>
+                                        <td>FREE-2026-00002</td>
+                                        <td>DGK-202604-EVT-002</td>
+                                        <td>CJ ENM</td>
+                                        <td>1</td>
+                                        <td>국내입금</td>
+                                        <td>2026.03.15</td>
+                                        <td>2026.03.15</td>
+                                        <td>-</td>
+                                        <td>KRW</td>
+                                        <td class="right">-</td>
+                                        <td class="right">3,200,000</td>
+                                        <td class="right">3,200,000</td>
+                                        <td class="right">200,000</td>
+                                        <td class="right">2,850,000</td>
+                                        <td class="right">85,500</td>
+                                        <td class="right">64,500</td>
+                                        <td class="right">2,550,000</td>
+                                        <td class="right">0</td>
+                                        <td>입금등록</td>
+                                        <td>신규 등록</td>
+                                    </tr>
+                                    <tr class="clickable" onclick="">
+                                        <td class="col-no">1</td>
+                                        <td>FREE-2026-00001</td>
+                                        <td>DGK-202604-EVT-001</td>
+                                        <td>Apple TV+</td>
+                                        <td>5</td>
+                                        <td>해외송금</td>
+                                        <td>2026.03.10</td>
+                                        <td>2026.03.12</td>
+                                        <td>2026.03.13</td>
+                                        <td>USD</td>
+                                        <td class="right">4,100.25</td>
+                                        <td class="right">5,535,338</td>
+                                        <td class="right">5,400,000</td>
+                                        <td class="right">0</td>
+                                        <td class="right">5,100,000</td>
+                                        <td class="right">153,000</td>
+                                        <td class="right">147,000</td>
+                                        <td class="right">4,650,000</td>
+                                        <td class="right">50,000</td>
                                         <td>검토연결완료</td>
+                                        <td>-</td>
                                     </tr>
 
                                     <!-- no data 시작 -->
                                     <!-- <tr>
-                                        <td colspan="9" class="no-data">
+                                        <td colspan="21" class="no-data">
                                             <p>데이터가 없습니다.</p>
                                         </td>
                                     </tr> -->
                                     <!-- no data 끝 -->
                                 </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th colspan="10">합계</th>
+                                        <th class="right">18,801.75</th>
+                                        <th class="right">44,891,078</th>
+                                        <th class="right">44,300,000</th>
+                                        <th class="right">250,000</th>
+                                        <th class="right">42,600,000</th>
+                                        <th class="right">1,278,000</th>
+                                        <th class="right">472,000</th>
+                                        <th class="right">40,350,000</th>
+                                        <th class="right">300,000</th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </tfoot>
                             </table>
                         </div>
 

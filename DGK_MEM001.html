@@ -60,15 +60,14 @@
                         <h3 class="title">회원 지급</h3>
                         <ul>
                             <li class="prepare"><a href="" title="지급 준비"><i class="icon-prepare"></i><span>지급 준비</span></a></li>
-                            <li class="waiting"><a href="" title="지급 대기"><i class="icon-waiting"></i><span>지급 대기</span></a></li>
-                            <li class="payment-history"><a href="" title="지급 이력"><i class="icon-payment-history"></i><span>지급 이력</span></a></li>
+                            <li class="waiting"><a href="" title="지급 대기"><i class="icon-waiting"></i><span>지급 대기</span></a></li>                            
                         </ul>
                     </div>
                     <div class="nav-list">
                         <h3 class="title">통계</h3>
                         <ul>
                             <li class="stat-work"><a href="" title="작품별 통계"><i class="icon-stat-work"></i><span>작품별 통계</span></a></li>
-                            <li class="stat-member"><a href="" title="회원별 통계"><i class="icon-stat-member"></i><span>회원별 통계</span></a></li>
+                            <li class="stat-member"><a href="" title="회원별 정산관리"><i class="icon-stat-member"></i><span>회원별 정산관리</span></a></li>
                         </ul>
                     </div>
                 </nav>
@@ -119,6 +118,29 @@
                 <!-- page body 시작 -->
                 <div class="page-body">
                     <div class="indiv">
+                        <div class="verify">
+                            <ul>
+                                <li class="auto-match">
+                                    <span class="name">총 회원수</span>
+                                    <span class="count">5,000,000 <span>명</span></span>
+                                </li>
+                                <li class="text-match">
+                                    <span class="name">정회원수</span>
+                                    <span class="count">500 <span>명</span></span>
+                                </li>
+                                <li class="total-unmatch">
+                                    <span class="name">준회원수</span>
+                                    <span class="count">1,000 <span>명</span></span>
+                                </li>
+                                <li class="guest">
+                                    <span class="name">저작권 회원수</span>
+                                    <span class="count">5,550 <span>명</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="indiv">
                         <h3 class="tit">조회</h3>
                         <form class="search-form">
                             <div class="tbl-input">
@@ -144,6 +166,7 @@
                                                         <option value="">전체</option>
                                                         <option value="">정상</option>
                                                         <option value="">탈퇴</option>
+                                                        <option value="">정지</option>
                                                     </select>
                                                 </div>
                                             </td>
@@ -161,7 +184,7 @@
                                                 </div>
                                             </td>
                                             <th>
-                                                <label class="tit">회원코드</label>
+                                                <label class="tit">DGK 회원코드</label>
                                             </th>
                                             <td>
                                                 <div class="input-box wd100">
@@ -174,6 +197,46 @@
                                             <td>
                                                 <div class="input-box wd100">
                                                     <input type="text" class="input">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <label class="tit">가명(국문)</label>
+                                            </th>
+                                            <td>
+                                                <div class="input-box wd100">
+                                                    <input type="text" class="input">
+                                                </div>
+                                            </td>
+                                            <th>
+                                                <label class="tit">가명(영문)</label>
+                                            </th>
+                                            <td>
+                                                <div class="input-box wd100">
+                                                    <input type="text" class="input">
+                                                </div>
+                                            </td>
+                                            <th>
+                                                <label class="tit">영문명</label>
+                                            </th>
+                                            <td>
+                                                <div class="input-box wd100">
+                                                    <input type="text" class="input">
+                                                </div>
+                                            </td>
+                                            <th>
+                                                <label class="tit">주요분야</label>
+                                            </th>
+                                            <td>
+                                                <div class="select-box wd100">
+                                                    <select>
+                                                        <option value="">전체</option>
+                                                        <option value="">상업</option>
+                                                        <option value="">독립</option>
+                                                        <option value="">시리즈</option>
+                                                        <option value="">작가</option>
+                                                    </select>
                                                 </div>
                                             </td>
                                         </tr>
@@ -207,17 +270,10 @@
                                                 </div>
                                             </td>
                                             <th>
-                                                <label class="tit">역할</label>
+                                                
                                             </th>
                                             <td>
-                                                <div class="select-box wd100">
-                                                    <select>
-                                                        <option value="">전체</option>
-                                                        <option value="">감독</option>
-                                                        <option value="">연출</option>
-                                                        <option value="">감독,연출</option>
-                                                    </select>
-                                                </div>
+                                                
                                             </td>
                                         </tr>
                                     </tbody>
@@ -257,7 +313,6 @@
                                 <colgroup>
                                     <col style="width:80px;">
                                     <col>
-                                    <col>
                                     <col style="width:200px;">
                                     <col>
                                     <col>
@@ -265,105 +320,108 @@
                                     <col>   
                                     <col>   
                                     <col>   
+                                    <col>   
+                                    <col>   
                                 </colgroup>
                                 <thead>
                                     <tr>
                                         <th scope="col">No</th>
-                                        <th scope="col">DKG 번호</th>
-                                        <th scope="col">역할</th>
+                                        <th scope="col">DKG 회원코드</th>
                                         <th scope="col">회원명</th>
-                                        <th scope="col">회원상태</th>
                                         <th scope="col">회원구분</th>
+                                        <th scope="col">회원상태</th>
+                                        <th scope="col">성별</th>
+                                        <th scope="col">생년월일</th>
                                         <th scope="col">전화번호</th>
-                                        <th scope="col">IPI 상태</th>
-                                        <th scope="col">승인일</th>
-                                        <th scope="col">상태</th>
+                                        <th scope="col">이메일</th>
+                                        <th scope="col">IPI BN</th>
+                                        <th scope="col">가입 승인일</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <!--
-                                        1. 회원상태 : <span class="normal">정상</span>
-                                        2. 회원상태 : <span class="withdraw">탈퇴</span>
-                                        3. 회원구분 : <span class="member">정회원</span>
-                                        4. 회원구분 : <span class="pre-member">준회원</span>
-                                        5. 회원구분 : <span class="non-member">대리중개</span>
-                                        6. 상태 : <span class="active">활성</span>
-                                        7. 상태 : <span class="inactive">비활성</span>                                    
+                                        회원상태 : <span class="normal">정상</span>, <span class="withdraw">탈퇴</span>, <span class="stop">정지</span>
+                                        회원구분 : <span class="member">정회원</span>, <span class="pre-member">준회원</span>, <span class="non-member">대리중개</span>                                   
                                     -->
-                                    <tr class="new">
+                                    <tr class="new"><!--승인 후 7일간 'new' 뱃지 노출-->
                                         <td class="col-no">5</td>
                                         <td>DGK2025001</td>
-                                        <td>감독</td>
                                         <td>
                                             <div class="link"><a href="javascript:void(0);">홍길동</a></div>
-                                        </td>
-                                        <td><span class="normal">정상</span></td>
+                                        </td>                                        
                                         <td><span class="member">정회원</span></td>
+                                        <td><span class="normal">정상</span></td>
+                                        <td>F</td>
+                                        <td>1990.01.01</td>
                                         <td>010-1234-5678</td>
-                                        <td>연동</td>
+                                        <td>hong@gmail.com</td>
+                                        <td>1111111</td>
                                         <td>2026.04.21</td>
-                                        <td><span class="active">활성</span></td>
                                     </tr>
-                                    <tr class="new">
+                                    <tr class="new"><!--승인 후 7일간 'new' 뱃지 노출-->
                                         <td class="col-no">4</td>
                                         <td>DGK2025002</td>
-                                        <td>연출</td>
                                         <td>
                                             <div class="link"><a href="javascript:void(0);">고길동</a></div>
                                         </td>
-                                        <td><span class="normal">정상</span></td>
                                         <td><span class="pre-member">준회원</span></td>
+                                        <td><span class="normal">정상</span></td>
+                                        <td>M</td>
+                                        <td>1990.01.01</td>
                                         <td>010-1234-5678</td>
-                                        <td>미연동</td>
+                                        <td>go@gmail.com</td>
+                                        <td>2222222</td>
                                         <td>2026.04.21</td>
-                                        <td><span class="active">활성</span></td>
                                     </tr>
                                     <tr>
                                         <td class="col-no">3</td>
                                         <td>DGK2025003</td>
-                                        <td>감독,연출</td>
                                         <td>
                                             <div class="link"><a href="javascript:void(0);">또치</a></div>
                                         </td>
-                                        <td><span class="normal">정상</span></td>
                                         <td><span class="member">정회원</span></td>
+                                        <td><span class="normal">정상</span></td>
+                                        <td>M</td>
+                                        <td>1990.01.01</td>
                                         <td>010-1234-5678</td>
-                                        <td>연동</td>
+                                        <td>cho@gmail.com</td>
+                                        <td>3333333</td>
                                         <td>2026.04.21</td>
-                                        <td><span class="active">활성</span></td>
                                     </tr>
                                     <tr>
                                         <td class="col-no">2</td>
                                         <td>DGK2025004</td>
-                                        <td>감독</td>
                                         <td>
                                             <div class="link"><a href="javascript:void(0);">마이클</a></div>
                                         </td>
+                                        <td><span class="pre-member">준회원</span></td>
                                         <td><span class="withdraw">탈퇴</span></td>
-                                        <td><span class="non-member">대리중개</span></td>
+                                        <td>M</td>
+                                        <td>1990.01.01</td>
                                         <td>010-1234-5678</td>
-                                        <td>미연동</td>
+                                        <td>michael@gmail.com</td>
+                                        <td>4444444</td>
                                         <td>2026.04.20</td>
-                                        <td><span class="inactive">비활성</span></td>
                                     </tr>
                                     <tr>
                                         <td class="col-no">1</td>
                                         <td>DGK2025005</td>
-                                        <td>감독,연출</td>
                                         <td>
                                             <div class="link"><a href="javascript:void(0);">고은애</a></div>
                                         </td>
-                                        <td><span class="withdraw">탈퇴</span></td>
-                                        <td><span class="non-member">대리중개</span></td>
+                                        <td><span class="member">정회원</span></td>
+                                        <td><span class="stop">정지</span></td>
+                                        <td>F</td>
+                                        <td>1990.01.01</td>
                                         <td>010-1234-5678</td>
-                                        <td>연동</td>
+                                        <td>eunai@gmail.com</td>
+                                        <td>5555555</td>
                                         <td>2026.04.21</td>
-                                        <td><span class="inactive">비활성</span></td>
                                     </tr>
 
                                     <!-- no data 시작 -->
                                     <!-- <tr>
-                                        <td colspan="10" class="no-data">
+                                        <td colspan="11" class="no-data">
                                             <p>데이터가 없습니다.</p>
                                         </td>
                                     </tr> -->

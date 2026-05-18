@@ -82,6 +82,9 @@ textarea:-ms-input-placeholder {
 .input-box .input.center {
     text-align: center;
 }
+.input-box .input.right {
+    text-align: right;
+}
 .input-box .input.only-number {
     /* 숫자(0–9)만 허용, maxlength 준수 */
 }
@@ -276,6 +279,9 @@ select::-o-expand {display:none;}
     gap:2rem;    
     flex-wrap:wrap;   
     padding:1rem 0; 
+}
+.radio-box.no-wrap {
+    flex-wrap:nowrap;
 }
 .radio-box.center {
     justify-content:center;

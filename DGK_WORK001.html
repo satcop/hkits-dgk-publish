@@ -60,15 +60,14 @@
                         <h3 class="title">회원 지급</h3>
                         <ul>
                             <li class="prepare"><a href="" title="지급 준비"><i class="icon-prepare"></i><span>지급 준비</span></a></li>
-                            <li class="waiting"><a href="" title="지급 대기"><i class="icon-waiting"></i><span>지급 대기</span></a></li>
-                            <li class="payment-history"><a href="" title="지급 이력"><i class="icon-payment-history"></i><span>지급 이력</span></a></li>
+                            <li class="waiting"><a href="" title="지급 대기"><i class="icon-waiting"></i><span>지급 대기</span></a></li>                            
                         </ul>
                     </div>
                     <div class="nav-list">
                         <h3 class="title">통계</h3>
                         <ul>
                             <li class="stat-work"><a href="" title="작품별 통계"><i class="icon-stat-work"></i><span>작품별 통계</span></a></li>
-                            <li class="stat-member"><a href="" title="회원별 통계"><i class="icon-stat-member"></i><span>회원별 통계</span></a></li>
+                            <li class="stat-member"><a href="" title="회원별 정산관리"><i class="icon-stat-member"></i><span>회원별 정산관리</span></a></li>
                         </ul>
                     </div>
                 </nav>
@@ -119,6 +118,25 @@
                 <!-- page body 시작 -->
                 <div class="page-body">
                     <div class="indiv">
+                        <div class="verify">
+                            <ul>
+                                <li class="auto-match">
+                                    <span class="name">누적 등록 작품 수</span>
+                                    <span class="count">5,000,000 <span>건</span></span>
+                                </li>
+                                <li class="text-match">
+                                    <span class="name">IDA 등록 작품 수</span>
+                                    <span class="count">100 <span>건</span></span>
+                                </li>
+                                <li class="total-unmatch">
+                                    <span class="name">총 작품 수 대비 IDA 등록율</span>
+                                    <span class="count">1 <span>%</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="indiv">
                         <h3 class="tit">조회</h3>
                         <form class="member-search-form">
                             <div class="tbl-input">
@@ -146,18 +164,13 @@
                                                 </div>
                                             </td>
                                             <th>
-                                                <label class="tit">에피소드</label>
+                                                <label class="tit">포멧</label>
                                             </th>
                                             <td>
-                                                <div class="radio-box">
-                                                    <div class="items">
-                                                        <input type="radio" name="episode" id="episode-include" value="포함" checked>
-                                                        <label for="episode-include">포함</label>
-                                                    </div>
-                                                    <div class="items">
-                                                        <input type="radio" name="episode" id="episode-exclude" value="미포함">
-                                                        <label for="episode-exclude">미포함</label>
-                                                    </div>
+                                                <div class="select-box">
+                                                    <select>
+                                                        <option value="">전체</option>
+                                                    </select>
                                                 </div>
                                             </td>
                                             <th>
@@ -248,13 +261,7 @@
                                 <colgroup>
                                     <col style="width:80px;">
                                     <col style="width:80px;">
-                                    <col>
-                                    <col>
-                                    <col>
-                                    <col>
-                                    <col>
-                                    <col>   
-                                    <col>   
+                                    <col span="11">  
                                 </colgroup>
                                 <thead>
                                     <tr>
@@ -267,13 +274,17 @@
                                             </div>
                                         </th>
                                         <th scope="col">No</th>
-                                        <th scope="col">DKG 번호</th>
-                                        <th scope="col">작품명</th>
+                                        <th scope="col">DGK번호</th>
                                         <th scope="col">작품구분</th>
-                                        <th scope="col">IDA 코드</th>
-                                        <th scope="col">IDA 상태</th>
+                                        <th scope="col">작품명</th>
+                                        <th scope="col">시즌</th>
+                                        <th scope="col">에피소드 회차</th>
+                                        <th scope="col">제작년도</th>
+                                        <th scope="col">참여자 (감독/작가)</th>
+                                        <th scope="col">공개상태</th>
+                                        <th scope="col">포멧(장르)</th>
+                                        <th scope="col">IDA REF</th>
                                         <th scope="col">등록일</th>
-                                        <th scope="col">상태</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -286,16 +297,18 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="col-no">5</td>
-                                        <td>DGK-W005</td>
-                                        <td>
-                                            <div class="link"><a href="javascript:void(0);">파친코 시즌 2</a></div>
-                                        </td>
+                                        <td class="col-no">4</td>
+                                        <td>DGK-W001</td>
                                         <td>시리즈-마스터</td>
-                                        <td>IDA202501</td>
-                                        <td>등록완료</td>
-                                        <td>2026.04.21</td>
+                                        <td class="left"><div class="link"><a href="javascript:void(0);">파친코 시즌 2</a></div></td>
+                                        <td>S2</td>
+                                        <td>전체</td>
+                                        <td>2024</td>
+                                        <td>홍길동 외 24명</td>
                                         <td>공개</td>
+                                        <td>드라마 시리즈</td>
+                                        <td>IDA202501</td>
+                                        <td>2025.03.10</td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -306,16 +319,18 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="col-no">4</td>
-                                        <td>DGK-W004</td>
-                                        <td>
-                                            <div class="link"><a href="javascript:void(0);">설국열차: 레거시</a></div>
-                                        </td>
+                                        <td class="col-no">3</td>
+                                        <td>DGK-W002</td>
                                         <td>영화</td>
-                                        <td>미등록</td>
-                                        <td>미등록</td>
-                                        <td>2026.04.21</td>
-                                        <td>미공개</td>
+                                        <td class="left"><div class="link"><a href="javascript:void(0);">설국열차: 레거시</a></div></td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>2025</td>
+                                        <td>홍길동 외 24명</td>
+                                        <td>공개</td>
+                                        <td>장편영화</td>
+                                        <td>IDA202502</td>
+                                        <td>2025.03.15</td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -326,16 +341,18 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="col-no">3</td>
+                                        <td class="col-no">2</td>
                                         <td>DGK-W003</td>
-                                        <td>
-                                            <div class="link"><a href="javascript:void(0);">더 글로리 시즌 3</a></div>
-                                        </td>
                                         <td>시리즈-마스터</td>
+                                        <td class="left"><div class="link"><a href="javascript:void(0);">더 글로리 시즌 3</a></div></td>
+                                        <td>S3</td>
+                                        <td>전체</td>
+                                        <td>2025</td>
+                                        <td>홍길동 외 24명</td>
+                                        <td>미공개</td>
+                                        <td>드라마 시리즈</td>
                                         <td>IDA202503</td>
-                                        <td>등록완료</td>
-                                        <td>2026.04.21</td>
-                                        <td>공개</td>
+                                        <td>2025.03.20</td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -346,41 +363,23 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="col-no">2</td>
-                                        <td>DGK-W002</td>
-                                        <td>
-                                            <div class="link"><a href="javascript:void(0);">더 글로리 시즌 3</a></div>
-                                        </td>
-                                        <td>시리즈-에피소드</td>
-                                        <td>처리중</td>
-                                        <td>처리중</td>
-                                        <td>2026.04.21</td>
-                                        <td>공개</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="check-box-wrap center">
-                                                <div class="check-box">
-                                                    <input type="checkbox" id="work-check-1" class="js-check-row" value="1">
-                                                    <label for="work-check-1" class="blank"><span class="mark" aria-hidden="true"></span></label>
-                                                </div>
-                                            </div>
-                                        </td>
                                         <td class="col-no">1</td>
-                                        <td>DGK-W001</td>
-                                        <td>
-                                            <div class="link"><a href="javascript:void(0);">오징어게임 시즌 3</a></div>
-                                        </td>
+                                        <td>DGK-W004</td>
                                         <td>시리즈-에피소드</td>
-                                        <td>처리중</td>
-                                        <td>처리중</td>
-                                        <td>2026.04.21</td>
-                                        <td>미공개</td>
+                                        <td class="left"><div class="link"><a href="javascript:void(0);">오징어게임 시즌 3</a></div></td>
+                                        <td>S3</td>
+                                        <td>EP.05</td>
+                                        <td>2025</td>
+                                        <td>홍길동 외 24명</td>
+                                        <td>공개</td>
+                                        <td>드라마 시리즈</td>
+                                        <td>IDA202504</td>
+                                        <td>2025.04.01</td>
                                     </tr>
 
                                     <!-- no data 시작 -->
                                     <!-- <tr>
-                                        <td colspan="9" class="no-data">
+                                        <td colspan="13" class="no-data">
                                             <p>데이터가 없습니다.</p>
                                         </td>
                                     </tr> -->

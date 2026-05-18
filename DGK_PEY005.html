@@ -60,15 +60,14 @@
                         <h3 class="title">회원 지급</h3>
                         <ul>
                             <li class="prepare"><a href="" title="지급 준비"><i class="icon-prepare"></i><span>지급 준비</span></a></li>
-                            <li class="waiting"><a href="" title="지급 대기"><i class="icon-waiting"></i><span>지급 대기</span></a></li>
-                            <li class="payment-history"><a href="" title="지급 이력"><i class="icon-payment-history"></i><span>지급 이력</span></a></li>
+                            <li class="waiting"><a href="" title="지급 대기"><i class="icon-waiting"></i><span>지급 대기</span></a></li>                            
                         </ul>
                     </div>
                     <div class="nav-list">
                         <h3 class="title">통계</h3>
                         <ul>
                             <li class="stat-work"><a href="" title="작품별 통계"><i class="icon-stat-work"></i><span>작품별 통계</span></a></li>
-                            <li class="stat-member"><a href="" title="회원별 통계"><i class="icon-stat-member"></i><span>회원별 통계</span></a></li>
+                            <li class="stat-member"><a href="" title="회원별 정산관리"><i class="icon-stat-member"></i><span>회원별 정산관리</span></a></li>
                         </ul>
                     </div>
                 </nav>
@@ -129,14 +128,6 @@
                                 <li class="text-match">
                                     <span class="name">대기 총액</span>
                                     <span class="count">1,000,000 <span>원</span></span>
-                                </li>
-                                <li class="total-unmatch">
-                                    <span class="name">보류 총액</span>
-                                    <span class="count">50,000 <span>원</span></span>
-                                </li>
-                                <li class="guest">
-                                    <span class="name">비회원 정산액</span>
-                                    <span class="count">10,000 <span>원</span></span>
                                 </li>
                             </ul>
                         </div>
@@ -241,7 +232,7 @@
                                     <button type="button" class="btn-secondary">일괄 대기 전환</button>
                                 </div>
                             </div>
-                            <div class="tbl-list no-wrap tbl-check-scope body-scroll">
+                            <div class="tbl-list tbl-check-scope body-scroll">
                                 <table>
                                     <colgroup>
                                         <col style="width:80px;">
@@ -265,13 +256,13 @@
                                             <th scope="col">No</th>
                                             <th scope="col">DGK 회원 코드</th>
                                             <th scope="col">DGK 회원명</th>
-                                            <th scope="col">IPI 코드</th>
-                                            <th scope="col">최근 정산일</th>
-                                            <th scope="col">누적 미정산 총액</th>
+                                            <th scope="col">미지급건수</th>
+                                            <th scope="col">미지급 회차</th>
+                                            <th scope="col">지급대기 전환 가능액</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <tr class="clickable">
                                             <td>
                                                 <div class="check-box-wrap center">
                                                     <div class="check-box">
@@ -280,16 +271,14 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="col-no">4</td>
-                                            <td>
-                                                <div class="link"><a href="javascript:void(0);">DGK00004</a></div>
-                                            </td>
-                                            <td>감 김</td>
-                                            <td>1234</td>
-                                            <td>2025.01.01</td>
-                                            <td>1,000,000</td>
+                                            <td class="col-no" onclick="location.href='./DGK_PEY005_D.html';">4</td>
+                                            <td onclick="">DGK00004</td>
+                                            <td onclick="location.href='./DGK_PEY005_D.html';">감 김</td>
+                                            <td onclick="location.href='./DGK_PEY005_D.html';">1,234</td>
+                                            <td onclick="location.href='./DGK_PEY005_D.html';">ASCAP 1회차, AAA 2회차, AAAA 2회차, AAAA 3회차, AAA 4회차</td>
+                                            <td class="right" onclick="location.href='./DGK_PEY005_D.html';">1,000,000</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="clickable">
                                             <td>
                                                 <div class="check-box-wrap center">
                                                     <div class="check-box">
@@ -298,16 +287,14 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="col-no">3</td>
-                                            <td>
-                                                <div class="link"><a href="javascript:void(0);">DGK00003</a></div>
-                                            </td>
-                                            <td>박철수</td>
-                                            <td>1234</td>
-                                            <td>2025.01.01</td>
-                                            <td>1,000,000</td>
+                                            <td class="col-no" onclick="location.href='./DGK_PEY005_D.html';">3</td>
+                                            <td onclick="location.href='./DGK_PEY005_D.html';">DGK00003</td>
+                                            <td onclick="location.href='./DGK_PEY005_D.html';">박철수</td>
+                                            <td onclick="location.href='./DGK_PEY005_D.html';">1,234</td>
+                                            <td onclick="location.href='./DGK_PEY005_D.html';">ASCAP 1회차, AAA 2회차, AAAA 2회차, AAAA 3회차, AAA 4회차</td>
+                                            <td class="right" onclick="location.href='./DGK_PEY005_D.html';">1,000,000</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="clickable">
                                             <td>
                                                 <div class="check-box-wrap center">
                                                     <div class="check-box">
@@ -316,16 +303,14 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="col-no">2</td>
-                                            <td>
-                                                <div class="link"><a href="javascript:void(0);">DGK00002</a></div>
-                                            </td>
-                                            <td>홍길동</td>
-                                            <td>1234</td>
-                                            <td>2025.01.01</td>
-                                            <td>1,000,000</td>
+                                            <td class="col-no" onclick="location.href='./DGK_PEY005_D.html';">2</td>
+                                            <td onclick="location.href='./DGK_PEY005_D.html';">DGK00002</td>
+                                            <td onclick="location.href='./DGK_PEY005_D.html';">홍길동</td>
+                                            <td onclick="location.href='./DGK_PEY005_D.html';">1,234</td>
+                                            <td onclick="location.href='./DGK_PEY005_D.html';">ASCAP 1회차, AAA 2회차, AAAA 2회차, AAAA 3회차, AAA 4회차</td>
+                                            <td class="right" onclick="location.href='./DGK_PEY005_D.html';">1,000,000</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="clickable">
                                             <td>
                                                 <div class="check-box-wrap center">
                                                     <div class="check-box">
@@ -334,14 +319,12 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="col-no">1</td>
-                                            <td>
-                                                <div class="link"><a href="javascript:void(0);">DGK00001</a></div>
-                                            </td>
-                                            <td>박영희</td>
-                                            <td>1234</td>
-                                            <td>2025.01.01</td>
-                                            <td>1,000,000</td>
+                                            <td class="col-no" onclick="location.href='./DGK_PEY005_D.html';">1</td>
+                                            <td onclick="location.href='./DGK_PEY005_D.html';">DGK00001</td>
+                                            <td onclick="location.href='./DGK_PEY005_D.html';">박영희</td>
+                                            <td onclick="location.href='./DGK_PEY005_D.html';">1,234</td>
+                                            <td onclick="location.href='./DGK_PEY005_D.html';">ASCAP 1회차, AAA 2회차, AAAA 2회차, AAAA 3회차, AAA 4회차</td>
+                                            <td class="right" onclick="location.href='./DGK_PEY005_D.html';">1,000,000</td>
                                         </tr>
                                         <!-- no data 시작 -->
                                         <!-- <tr>

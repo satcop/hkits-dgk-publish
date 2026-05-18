@@ -94,7 +94,10 @@
     text-underline-offset:0.2rem !important;
 }
 
-
+/* right */
+.tbl-input td.right {
+    text-align:right;
+}
 
 
 
@@ -160,11 +163,20 @@
 .tbl-list td.left { text-align:left;} 
 .tbl-list td.right { text-align:right;} 
 
+/* 회원상태 */
+/* 회원상태 : 정상 */
 .tbl-list td span.normal {display:inline-block; height:26px; line-height:25px; border-radius:100vh; padding:0 0.8rem; background:#EBF7F1; border:solid 1px #C4DED0; color:#2A7A4B; font-size:12px; font-weight:bold; } /* 회원상태 : 정상 */
+/* 회원상태 : 탈퇴 */
 .tbl-list td span.withdraw {display:inline-block; height:26px; line-height:25px; border-radius:100vh; padding:0 0.8rem; background:#FAEEEE; border:solid 1px #FAC8C8; color:#D22A2A; font-size:12px; font-weight:bold; } /* 회원상태 : 탈퇴 */
+/* 회원상태 : 정지 */
+.tbl-list td span.stop {display:inline-block; height:26px; line-height:25px; border-radius:100vh; padding:0 0.8rem; background:#f5f5f5; border:solid 1px #aaa; color:#666; font-size:12px; font-weight:bold; } /* 회원상태 : 정지 */
+
+/* 회원구분 */
 .tbl-list td span.member { color:var(--ccolor); font-weight:600; } /* 회원구분 : 정회원 */
 .tbl-list td span.pre-member { color:#222; font-weight:600; } /* 회원구분 : 준회원 */
 .tbl-list td span.non-member { color:#aaa; font-weight:600; } /* 회원구분 : 비회원 */
+
+
 .tbl-list td span.active { color:var(--ccolor); font-weight:600; } /* 상태 : 활성 */
 .tbl-list td span.inactive { color:#aaa; font-weight:600; } /* 상태 : 비활성 */
 
@@ -301,4 +313,11 @@
 }
 .tbl-list tr.clickable:hover td {
     background:#fafafa;
+}
+
+
+/* tfoot */
+.tbl-list tfoot th.right,
+.tbl-list tfoot td.right {
+    text-align:right;
 }

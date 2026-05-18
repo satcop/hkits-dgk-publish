@@ -60,15 +60,14 @@
                         <h3 class="title">회원 지급</h3>
                         <ul>
                             <li class="prepare"><a href="" title="지급 준비"><i class="icon-prepare"></i><span>지급 준비</span></a></li>
-                            <li class="waiting"><a href="" title="지급 대기"><i class="icon-waiting"></i><span>지급 대기</span></a></li>
-                            <li class="payment-history"><a href="" title="지급 이력"><i class="icon-payment-history"></i><span>지급 이력</span></a></li>
+                            <li class="waiting"><a href="" title="지급 대기"><i class="icon-waiting"></i><span>지급 대기</span></a></li>                            
                         </ul>
                     </div>
                     <div class="nav-list">
                         <h3 class="title">통계</h3>
                         <ul>
                             <li class="stat-work"><a href="" title="작품별 통계"><i class="icon-stat-work"></i><span>작품별 통계</span></a></li>
-                            <li class="stat-member"><a href="" title="회원별 통계"><i class="icon-stat-member"></i><span>회원별 통계</span></a></li>
+                            <li class="stat-member"><a href="" title="회원별 정산관리"><i class="icon-stat-member"></i><span>회원별 정산관리</span></a></li>
                         </ul>
                     </div>
                 </nav>
@@ -110,9 +109,9 @@
                     <ul id="location">
                         <li>홈</li>
                         <li>통계</li>
-                        <li>회원별 통계</li>
+                        <li>회원별 정산관리</li>
                     </ul>
-                    <h2 class="page-title">회원별 통계</h2>                    
+                    <h2 class="page-title">회원별 정산관리</h2>                    
                 </div>
                 <!-- page head 끝 -->
 
@@ -149,7 +148,7 @@
                                                 </div>
                                             </td>
                                             <th>
-                                                <label class="tit">DGK 회원 코드</label>
+                                                <label class="tit">DGK 회원코드</label>
                                             </th>
                                             <td>
                                                 <div class="input-box">
@@ -177,13 +176,23 @@
                                             <th>
                                                 <label class="tit">단체</label>
                                             </th>
-                                            <td colspan="3">
+                                            <td>
                                                 <div class="select-box">
                                                     <select>
                                                         <option value="">전체</option>
                                                     </select>
                                                 </div>
-                                            </td>                                                                                       
+                                            </td>  
+                                            <th>
+                                                <label class="tit">상태</label>
+                                            </th>
+                                            <td>
+                                                <div class="select-box">
+                                                    <select>
+                                                        <option value="">전체</option>  
+                                                    </select>
+                                                </div>
+                                            </td>                                                                                      
                                         </tr>
                                     </tbody>
                                 </table>
@@ -211,7 +220,7 @@
                                 <table>
                                     <colgroup>
                                         <col style="width:80px;">
-                                        <col span="19">
+                                        <col span="21">
                                     </colgroup>
                                     <thead>
                                         <tr>
@@ -235,6 +244,8 @@
                                             <th scope="col">개인소득세(E)</th>
                                             <th scope="col">개인주민세(F)</th>
                                             <th scope="col">최종 개인지급액(D-E-F)</th>
+                                            <th scope="col">상태</th>
+                                            <th scope="col">비고</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -250,15 +261,17 @@
                                             <td>IDA2026-P041</td>
                                             <td>Silver Lining Project</td>
                                             <td>은밀한 선행</td>
-                                            <td>11,240,000</td>
-                                            <td>8,920</td>
-                                            <td>9,050,000</td>
-                                            <td>452,500</td>
-                                            <td>226,250</td>
-                                            <td>8,371,250</td>
-                                            <td>837,125</td>
-                                            <td>83,712</td>
-                                            <td>7,450,413</td>
+                                            <td class="right">11,240,000</td>
+                                            <td class="right">8,920</td>
+                                            <td class="right">9,050,000</td>
+                                            <td class="right">452,500</td>
+                                            <td class="right">226,250</td>
+                                            <td class="right">8,371,250</td>
+                                            <td class="right">837,125</td>
+                                            <td class="right">83,712</td>
+                                            <td class="right">7,450,413</td>
+                                            <td></td>
+                                            <td></td>
                                         </tr>
                                         <tr>
                                             <td class="col-no">3</td>
@@ -272,15 +285,17 @@
                                             <td>IDA2026-M118</td>
                                             <td>Studio Archive No.7</td>
                                             <td>세븐스 아카이브</td>
-                                            <td>9,675,400</td>
-                                            <td>7,630</td>
-                                            <td>7,740,320</td>
-                                            <td>387,016</td>
-                                            <td>193,508</td>
-                                            <td>7,159,796</td>
-                                            <td>716,980</td>
-                                            <td>71,698</td>
-                                            <td>6,371,118</td>
+                                            <td class="right">9,675,400</td>
+                                            <td class="right">7,630</td>
+                                            <td class="right">7,740,320</td>
+                                            <td class="right">387,016</td>
+                                            <td class="right">193,508</td>
+                                            <td class="right">7,159,796</td>
+                                            <td class="right">716,980</td>
+                                            <td class="right">71,698</td>
+                                            <td class="right">6,371,118</td>
+                                            <td></td>
+                                            <td></td>
                                         </tr>
                                         <tr>
                                             <td class="col-no">2</td>
@@ -294,15 +309,17 @@
                                             <td>IDA2026-S055</td>
                                             <td>Windless Harbor</td>
                                             <td>바람 없는 항구</td>
-                                            <td>13,982,600</td>
-                                            <td>11,050</td>
-                                            <td>11,186,080</td>
-                                            <td>559,304</td>
-                                            <td>279,652</td>
-                                            <td>10,347,124</td>
-                                            <td>1,034,712</td>
-                                            <td>103,471</td>
-                                            <td>9,208,941</td>
+                                            <td class="right">13,982,600</td>
+                                            <td class="right">11,050</td>
+                                            <td class="right">11,186,080</td>
+                                            <td class="right">559,304</td>
+                                            <td class="right">279,652</td>
+                                            <td class="right">10,347,124</td>
+                                            <td class="right">1,034,712</td>
+                                            <td class="right">103,471</td>
+                                            <td class="right">9,208,941</td>
+                                            <td></td>
+                                            <td></td>
                                         </tr>
                                         <tr>
                                             <td class="col-no">1</td>
@@ -316,20 +333,22 @@
                                             <td>IDA2026-D099</td>
                                             <td>Parallel Echo</td>
                                             <td>평행한 메아리</td>
-                                            <td>7,128,950</td>
-                                            <td>5,090</td>
-                                            <td>5,703,160</td>
-                                            <td>285,158</td>
-                                            <td>142,579</td>
-                                            <td>5,275,423</td>
-                                            <td>527,542</td>
-                                            <td>52,754</td>
-                                            <td>4,695,127</td>
+                                            <td class="right">7,128,950</td>
+                                            <td class="right">5,090</td>
+                                            <td class="right">5,703,160</td>
+                                            <td class="right">285,158</td>
+                                            <td class="right">142,579</td>
+                                            <td class="right">5,275,423</td>
+                                            <td class="right">527,542</td>
+                                            <td class="right">52,754</td>
+                                            <td class="right">4,695,127</td>
+                                            <td></td>
+                                            <td></td>
                                         </tr>
                                         
                                         <!-- no data 시작 -->
                                         <!-- <tr>
-                                            <td colspan="20" class="no-data">
+                                            <td colspan="22" class="no-data">
                                                 <p>데이터가 없습니다.</p>
                                             </td>
                                         </tr> -->
@@ -338,15 +357,16 @@
                                     <tfoot>
                                         <tr>
                                             <th colspan="11">합계</th>
-                                            <th>42,026,950</th>
-                                            <th>32,690</th>
-                                            <th>33,679,560</th>
-                                            <th>1,683,978</th>
-                                            <th>841,989</th>
-                                            <th>31,153,593</th>
-                                            <th>3,116,359</th>
-                                            <th>311,635</th>
-                                            <th>27,725,599</th>
+                                            <th class="right">42,026,950</th>
+                                            <th class="right">32,690</th>
+                                            <th class="right">33,679,560</th>
+                                            <th class="right">1,683,978</th>
+                                            <th class="right">841,989</th>
+                                            <th class="right">31,153,593</th>
+                                            <th class="right">3,116,359</th>
+                                            <th class="right">311,635</th>
+                                            <th class="right">27,725,599</th>
+                                            <th colspan="2"></th>
                                         </tr>
                                     </tfoot>
                                 </table>
@@ -367,7 +387,7 @@
     <script>
         /* 사이드바 네비 현재 메뉴 활성 */
         $(document).ready(function () {
-            setSidebarNavActive('stat-member'); // 회원별 통계
+            setSidebarNavActive('stat-member'); // 회원별 정산관리
         });
     </script>
 </body>

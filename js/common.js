@@ -310,7 +310,22 @@ $(document).ready(function () {
     });
 });
 
+/* 탭 메뉴 — .tab-menu + 바로 다음 .tab-content 마크업 공통 */
+$(document).on('click', '.tab-menu button[type="button"]', function () {
+    var $btn = $(this);
+    var $menu = $btn.closest('.tab-menu');
+    var $content = $menu.next('.tab-content');
+    if (!$content.length) return;
+    var idx = $btn.closest('li').index();
 
+    $menu.find('li').removeClass('active').eq(idx).addClass('active');
+    $menu.find('button[role="tab"]').attr('aria-selected', 'false');
+    $btn.attr('aria-selected', 'true');
+
+    var $panels = $content.find('.tab-content-item');
+    $panels.removeClass('active').attr('hidden', true);
+    $panels.eq(idx).addClass('active').removeAttr('hidden');
+});
 
 /* 첨부파일 드롭존 — 동일 페이지·여러 블록·동적 추가 공통
  * 마크업: .file-drop-zone > .file-native, .file-drop-main, .btn-file-pick, .file-drop-filled(.file-link, .file-meta), .btn-file-remove
@@ -433,7 +448,7 @@ $(document).ready(function () {
 /* 주소찾기 — 카카오(다음) 우편번호 서비스 (주소 검색 팝업)
  * 마크업: .addr-row 안 .input-box.zip .input(우편), .input-box.grow .input 순서(기본주소, 상세)
  * 또는 버튼에 data-target-zip / data-target-base / data-target-detail (CSS 선택자) */
- (function () {
+(function () {
     var postcodeScriptLoading = false;
     var postcodeScriptQueue = [];
 

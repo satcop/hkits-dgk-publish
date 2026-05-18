@@ -60,15 +60,14 @@
                         <h3 class="title">회원 지급</h3>
                         <ul>
                             <li class="prepare"><a href="" title="지급 준비"><i class="icon-prepare"></i><span>지급 준비</span></a></li>
-                            <li class="waiting"><a href="" title="지급 대기"><i class="icon-waiting"></i><span>지급 대기</span></a></li>
-                            <li class="payment-history"><a href="" title="지급 이력"><i class="icon-payment-history"></i><span>지급 이력</span></a></li>
+                            <li class="waiting"><a href="" title="지급 대기"><i class="icon-waiting"></i><span>지급 대기</span></a></li>                            
                         </ul>
                     </div>
                     <div class="nav-list">
                         <h3 class="title">통계</h3>
                         <ul>
                             <li class="stat-work"><a href="" title="작품별 통계"><i class="icon-stat-work"></i><span>작품별 통계</span></a></li>
-                            <li class="stat-member"><a href="" title="회원별 통계"><i class="icon-stat-member"></i><span>회원별 통계</span></a></li>
+                            <li class="stat-member"><a href="" title="회원별 정산관리"><i class="icon-stat-member"></i><span>회원별 정산관리</span></a></li>
                         </ul>
                     </div>
                 </nav>
@@ -149,7 +148,7 @@
                                                 </div>
                                             </td>
                                             <th>
-                                                <label class="tit">DGK 회원 코드</label>
+                                                <label class="tit">DGK 회원코드</label>
                                             </th>
                                             <td>
                                                 <div class="input-box">
@@ -167,7 +166,7 @@
                                         </tr>
                                         <tr>
                                             <th>
-                                                <label class="tit">IPI</label>
+                                                <label class="tit">정산 ID</label>
                                             </th>
                                             <td>
                                                 <div class="input-box">
@@ -177,7 +176,7 @@
                                             <th>
                                                 <label class="tit">상태</label>
                                             </th>
-                                            <td colspan="3">
+                                            <td>
                                                 <div class="select-box">
                                                     <select>
                                                         <option value="">전체</option>
@@ -186,7 +185,17 @@
                                                         <option value="">입금오류</option>
                                                     </select>
                                                 </div>
-                                            </td>                                                                                       
+                                            </td>  
+                                            <th>
+                                                <label class="tit">단체</label>
+                                            </th>
+                                            <td>
+                                                <div class="select-box">
+                                                    <select>
+                                                        <option value="">전체</option>
+                                                    </select>
+                                                </div>
+                                            </td>                                                                                      
                                         </tr>
                                     </tbody>
                                 </table>
@@ -213,6 +222,8 @@
                                     </div>
                                 </div>
                                 <div class="right">
+                                    <button type="button" class="btn-secondary">정산서 일괄 발급</button>
+                                    <span class="divider">|</span>
                                     <div class="select-box">
                                         <select>
                                             <option value="" selected>입금완료</option>
@@ -221,6 +232,8 @@
                                         </select>
                                     </div>
                                     <button type="button" class="btn-primary">상태 전환</button>
+                                    <span class="divider">|</span>
+                                    <button type="button" class="btn-gray">삭제</button>
                                 </div>
                             </div>
                             <div class="tbl-list no-wrap tbl-check-scope body-scroll">
@@ -228,7 +241,7 @@
                                     <colgroup>
                                         <col style="width:80px;">
                                         <col style="width:80px;">
-                                        <col span="10">
+                                        <col span="11">
                                     </colgroup>
                                     <thead>
                                         <tr>
@@ -242,14 +255,15 @@
                                             </th>
                                             <th scope="col">No</th>
                                             <th scope="col">지급대기 전환일</th>
-                                            <th scope="col">DGK 회원 코드</th>
+                                            <th scope="col">DGK 회원코드</th>
                                             <th scope="col">DGK 회원명</th>
                                             <th scope="col">IPI 코드</th>
                                             <th scope="col">최근 정산일</th>
-                                            <th scope="col">지금액</th>
+                                            <th scope="col">지급액</th>
                                             <th scope="col">지급일</th>
                                             <th scope="col">상태</th>
                                             <th scope="col">정산서</th>
+                                            <th scope="col">메일발송결과</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -268,12 +282,13 @@
                                             <td>감 김</td>
                                             <td>1234</td>
                                             <td>2025.01.01</td>
-                                            <td>1,000,000</td>
+                                            <td class="right">1,000,000</td>
                                             <td>2026.04.29</td>
                                             <td>입금완료</td>
                                             <td>
                                                 <div class="link"><a href="javascript:void(0);">정산서보기</a></div>
                                             </td>
+                                            <td>실패</td>
                                         </tr>
                                         <tr>
                                             <td>
@@ -290,12 +305,13 @@
                                             <td>박철수</td>
                                             <td>1234</td>
                                             <td>2025.01.01</td>
-                                            <td>1,000,000</td>
+                                            <td class="right">1,000,000</td>
                                             <td></td>
                                             <td>입금대기</td>
                                             <td>
                                                 <div class="link"><a href="javascript:void(0);">정산서보기</a></div>
                                             </td>
+                                            <td>성공</td>
                                         </tr>
                                         <tr>
                                             <td>
@@ -312,12 +328,13 @@
                                             <td>홍길동</td>
                                             <td>1234</td>
                                             <td>2025.01.01</td>
-                                            <td>1,000,000</td>
+                                            <td class="right">1,000,000</td>
                                             <td></td>
                                             <td>입금대기</td>
                                             <td>
                                                 <div class="link"><a href="javascript:void(0);">정산서보기</a></div>
                                             </td>
+                                            <td>성공</td>
                                         </tr>
                                         <tr>
                                             <td>
@@ -334,17 +351,18 @@
                                             <td>박영희</td>
                                             <td>1234</td>
                                             <td>2025.01.01</td>
-                                            <td>1,000,000</td>
+                                            <td class="right">1,000,000</td>
                                             <td></td>
                                             <td>입금대기</td>
                                             <td>
                                                 <div class="link"><a href="javascript:void(0);">정산서보기</a></div>
                                             </td>
+                                            <td>성공</td>
                                         </tr>
                                         
                                         <!-- no data 시작 -->
                                         <!-- <tr>
-                                            <td colspan="11" class="no-data">
+                                            <td colspan="12" class="no-data">
                                                 <p>데이터가 없습니다.</p>
                                             </td>
                                         </tr> -->
