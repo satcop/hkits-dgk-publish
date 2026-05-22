@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=yes"/>
+    <meta name="viewport" content="width=1280, user-scalable=yes"/>
     <meta http-equiv="Pragma" content="no-cache"/>
     <meta http-equiv="Cache-Control" content="no-cache"/>
     <meta http-equiv="Expires" content="0"/>
@@ -21,7 +21,7 @@
 	<link rel="preload" href="./font/woff2-subset/Pretendard-Black.subset.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- css : 스타일 -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css?v=1.0.0">
 
     <!-- js : 자바스크립트 -->
     <script src="./js/jquery-3.7.1.min.js"></script>
@@ -51,7 +51,7 @@
                         <h3 class="title">정산 관리</h3>
                         <ul>
                             <li class="deposit"><a href="" title="입금내역 관리"><i class="icon-deposit"></i><span>입금내역 관리</span></a></li>
-                            <li class="unsettled"><a href="" title="미정산내역"><i class="icon-unsettled"></i><span>미정산내역</span></a></li>
+                            <li class="unsettled"><a href="" title="미정산내역"><i class="icon-unsettled"></i><span>미정산 내역</span></a></li>
                             <li class="history"><a href="" title="관리비율 이력"><i class="icon-history"></i><span>관리비율 이력</span></a></li>
                             <li class="group"><a href="" title="단체 관리"><i class="icon-group"></i><span>단체 관리</span></a></li>
                         </ul>
@@ -64,10 +64,10 @@
                         </ul>
                     </div>
                     <div class="nav-list">
-                        <h3 class="title">통계</h3>
+                        <h3 class="title">정산 통계</h3>
                         <ul>
-                            <li class="stat-work"><a href="" title="작품별 통계"><i class="icon-stat-work"></i><span>작품별 통계</span></a></li>
-                            <li class="stat-member"><a href="" title="회원별 정산관리"><i class="icon-stat-member"></i><span>회원별 정산관리</span></a></li>
+                            <li class="stat-work"><a href="" title="정산 통계"><i class="icon-stat-work"></i><span>정산 통계</span></a></li>
+                            <li class="stat-member"><a href="" title="회원별 정산내역"><i class="icon-stat-member"></i><span>회원별 정산내역</span></a></li>
                         </ul>
                     </div>
                 </nav>
@@ -109,9 +109,9 @@
                     <ul id="location">
                         <li>홈</li>
                         <li>통계</li>
-                        <li>회원별 정산관리</li>
+                        <li>회원별 정산내역</li>
                     </ul>
-                    <h2 class="page-title">회원별 정산관리</h2>                    
+                    <h2 class="page-title">회원별 정산내역</h2>                    
                 </div>
                 <!-- page head 끝 -->
 
@@ -216,7 +216,7 @@
                                     <button type="button" class="btn-download">엑셀 다운로드</button>
                                 </div>
                             </div>
-                            <div class="tbl-list no-wrap body-scroll">
+                            <div class="tbl-list no-wrap">
                                 <table>
                                     <colgroup>
                                         <col style="width:80px;">
@@ -354,24 +354,26 @@
                                         </tr> -->
                                         <!-- no data 끝 -->
                                     </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th colspan="11">합계</th>
-                                            <th class="right">42,026,950</th>
-                                            <th class="right">32,690</th>
-                                            <th class="right">33,679,560</th>
-                                            <th class="right">1,683,978</th>
-                                            <th class="right">841,989</th>
-                                            <th class="right">31,153,593</th>
-                                            <th class="right">3,116,359</th>
-                                            <th class="right">311,635</th>
-                                            <th class="right">27,725,599</th>
-                                            <th colspan="2"></th>
-                                        </tr>
-                                    </tfoot>
                                 </table>
                             </div>
                         </form>
+
+                        <!-- paging 시작 -->
+                        <nav class="paging">
+                            <button type="button" class="paging__btn paging__btn--soft">처음</button>
+                            <button type="button" class="paging__btn paging__btn--soft">이전</button>
+                            <div class="paging__nums">
+                                <a href="javascript:void(0);" class="paging__num is-active">1</a>
+                                <a href="javascript:void(0);" class="paging__num">2</a>
+                                <a href="javascript:void(0);" class="paging__num">3</a>
+                                <a href="javascript:void(0);" class="paging__num">4</a>
+                                <a href="javascript:void(0);" class="paging__num">5</a>
+                            </div>
+                            <button type="button" class="paging__btn">다음</button>
+                            <button type="button" class="paging__btn">맨끝</button>
+                        </nav>
+                        <!-- paging 끝 -->
+
                     </div>
                 </div>                
                 <!-- page body 끝 -->
@@ -387,7 +389,7 @@
     <script>
         /* 사이드바 네비 현재 메뉴 활성 */
         $(document).ready(function () {
-            setSidebarNavActive('stat-member'); // 회원별 정산관리
+            setSidebarNavActive('stat-member'); // 회원별 정산내역
         });
     </script>
 </body>

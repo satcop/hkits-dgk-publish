@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=yes"/>
+    <meta name="viewport" content="width=1280, user-scalable=yes"/>
     <meta http-equiv="Pragma" content="no-cache"/>
     <meta http-equiv="Cache-Control" content="no-cache"/>
     <meta http-equiv="Expires" content="0"/>
@@ -21,7 +21,7 @@
 	<link rel="preload" href="./font/woff2-subset/Pretendard-Black.subset.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- css : 스타일 -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css?v=1.0.0">
 
     <!-- js : 자바스크립트 -->
     <script src="./js/jquery-3.7.1.min.js"></script>
@@ -51,7 +51,7 @@
                         <h3 class="title">정산 관리</h3>
                         <ul>
                             <li class="deposit"><a href="" title="입금내역 관리"><i class="icon-deposit"></i><span>입금내역 관리</span></a></li>
-                            <li class="unsettled"><a href="" title="미정산내역"><i class="icon-unsettled"></i><span>미정산내역</span></a></li>
+                            <li class="unsettled"><a href="" title="미정산내역"><i class="icon-unsettled"></i><span>미정산 내역</span></a></li>
                             <li class="history"><a href="" title="관리비율 이력"><i class="icon-history"></i><span>관리비율 이력</span></a></li>
                             <li class="group"><a href="" title="단체 관리"><i class="icon-group"></i><span>단체 관리</span></a></li>
                         </ul>
@@ -64,10 +64,10 @@
                         </ul>
                     </div>
                     <div class="nav-list">
-                        <h3 class="title">통계</h3>
+                        <h3 class="title">정산 통계</h3>
                         <ul>
-                            <li class="stat-work"><a href="" title="작품별 통계"><i class="icon-stat-work"></i><span>작품별 통계</span></a></li>
-                            <li class="stat-member"><a href="" title="회원별 정산관리"><i class="icon-stat-member"></i><span>회원별 정산관리</span></a></li>
+                            <li class="stat-work"><a href="" title="정산 통계"><i class="icon-stat-work"></i><span>정산 통계</span></a></li>
+                            <li class="stat-member"><a href="" title="회원별 정산내역"><i class="icon-stat-member"></i><span>회원별 정산내역</span></a></li>
                         </ul>
                     </div>
                 </nav>
@@ -108,10 +108,10 @@
                 <div class="page-head">
                     <ul id="location">
                         <li>홈</li>
-                        <li>통계</li>
-                        <li>작품별 통계</li>
+                        <li>정산 통계</li>
+                        <li>정산 통계</li>
                     </ul>
-                    <h2 class="page-title">작품별 통계</h2>                    
+                    <h2 class="page-title">정산 통계</h2>                    
                 </div>
                 <!-- page head 끝 -->
 
@@ -125,16 +125,12 @@
                                 <table>
                                     <colgroup>
                                         <col width="12%">
-                                        <col width="21.33%">
-                                        <col width="12%">
-                                        <col width="21.33%">
-                                        <col width="12%">
-                                        <col width="21.34%">
+                                        <col>
                                     </colgroup>
                                     <tbody>
                                         <tr>
                                             <th>
-                                                <label class="tit">지급일</label>
+                                                <label class="tit">조회기간</label>
                                             </th>
                                             <td>
                                                 <div class="date-range">
@@ -147,42 +143,6 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <th>
-                                                <label class="tit">DGK 작품 코드</label>
-                                            </th>
-                                            <td>
-                                                <div class="input-box">
-                                                    <input type="text" class="input">
-                                                </div>
-                                            </td>
-                                            <th>
-                                                <label class="tit">작품명</label>
-                                            </th>
-                                            <td>
-                                                <div class="input-box">
-                                                    <input type="text" class="input">
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>
-                                                <label class="tit">IDA 코드</label>
-                                            </th>
-                                            <td>
-                                                <div class="input-box">
-                                                    <input type="text" class="input">
-                                                </div>
-                                            </td>
-                                            <th>
-                                                <label class="tit">단체</label>
-                                            </th>
-                                            <td colspan="3">
-                                                <div class="select-box">
-                                                    <select>
-                                                        <option value="">전체</option>
-                                                    </select>
-                                                </div>
-                                            </td>                                                                                       
                                         </tr>
                                     </tbody>
                                 </table>
@@ -196,12 +156,103 @@
                     </div>
 
                     <div class="indiv">
-                        <h3 class="tit">목록</h3>
+                        <h3 class="tit">전체 정산 요약 및 상태별 현황</h3>
                         <form class="list-form">
                             <div class="tbl-top">
                                 <div class="left">
                                     <div class="item">
                                         전체 <span>4</span> 건
+                                    </div>
+                                    <button type="button" class="btn-download">엑셀 다운로드</button>
+                                </div>
+                            </div>
+                            <div class="tbl-list no-wrap">
+                                <table>
+                                    <colgroup>
+                                        <col style="width:80px;">
+                                        <col span="8">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="2">No</th>
+                                            <th scope="col" rowspan="2">총 수취액</th>
+                                            <th scope="col" rowspan="2">총 지급액</th>
+                                            <th scope="col" rowspan="2">총 DGK 수수료</th>
+                                            <th scope="col" rowspan="2">총 복지기금</th>
+                                            <th scope="col" rowspan="2">총 개인지급액</th>
+                                            <th scope="colgroup" colspan="3">미처리액</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">지급 준비 단계</th>
+                                            <th scope="col">지급 대기 단계</th>
+                                            <th scope="col">미정산 내역</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-no">4</td>
+                                            <td class="right">1,000,000</td>
+                                            <td class="right">1,000,000</td>
+                                            <td class="right">1,000,000</td>
+                                            <td class="right">1,000,000</td>
+                                            <td class="right">1,000,000</td>
+                                            <td class="right">1,000,000</td>
+                                            <td class="right">1,000,000</td>
+                                            <td class="right">1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-no">3</td>
+                                            <td class="right">1,000,000</td>
+                                            <td class="right">1,000,000</td>
+                                            <td class="right">1,000,000</td>
+                                            <td class="right">1,000,000</td>
+                                            <td class="right">1,000,000</td>
+                                            <td class="right">1,000,000</td>
+                                            <td class="right">1,000,000</td>
+                                            <td class="right">1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-no">2</td>
+                                            <td class="right">1,000,000</td>
+                                            <td class="right">1,000,000</td>
+                                            <td class="right">1,000,000</td>
+                                            <td class="right">1,000,000</td>
+                                            <td class="right">1,000,000</td>
+                                            <td class="right">1,000,000</td>
+                                            <td class="right">1,000,000</td>
+                                            <td class="right">1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-no">1</td>
+                                            <td class="right">1,000,000</td>
+                                            <td class="right">1,000,000</td>
+                                            <td class="right">1,000,000</td>
+                                            <td class="right">1,000,000</td>
+                                            <td class="right">1,000,000</td>
+                                            <td class="right">1,000,000</td>
+                                            <td class="right">1,000,000</td>
+                                            <td class="right">1,000,000</td>
+                                        </tr>
+                                        <!-- no data 시작 -->
+                                        <!-- <tr>
+                                            <td colspan="9" class="no-data">
+                                                <p>데이터가 없습니다.</p>
+                                            </td>
+                                        </tr> -->
+                                        <!-- no data 끝 -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="indiv">
+                        <h3 class="tit">연간 정산 실적</h3>
+                        <form class="list-form">
+                            <div class="tbl-top">
+                                <div class="left">
+                                    <div class="item">
+                                        전체 <span>3</span> 건
                                     </div>
                                     <button type="button" class="btn-download">엑셀 다운로드</button>
                                 </div>
@@ -215,92 +266,74 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">No</th>
-                                            <th scope="col">지급일</th>
-                                            <th scope="col">단체</th>
-                                            <th scope="col">IDA</th>
-                                            <th scope="col">DGK 작품코드</th>
-                                            <th scope="col">작품명</th>
-                                            <th scope="col">Net_Amount</th>
-                                            <th scope="col">NET_USD</th>
-                                            <th scope="col">분배금액(A)</th>
-                                            <th scope="col">DGK수수료(B)</th>
-                                            <th scope="col">복지기금(C)</th>
-                                            <th scope="col">개인별 정산액(D=A-B-C)</th>
-                                            <th scope="col">개인소득세(E)</th>
-                                            <th scope="col">개인주민세(F)</th>
-                                            <th scope="col">최종 개인지급액(D-E-F)</th>
+                                            <th scope="col">연도</th>
+                                            <th scope="col">(참고) 송금단체</th>
+                                            <th scope="col">전년도 미배분 로열티(A)</th>
+                                            <th scope="col">수취액(B)</th>
+                                            <th scope="col">순 배분 가능 로열티 (A+B)</th>
+                                            <th scope="col">총 분배금</th>
+                                            <th scope="col">DGK수수료</th>
+                                            <th scope="col">복지기금</th>
+                                            <th scope="col">세금 합계</th>
+                                            <th scope="col">해당연도 지급</th>
+                                            <th scope="col">미분배액</th>
+                                            <th scope="col">실제 회원지급액</th>
+                                            <th scope="col">차액</th>
+                                            <th scope="col">(참고) 분배해당</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td class="col-no">4</td>
-                                            <td>2026.05.15</td>
-                                            <td>영화감독조합</td>
-                                            <td>IDA2024-001</td>
-                                            <td>DGK-2024-00101</td>
-                                            <td>봄날의 약속</td>
-                                            <td class="right">12,500,000</td>
-                                            <td class="right">8,500</td>
-                                            <td class="right">10,000,000</td>
-                                            <td class="right">500,000</td>
-                                            <td class="right">250,000</td>
-                                            <td class="right">9,250,000</td>
-                                            <td class="right">925,000</td>
-                                            <td class="right">92,500</td>
-                                            <td class="right">8,232,500</td>
-                                        </tr>
-                                        <tr>
                                             <td class="col-no">3</td>
-                                            <td>2026.04.20</td>
-                                            <td>영화감독조합</td>
-                                            <td>IDA2024-002</td>
-                                            <td>DGK-2024-00202</td>
-                                            <td>한강의 밤</td>
-                                            <td class="right">8,300,000</td>
-                                            <td class="right">5,600</td>
-                                            <td class="right">6,500,000</td>
-                                            <td class="right">325,000</td>
-                                            <td class="right">162,500</td>
-                                            <td class="right">6,012,500</td>
-                                            <td class="right">601,250</td>
-                                            <td class="right">60,125</td>
-                                            <td class="right">5,351,125</td>
+                                            <td>2022</td>
+                                            <td>SACD 4차, SACD 5차, SACD 6차, DAMA 1차</td>
+                                            <td class="right">7,601,019</td>
+                                            <td class="right">210,579,574</td>
+                                            <td class="right">218,180,593</td>
+                                            <td class="right">8,853,748</td>
+                                            <td class="right">2,220,564</td>
+                                            <td class="right">442,688</td>
+                                            <td class="right">204,285</td>
+                                            <td class="right">5,986,212</td>
+                                            <td class="right">209,328,845</td>
+                                            <td class="right">5,987,582</td>
+                                            <td class="right">-1,370</td>
+                                            <td>SACD 1차, SACD 3차, SACD 4차, SACD 5차</td>
                                         </tr>
                                         <tr>
                                             <td class="col-no">2</td>
-                                            <td>2026.04.10</td>
-                                            <td>영화감독조합</td>
-                                            <td>IDA2024-003</td>
-                                            <td>DGK-2024-00303</td>
-                                            <td>도시의 빛</td>
-                                            <td class="right">15,200,000</td>
-                                            <td class="right">10,400</td>
-                                            <td class="right">12,000,000</td>
-                                            <td class="right">600,000</td>
-                                            <td class="right">300,000</td>
-                                            <td class="right">11,100,000</td>
-                                            <td class="right">1,110,000</td>
-                                            <td class="right">111,000</td>
-                                            <td class="right">9,879,000</td>
+                                            <td>2021</td>
+                                            <td>SACD 2차, SACD 3차</td>
+                                            <td class="right">3,123,688</td>
+                                            <td class="right">5,118,451</td>
+                                            <td class="right">8,242,139</td>
+                                            <td class="right">641,120</td>
+                                            <td class="right">163,183</td>
+                                            <td class="right">32,056</td>
+                                            <td class="right">14,713</td>
+                                            <td class="right">431,168</td>
+                                            <td class="right">7,601,019</td>
+                                            <td class="right">431,166</td>
+                                            <td class="right">2</td>
+                                            <td>SACD 2차</td>
                                         </tr>
                                         <tr>
                                             <td class="col-no">1</td>
-                                            <td>2026.04.01</td>
-                                            <td>영화감독조합</td>
-                                            <td>IDA2024-004</td>
-                                            <td>DGK-2024-00404</td>
-                                            <td>별에게</td>
-                                            <td class="right">6,800,000</td>
-                                            <td class="right">4,600</td>
-                                            <td class="right">5,200,000</td>
-                                            <td class="right">260,000</td>
-                                            <td class="right">130,000</td>
-                                            <td class="right">4,810,000</td>
-                                            <td class="right">481,000</td>
-                                            <td class="right">48,100</td>
-                                            <td class="right">4,280,900</td>
+                                            <td>2020</td>
+                                            <td>SACD 1차</td>
+                                            <td class="right"></td>
+                                            <td class="right">8,977,753</td>
+                                            <td class="right">8,977,753</td>
+                                            <td class="right">5,854,065</td>
+                                            <td class="right">1,463,516</td>
+                                            <td class="right">292,703</td>
+                                            <td class="right">135,229</td>
+                                            <td class="right">3,962,617</td>
+                                            <td class="right">3,123,688</td>
+                                            <td class="right">3,962,708</td>
+                                            <td class="right">-91</td>
+                                            <td>SACD 1차</td>
                                         </tr>
-                                        
                                         <!-- no data 시작 -->
                                         <!-- <tr>
                                             <td colspan="15" class="no-data">
@@ -309,24 +342,163 @@
                                         </tr> -->
                                         <!-- no data 끝 -->
                                     </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th colspan="6">합계</th>
-                                            <th class="right">42,800,000</th>
-                                            <th class="right">29,100</th>
-                                            <th class="right">33,700,000</th>
-                                            <th class="right">1,685,000</th>
-                                            <th class="right">842,500</th>
-                                            <th class="right">31,172,500</th>
-                                            <th class="right">3,117,250</th>
-                                            <th class="right">311,725</th>
-                                            <th class="right">27,435,525</th>
-                                        </tr>
-                                    </tfoot>
                                 </table>
                             </div>
                         </form>
-                    </div>
+                    </div>    
+                    
+                    <div class="indiv">
+                        <h3 class="tit">단체별 수취, 분배 현황</h3>
+                        <form class="list-form">
+                            <div class="tbl-top">
+                                <div class="left">
+                                    <div class="item">
+                                        전체 <span>7</span> 건
+                                    </div>
+                                    <button type="button" class="btn-download">엑셀 다운로드</button>
+                                </div>
+                            </div>
+                            <div class="tbl-list no-wrap body-scroll">
+                                <table>
+                                    <colgroup>
+                                        <col style="width:80px;">
+                                        <col span="12">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">No</th>
+                                            <th scope="col">단체명</th>
+                                            <th scope="col">최초 보상금 수취일</th>
+                                            <th scope="col">최근 보상금 수취일</th>
+                                            <th scope="col">총 수취회차</th>
+                                            <th scope="col">지급 완료 건 수</th>
+                                            <th scope="col">수취 대기(외화)</th>
+                                            <th scope="col">총 수취액(원화)</th>
+                                            <th scope="col">총 분배액(원화)</th>
+                                            <th scope="col">미분배액(원화)</th>
+                                            <th scope="col">총 DGK 수수료</th>
+                                            <th scope="col">총 복지기금</th>
+                                            <th scope="col">총 회원 지급액</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-no">7</td>
+                                            <td>SACD</td>
+                                            <td>2020-08-01</td>
+                                            <td>2023-10-01</td>
+                                            <td>10차</td>
+                                            <td>7차</td>
+                                            <td class="right">€1,149.13</td>
+                                            <td class="right">36,427,917</td>
+                                            <td class="right">20,511,772</td>
+                                            <td class="right">15,916,145</td>
+                                            <td class="right">5,137,973</td>
+                                            <td class="right">1,025,589</td>
+                                            <td class="right">14,348,213</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-no">6</td>
+                                            <td>DAC</td>
+                                            <td>2023-01-01</td>
+                                            <td>2025-09-01</td>
+                                            <td>6차</td>
+                                            <td>4차</td>
+                                            <td class="right"></td>
+                                            <td class="right">354,773,369</td>
+                                            <td class="right">156,719,892</td>
+                                            <td class="right">198,053,477</td>
+                                            <td class="right"></td>
+                                            <td class="right"></td>
+                                            <td class="right"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-no">5</td>
+                                            <td>DAMA</td>
+                                            <td>2022-12-01</td>
+                                            <td>2026-04-01</td>
+                                            <td>5차</td>
+                                            <td>3차</td>
+                                            <td class="right">€ 119,674.03</td>
+                                            <td class="right">867,661,605</td>
+                                            <td class="right">678,218,603</td>
+                                            <td class="right">189,443,002</td>
+                                            <td class="right"></td>
+                                            <td class="right"></td>
+                                            <td class="right"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-no">4</td>
+                                            <td>ATN</td>
+                                            <td>2025-05-01</td>
+                                            <td>2025-12-01</td>
+                                            <td>2차</td>
+                                            <td>없음</td>
+                                            <td class="right"></td>
+                                            <td class="right">108,070,788</td>
+                                            <td class="right">0</td>
+                                            <td class="right">108,070,788</td>
+                                            <td class="right"></td>
+                                            <td class="right"></td>
+                                            <td class="right"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-no">3</td>
+                                            <td>DASC</td>
+                                            <td>2024-12-01</td>
+                                            <td>2025-12-01</td>
+                                            <td>3차</td>
+                                            <td>2차</td>
+                                            <td class="right"></td>
+                                            <td class="right">30,202,141</td>
+                                            <td class="right">1,651,212</td>
+                                            <td class="right">28,550,929</td>
+                                            <td class="right"></td>
+                                            <td class="right"></td>
+                                            <td class="right"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-no">2</td>
+                                            <td>REDES</td>
+                                            <td>2024-08-01</td>
+                                            <td>2025-09-01</td>
+                                            <td>3차</td>
+                                            <td>2차</td>
+                                            <td class="right"></td>
+                                            <td class="right">11,223,710</td>
+                                            <td class="right">8,555,796</td>
+                                            <td class="right">2,667,914</td>
+                                            <td class="right"></td>
+                                            <td class="right"></td>
+                                            <td class="right"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-no">1</td>
+                                            <td>ZAPA</td>
+                                            <td>2023-12-01</td>
+                                            <td>2025-12-01</td>
+                                            <td>3차</td>
+                                            <td>1차</td>
+                                            <td class="right"></td>
+                                            <td class="right">53,945,782</td>
+                                            <td class="right">4,122,487</td>
+                                            <td class="right">49,823,295</td>
+                                            <td class="right"></td>
+                                            <td class="right"></td>
+                                            <td class="right"></td>
+                                        </tr>
+                                        <!-- no data 시작 -->
+                                        <!-- <tr>
+                                            <td colspan="13" class="no-data">
+                                                <p>데이터가 없습니다.</p>
+                                            </td>
+                                        </tr> -->
+                                        <!-- no data 끝 -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form>
+                    </div>                      
                 </div>                
                 <!-- page body 끝 -->
 

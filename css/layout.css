@@ -12,7 +12,8 @@ body {
 }
 @media (max-width:1025px){
     #wrap {
-        height:auto;
+        height:100%;
+        min-height:100%;
     }
 }
 
@@ -26,7 +27,7 @@ aside.sidebar {
     width: 24rem;
     background-color: #fff;
     transition: all 0.3s ease;
-    z-index: 10;
+    z-index: 1001;
     border-right: 1px solid #eee;
     overflow-y:auto;
 }
@@ -541,4 +542,16 @@ aside.sidebar.active button.btn-toggle-sidebar {
     font-size:1.4rem;
     font-weight:500;
     color:#222;
+}
+
+
+/* 모바일: PC 화면 레이아웃 유지 (축소 없이 가로 스크롤) */
+body {
+    min-width:1280px;
+}
+#wrap {
+    min-width:1280px;
+}
+.layer-popup {
+    min-width:1280px;
 }

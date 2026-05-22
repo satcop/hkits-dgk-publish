@@ -78,7 +78,8 @@ table {border-collapse:collapse;border-spacing:0;}
 
 html {
     font-size:62.5%;
-    overflow-x:hidden;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
 }
 
 /* media queries  */
@@ -98,9 +99,10 @@ html {
     --ccolor:#8B6F4B;
     --ccolor-hover:#8b6f4bed;
 }
+/* 모바일에서도 PC와 동일한 여백 유지 */
 @media (max-width:481px){
     :root{
-        --body-padding:2rem;
+        --body-padding:4rem;
     }
 }
 
